@@ -11,15 +11,15 @@ export default function Header() {
             justifyContent: 'space-between',
             alignItems: 'center',
             width: '80%',
-            margin: '0 auto',
+            margin: '2rem auto 0',
             height: '6rem',
             }}>
               <div className='Left'>
               <FontAwesomeIcon icon={faAlignJustify}/>
               </div>
             <img src={Logo} alt={'Caribbean Scholar'} sx ={{
-              width: '9rem',
-              paddingBottom: '1.3rem'
+              width: '10rem',
+              marginBottom: '2rem'
               }}/>
               <div className='Right'>
             <FontAwesomeIcon icon={faSearch} sx={{

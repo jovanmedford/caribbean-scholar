@@ -2,7 +2,7 @@
 export default {
   fonts: {
     body: 'system-ui, sans-serif',
-    heading: 'Avenir Next, sans-serif',
+    heading: 'Montserrat, sans-serif',
     monospace: 'Menlo, monospace',
   },
   colors: {

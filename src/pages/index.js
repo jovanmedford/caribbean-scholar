@@ -28,6 +28,12 @@ export default function BlogHome() {
         <li>Economics</li>
       </ul>
       <Hero />
+      <p sx={{
+        fontWeight: 'bold',
+        fontSize: '1rem',
+        marginLeft: '1rem', 
+        marginTop: '2rem'
+    }}>See more</p>
     </div>
   )
 }

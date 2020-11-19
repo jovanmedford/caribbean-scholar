@@ -3,6 +3,7 @@ import { faBorderNone } from '@fortawesome/free-solid-svg-icons'
 import { jsx } from 'theme-ui'
 import Header from '../components/header'
 import Hero from '../components/hero'
+import Ad from '../../static/ad.jpg'
 
 
 export default function BlogHome() {
@@ -34,6 +35,12 @@ export default function BlogHome() {
         marginLeft: '1rem', 
         marginTop: '2rem'
     }}>See All Topics</p>
-    </div>
+
+    <img src={Ad} sx={{
+      display: 'block',
+      width: '60%',
+      margin: '0 auto'
+    }}/>
+  </div>
   )
 }

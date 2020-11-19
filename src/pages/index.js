@@ -33,7 +33,7 @@ export default function BlogHome() {
         fontSize: '1rem',
         marginLeft: '1rem', 
         marginTop: '2rem'
-    }}>See more</p>
+    }}>See All Topics</p>
     </div>
   )
 }

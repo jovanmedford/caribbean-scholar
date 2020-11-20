@@ -1,9 +1,9 @@
 /** @jsx jsx */
-import { faBorderNone } from '@fortawesome/free-solid-svg-icons'
 import { jsx } from 'theme-ui'
 import Header from '../components/header'
 import Hero from '../components/hero'
 import Card from '../components/card'
+import Cta from '../components/cta'
 import Ad from '../../static/ad.jpg'
 
 
@@ -46,6 +46,8 @@ export default function BlogHome() {
     <Card />
     <Card />
     <Card />
+
+    <Cta />
   </div>
   )
 }

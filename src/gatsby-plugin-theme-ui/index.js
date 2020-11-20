@@ -9,6 +9,7 @@ export default {
     text: '#0F325A',
     background: '#FEFFF1',
     primary: '#33e',
+    cta: '#387CBD',
     title: 'white'
   },
 }

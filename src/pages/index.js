@@ -6,6 +6,30 @@ import Card from '../components/card'
 import Cta from '../components/cta'
 import Ad from '../../static/ad.jpg'
 
+/*Images*/
+import Image1 from '../../static/spanish.jpg'
+import geo from '../../static/geo.jpg'
+import bim from '../../static/bim.webp'
+
+
+const spanishPost = {
+  src: Image1,
+  category: 'Spanish',
+  title: '50 Things You Must Know Before The Spanish Exam'
+}
+
+const geoPost = {
+  src: geo,
+  category: 'Geography',
+  title: 'Contour Lines By Name and Nature'
+}
+
+const bimPost = {
+  src: bim,
+  category: 'Lifestyle',
+  title: 'Studying Abroad From At Home'
+}
+
 
 export default function BlogHome() {
   return (
@@ -43,9 +67,9 @@ export default function BlogHome() {
       margin: '0 auto'
     }}/>
 
-    <Card />
-    <Card />
-    <Card />
+    <Card post={spanishPost}/>
+    <Card post={geoPost}/>
+    <Card post={bimPost}/>
 
     <Cta />
   </div>

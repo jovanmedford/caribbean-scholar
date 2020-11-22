@@ -1,9 +1,9 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui'
 
-import Image1 from '../../static/spanish.jpg'
 
-export default function Card() {
+
+export default function Card(props) {
     return(
         <div className='Card' sx={{
             width: '80%',
@@ -15,14 +15,14 @@ export default function Card() {
             <div className='card-image' sx={{
               height:'7.5rem',
               width:'100%',
-              backgroundImage: `url(${Image1})`,
+              backgroundImage: `url(${props.post.src})`,
               backgroundSize: 'cover'}}>
             </div>
             <div className='card-content' sx={{
               padding: '0.8rem'
               }}>
-              <h3 sx={{margin: 0}}>Spanish</h3>
-              <p>50 Spanish Expressions You Must Know Before Taking The Exam</p>
+              <h3 sx={{margin: 0}}>{props.post.category}</h3>
+              <p>{props.post.title}</p>
             </div>
           </div>
     )

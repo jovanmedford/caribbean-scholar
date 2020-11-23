@@ -72,6 +72,27 @@ export default function BlogHome() {
     <Card post={bimPost}/>
 
     <Cta />
+
+    <section className='copy' sx={{marginLeft: '1rem'}}>
+      <h2>Find real <span sx={{color:'muted'}}>answers</span> to your questions</h2>
+      <p>Read detailed info on course material and everything related to your future.</p>
+    </section>
+
+    <section className='top-posts' sx={{margin: '1rem'}}>
+      <h2>Top Posts</h2>
+      <Card post={spanishPost}/>
+      <Card post={spanishPost}/>
+      <Card post={spanishPost}/>
+    </section>
+
+    <Cta /> 
+
+    <section className='recently-added' sx={{marginLeft: '1rem'}}>
+      <h2>Recently Added</h2>
+      <Card post={spanishPost}/>
+      <Card post={spanishPost}/>
+      <Card post={spanishPost}/>
+    </section>
   </div>
   )
 }

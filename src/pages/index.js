@@ -93,6 +93,16 @@ export default function BlogHome() {
       <Card post={spanishPost}/>
       <Card post={spanishPost}/>
     </section>
+
+    <button sx={{
+      display: 'block',
+      margin: '0 auto',
+      background: 'none',
+      border: 'darkblue 0.5px solid',
+      height: '2.5rem',
+      width: '8rem'
+    }}>Load More...</button>
+    <hr></hr>
   </div>
   )
 }

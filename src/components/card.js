@@ -8,7 +8,7 @@ export default function Card(props) {
         <div className='Card' sx={{
             width: '80%',
             backgroundColor: 'white',
-            height: '15rem',
+            height: '17rem',
             margin: '1rem auto',
             overflow: 'hidden'
           }}>
@@ -23,6 +23,9 @@ export default function Card(props) {
               }}>
               <h3 sx={{margin: 0}}>{props.post.category}</h3>
               <p>{props.post.title}</p>
+              <button sx={{
+              float:'right',
+              }}>Read Now</button>
             </div>
           </div>
     )

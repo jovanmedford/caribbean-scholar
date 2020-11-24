@@ -1,9 +1,24 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui'
-import { graphql } from 'gatsby'
+import { graphql, useStaticQuery } from 'gatsby'
 import Img from 'gatsby-image'
 
-export default function Hero({ data }) {
+export default function Hero() {
+  const data = useStaticQuery(graphql`
+    query {
+      heroImage: file(relativePath: {eq: "img/mattridley.jpg"}) {
+            childImageSharp {
+              fluid(maxWidth: 1200) {
+                ...GatsbyImageSharpFluid
+              }
+        }
+      }
+    }
+  `
+  )
+
+  const source = data.heroImage.childImageSharp.fluid
+
     return (
     <div sx={{position: 'relative'}}>
         <div className='Overlay' sx={{
@@ -31,7 +46,7 @@ export default function Hero({ data }) {
           </h2>
           <h3>By Carl Edwards<br/>in Chemistry</h3>
         </div>
-        <Img src={data.headerImage} sx={{
+        <Img fluid={source} sx={{
           width: '100%',
           height: '18rem',
           zIndex: '-1'
@@ -39,12 +54,3 @@ export default function Hero({ data }) {
     </div>
     )
 }
-
-export const query = graphql`
-  query {
-    headerImage: imageSharp(id: { regex: "/mattridley"}) {
-      sizes (maxWidth: 1240) {
-        ...GatsbyImageSharpSizes
-      }
-    }
-  }`

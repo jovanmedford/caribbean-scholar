@@ -2,7 +2,7 @@
 import { jsx } from 'theme-ui'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faAlignJustify, faSearch, faMoon } from '@fortawesome/free-solid-svg-icons'
-import Logo from '../../static/logopng.png'
+import Logo from '../img/logopng.png'
 
 export default function Header() {
     return (

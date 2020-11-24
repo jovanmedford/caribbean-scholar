@@ -4,12 +4,12 @@ import Header from '../components/header'
 import Hero from '../components/hero'
 import Card from '../components/card'
 import Cta from '../components/cta'
-import Ad from '../../static/ad.jpg'
+import Ad from '../img//ad.jpg'
 
 /*Images*/
-import Image1 from '../../static/spanish.jpg'
-import geo from '../../static/geo.jpg'
-import bim from '../../static/bim.webp'
+import Image1 from '../img/spanish.jpg'
+import geo from '../img/geo.jpg'
+import bim from '../img/bim.webp'
 
 
 const spanishPost = {

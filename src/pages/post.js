@@ -1,14 +1,16 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui'
 import Header from '../components/header'
+import { graphql } from 'gatsby'
 import Hero from '../components/hero'
 import Me from '../img/me.jpg'
 
-export default function Post() {
-    const bodyMargin = '0 2rem'
+export default function Post({data}) {
+    const bodyMargin = '0 2rem';
+    const wpPost = data.allWpPost.edges[2].node;
     return (
         <div sx={{
-            fontFamily: 'Avenue Next',
+            fontFamily: 'Montserrat',
 
             h1: {
                 fontWeight: 'normal'
@@ -19,7 +21,7 @@ export default function Post() {
                 margin: bodyMargin
             }}>
                 <h3>Productivity</h3>
-                <h1>5 Keys To Successful Online Learning</h1>
+                <h1>{wpPost.title}</h1>
                 <section className="bio" sx={{
                     display: 'flex',
                     justifyContent: 'space-between',
@@ -45,10 +47,26 @@ export default function Post() {
             </section>
             <Hero isPost={true}/>
             <article sx={{
-                margin: bodyMargin
-            }}>
-                <h3>Set Up</h3>
+                margin: bodyMargin,
+                fontSize: '1.4rem',
+                lineHeight: '1.5'
+            }}
+            dangerouslySetInnerHTML={{__html: wpPost.content}}>
             </article>
         </div>      
     )
 }
+
+
+export const query = graphql`
+    {
+            allWpPost {
+              edges {
+                node {
+                  content
+                  title
+                  date(formatString: "YYYY-MM-DD")
+                }
+              }
+            }
+    }`

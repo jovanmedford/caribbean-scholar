@@ -18,6 +18,13 @@ module.exports = {
     },
     `gatsby-transformer-sharp`, 
     `gatsby-plugin-sharp`,
+    {
+      resolve: `gatsby-source-wordpress-experimental`,
+      options: {
+        // I have created a dummy site for us to use with the plugins we discussed
+        url: "http://writers.flywheelsites.com/graphql"
+      }
+    },
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-theme-ui',
     'gatsby-plugin-fontawesome-css',

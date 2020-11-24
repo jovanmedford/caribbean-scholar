@@ -1,8 +1,9 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui'
-import HeroImage from '../../static/mattridley.jpg'
+import { graphql } from 'gatsby'
+import Img from 'gatsby-image'
 
-export default function Hero() {
+export default function Hero({ data }) {
     return (
     <div sx={{position: 'relative'}}>
         <div className='Overlay' sx={{
@@ -30,7 +31,7 @@ export default function Hero() {
           </h2>
           <h3>By Carl Edwards<br/>in Chemistry</h3>
         </div>
-        <img src={HeroImage} sx={{
+        <Img src={data.headerImage} sx={{
           width: '100%',
           height: '18rem',
           zIndex: '-1'
@@ -38,3 +39,12 @@ export default function Hero() {
     </div>
     )
 }
+
+export const query = graphql`
+  query {
+    headerImage: imageSharp(id: { regex: "/mattridley"}) {
+      sizes (maxWidth: 1240) {
+        ...GatsbyImageSharpSizes
+      }
+    }
+  }`

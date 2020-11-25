@@ -11,15 +11,15 @@ export default function BlogPost({data}) {
     const post = data.wpPost;
     return (
         <div sx={{
-            fontFamily: 'Montserrat',
-
+            fontFamily: 'Avenir Next',
             h1: {
-                fontWeight: 'normal'
+                fontWeight: 'normal',
+                fontFamily: 'Avenir Next',
             }        
                 }}>
             <Header />
             <PostHeader category={post.categories.nodes.name} title={post.title} 
-            authorImg={Me} authorName={post.author.node.firstName} date={post.date}/>
+            authorImg={Me} authorName={post.author.node.firstName + ' ' + post.author.node.lastName} date={post.date}/>
             <Hero isPost={true}/>
             <article sx={{
                 margin: bodyMargin,

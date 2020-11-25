@@ -3,7 +3,7 @@ import { jsx } from 'theme-ui'
 
 export default function PostHeader(props) {
     const bodyMargin = '0 2rem';
-    
+
     return(
     <section className='body' sx={{
         margin: bodyMargin
@@ -26,9 +26,9 @@ export default function PostHeader(props) {
             <div className="bio__info" sx={{
                 width: '65%'
             }}>
-                <span>props.authorName</span>
+                <span>{props.authorName}</span>
                 <br/>
-                <span sx={{fontSize: '0.8rem'}}>Last Edited: props.date</span>
+                <span sx={{fontSize: '0.8rem'}}>Last Edited: {props.date}</span>
             </div>
             <span><li>2 min</li></span>
         </section>

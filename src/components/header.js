@@ -3,8 +3,10 @@ import { jsx } from 'theme-ui'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faAlignJustify, faSearch, faMoon } from '@fortawesome/free-solid-svg-icons'
 import Logo from '../img/logopng.png'
+import { useColorMode } from 'theme-ui'
 
 export default function Header() {
+  const [colorMode, setColorMode] = useColorMode()
     return (
         <div sx={{
             display: 'flex',
@@ -25,7 +27,11 @@ export default function Header() {
             <FontAwesomeIcon icon={faSearch} sx={{
               marginRight: '0.5rem'
             }}/>
-            <FontAwesomeIcon icon={faMoon}/>
+            <FontAwesomeIcon icon={faMoon}
+              onClick={e => {
+                setColorMode(colorMode === 'default' ? 'dark' : 'default')
+              }}
+            />
             </div> 
           </div>
     )

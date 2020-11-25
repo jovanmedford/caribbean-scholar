@@ -9,18 +9,21 @@ export default function PostHeader(props) {
         margin: bodyMargin
     }}>
         <h3>{props.category}</h3>
-        <h1>{props.title}</h1>
+        <h1 sx={{marginBottom: '1rem'}}>{props.title}</h1>
         <section className="bio" sx={{
             display: 'flex',
             justifyContent: 'space-between',
-            height: '3rem',
+            alignItems: 'flex-end',
+            height: '2.5rem',
             width: '100%',
+            marginBottom: '0.5rem'
         }}>
             <div className="bio__image" sx={{
+            
             }}>
                 <img src={props.authorImg} sx={{
                     borderRadius: '100%',
-                    width: '2rem'
+                    width: '2rem',
                 }}/>
             </div>
             <div className="bio__info" sx={{
@@ -28,10 +31,9 @@ export default function PostHeader(props) {
             }}>
                 <span>{props.authorName}</span>
                 <br/>
-                <span sx={{fontSize: '1rem'}}>Last Edited: {props.date}</span>
+                <span sx={{fontSize: 'rem'}}>Last Edited: {props.date}</span>
             </div>
             <span sx={{
-                alignSelf: 'center',
                 fontWeight: '700'
                 }}><li>2 min</li></span>
         </section>

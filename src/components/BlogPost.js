@@ -2,19 +2,21 @@
 import { jsx } from 'theme-ui'
 import Header from '../components/header'
 import { graphql } from 'gatsby'
-import Hero from '../components/hero'
+import Img from 'gatsby-image'
 import Me from '../img/me.jpg'
 import PostHeader from '../components/PostHeader'
 
 export default function BlogPost({data}) {
     const bodyMargin = '0rem 2rem';
     const post = data.wpPost;
+    const source = post.featuredImage.node.localFile.childImageSharp.fluid;
+
     return (
         <div>
             <Header />
             <PostHeader category={post.categories.nodes.name} title={post.title} 
             authorImg={Me} authorName={post.author.node.firstName + ' ' + post.author.node.lastName} date={post.date}/>
-            <Hero isPost={true}/>
+            <Img fluid={source} sx={{height: '18rem'}}/>
             <article sx={{
                 margin: bodyMargin,
                 h3: {
@@ -23,8 +25,7 @@ export default function BlogPost({data}) {
                     marginBottom: '0.4rem'
                 },
                 p: {
-                    fontWeight: 500,
-                    fontSize: '1.25rem',
+                    fontSize: '1.2rem',
                     lineHeight: '1.6',
                     marginTop: 0
                 }
@@ -53,5 +54,16 @@ export const query = graphql`
                 name
                 }
             }
+            featuredImage {
+                node {
+                  localFile {
+                    childImageSharp {
+                      fluid(maxWidth: 1200) {
+                        ...GatsbyImageSharpFluid
+                      }
+                    }
+                  }
+                }
+              }
         }
     }`

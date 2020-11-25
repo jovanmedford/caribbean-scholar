@@ -5,9 +5,9 @@ import { graphql } from 'gatsby'
 import Hero from '../components/hero'
 import Me from '../img/me.jpg'
 
-export default function Post({data}) {
+export default function Sample({data}) {
     const bodyMargin = '0 2rem';
-    const wpPost = data.allWpPost.edges[2].node;
+    const wpPost = data.allWpPost.edges[0].node;
     return (
         <div sx={{
             fontFamily: 'Montserrat',
@@ -48,8 +48,8 @@ export default function Post({data}) {
             <Hero isPost={true}/>
             <article sx={{
                 margin: bodyMargin,
-                fontSize: '1.4rem',
-                lineHeight: '1.5'
+                fontSize: '1.5rem',
+                lineHeight: '1.4'
             }}
             dangerouslySetInnerHTML={{__html: wpPost.content}}>
             </article>

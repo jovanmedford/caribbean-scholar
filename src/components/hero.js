@@ -16,7 +16,6 @@ export default function Hero() {
     }
   `
   )
-
   const source = data.heroImage.childImageSharp.fluid
 
     return (

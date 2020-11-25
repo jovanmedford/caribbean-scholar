@@ -10,11 +10,11 @@ export default function BlogPost({data}) {
     const bodyMargin = '0rem 2rem';
     const post = data.wpPost;
     const source = post.featuredImage.node.localFile.childImageSharp.fluid;
-
+    
     return (
         <div>
             <Header />
-            <PostHeader category={post.categories.nodes.name} title={post.title} 
+            <PostHeader category={post.categories.nodes[0].name} title={post.title} 
             authorImg={Me} authorName={post.author.node.firstName + ' ' + post.author.node.lastName} date={post.date}/>
             <Img fluid={source} sx={{height: '18rem'}}/>
             <article sx={{

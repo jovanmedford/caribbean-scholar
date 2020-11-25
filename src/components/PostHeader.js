@@ -8,8 +8,13 @@ export default function PostHeader(props) {
     <section className='body' sx={{
         margin: bodyMargin
     }}>
-        <h3>{props.category}</h3>
-        <h1 sx={{marginBottom: '1rem'}}>{props.title}</h1>
+        <h3 sx={{
+            marginBottom: 0,
+            color:'primary'
+        }}>{props.category}</h3>
+        <h1 sx={{
+            marginTop: 0,
+            marginBottom: '1rem'}}>{props.title}</h1>
         <section className="bio" sx={{
             display: 'flex',
             justifyContent: 'space-between',

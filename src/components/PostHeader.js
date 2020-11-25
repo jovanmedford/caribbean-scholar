@@ -28,9 +28,12 @@ export default function PostHeader(props) {
             }}>
                 <span>{props.authorName}</span>
                 <br/>
-                <span sx={{fontSize: '0.8rem'}}>Last Edited: {props.date}</span>
+                <span sx={{fontSize: '1rem'}}>Last Edited: {props.date}</span>
             </div>
-            <span><li>2 min</li></span>
+            <span sx={{
+                alignSelf: 'center',
+                fontWeight: '700'
+                }}><li>2 min</li></span>
         </section>
     </section>
     )

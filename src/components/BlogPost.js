@@ -7,7 +7,7 @@ import Me from '../img/me.jpg'
 import PostHeader from '../components/PostHeader'
 
 export default function BlogPost({data}) {
-    const bodyMargin = '0 2rem';
+    const bodyMargin = '0rem 2rem';
     const post = data.wpPost;
     return (
         <div>
@@ -17,8 +17,17 @@ export default function BlogPost({data}) {
             <Hero isPost={true}/>
             <article sx={{
                 margin: bodyMargin,
-                fontSize: '1.5rem',
-                lineHeight: '1.4'
+                h3: {
+                    fontFamily: 'heading',
+                    fontSize: '1.4rem',
+                    marginBottom: '0.4rem'
+                },
+                p: {
+                    fontWeight: 500,
+                    fontSize: '1.25rem',
+                    lineHeight: '1.6',
+                    marginTop: 0
+                }
             }}
             dangerouslySetInnerHTML={{__html: post.content}}>
             </article>

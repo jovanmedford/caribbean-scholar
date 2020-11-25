@@ -2,7 +2,7 @@
 export default {
   fonts: {
     body: 'Lato, system-ui, sans-serif',
-    heading: 'Avenir Next, Lato, Montserrat, sans-serif',
+    heading: 'Avenir Next, sans-serif',
     monospace: 'Menlo, monospace',
   },
   fontWeights: {
@@ -33,4 +33,15 @@ export default {
       }
     }
   },
+  styles: {
+    root: {
+      fontFamily: 'body',
+
+      h1: {
+        fontFamily: 'heading',
+        fontSize: '2rem',
+        fontWeight: 'heading'
+      }
+    }
+  }
 }

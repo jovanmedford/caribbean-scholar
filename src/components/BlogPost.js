@@ -10,13 +10,7 @@ export default function BlogPost({data}) {
     const bodyMargin = '0 2rem';
     const post = data.wpPost;
     return (
-        <div sx={{
-            fontFamily: 'Avenir Next',
-            h1: {
-                fontWeight: 'normal',
-                fontFamily: 'Avenir Next',
-            }        
-                }}>
+        <div>
             <Header />
             <PostHeader category={post.categories.nodes.name} title={post.title} 
             authorImg={Me} authorName={post.author.node.firstName + ' ' + post.author.node.lastName} date={post.date}/>

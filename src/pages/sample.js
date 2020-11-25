@@ -5,7 +5,7 @@ import { graphql } from 'gatsby'
 import Hero from '../components/hero'
 import Me from '../img/me.jpg'
 
-export default function Sample({data}) {
+export default function Post({data}) {
     const bodyMargin = '0 2rem';
     const wpPost = data.allWpPost.edges[0].node;
     return (

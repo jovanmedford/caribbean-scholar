@@ -6,6 +6,7 @@ import Card from '../components/card'
 import Cta from '../components/cta'
 import Ad from '../img//ad.jpg'
 import PostPreview from '../components/PostPreview'
+import { graphql } from 'gatsby'
 
 /*Images*/
 import Image1 from '../img/spanish.jpg'
@@ -32,7 +33,7 @@ const bimPost = {
 }
 
 
-export default function BlogHome() {
+export default function BlogHome( {data} ) {
   return (
     <div sx={{fontFamily: 'heading',
     ul: {
@@ -69,7 +70,7 @@ export default function BlogHome() {
     }}/>
 
     
-    <PostPreview />
+    <PostPreview info={data.csec.nodes}/>
     <Cta />
 
     <section className='copy' sx={{marginLeft: '1rem'}}>
@@ -79,9 +80,7 @@ export default function BlogHome() {
 
     <section className='top-posts' sx={{margin: '1rem'}}>
       <h2>Top Posts</h2>
-      <Card post={spanishPost}/>
-      <Card post={spanishPost}/>
-      <Card post={spanishPost}/>
+      <PostPreview info={data.top.nodes}/>
     </section>
 
     <Cta /> 
@@ -106,3 +105,52 @@ export default function BlogHome() {
   )
 }
 
+
+export const query = graphql`
+
+query {
+  top: allWpPost(filter: {tags: {nodes: {elemMatch: {name: {eq: "Top Post"}}}}}){
+    ...PreviewInformation
+  }
+
+  csec: allWpPost(filter: {tags: {nodes: {elemMatch: {name: {eq: "CSEC"}}}}}){
+    ...PreviewInformation
+  }
+}
+
+fragment PreviewInformation on WpPostConnection{
+  nodes {
+categories {
+  nodes {
+    name
+  }
+}
+author {
+  node {
+    firstName
+    lastName
+  }
+}
+slug
+title
+modified(formatString: "MMMM Do, YYYY")
+featuredImage {
+  node {
+    localFile {
+      childImageSharp {
+        fluid(maxWidth: 1200) {
+          base64
+          tracedSVG
+          srcWebp
+          srcSetWebp
+          originalImg
+          originalName
+        }
+        gatsbyImageData
+      }
+    }
+  }
+}
+}
+}
+`

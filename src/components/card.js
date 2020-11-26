@@ -1,6 +1,7 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui'
-
+import Img from 'gatsby-image'
+import { Link } from 'gatsby'
 
 
 export default function Card(props) {
@@ -12,20 +13,21 @@ export default function Card(props) {
             margin: '1rem auto',
             overflow: 'hidden'
           }}>
-            <div className='card-image' sx={{
+
+            <Img fluid={props.fluid} sx ={{
               height:'7.5rem',
-              width:'100%',
-              backgroundImage: `url(${props.post.src})`,
-              backgroundSize: 'cover'}}>
-            </div>
+              width:'100%'
+            }}/>
+
             <div className='card-content' sx={{
               padding: '0.8rem'
               }}>
-              <h3 sx={{margin: 0}}>{props.post.category}</h3>
-              <p>{props.post.title}</p>
-              <button sx={{
+              <h3 sx={{margin: 0}}>{props.category}</h3>
+              <p>{props.title}</p>
+              <Link to={`/post/${props.slug}`}
+              sx={{
               float:'right',
-              }}>Read Now</button>
+              }}>Read Now</Link>
             </div>
           </div>
     )

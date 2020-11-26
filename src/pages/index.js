@@ -5,6 +5,7 @@ import Hero from '../components/hero'
 import Card from '../components/card'
 import Cta from '../components/cta'
 import Ad from '../img//ad.jpg'
+import PostPreview from '../components/PostPreview'
 
 /*Images*/
 import Image1 from '../img/spanish.jpg'
@@ -67,14 +68,12 @@ export default function BlogHome() {
       margin: '0 auto'
     }}/>
 
-    <Card post={spanishPost}/>
-    <Card post={geoPost}/>
-    <Card post={bimPost}/>
-
+    
+    <PostPreview />
     <Cta />
 
     <section className='copy' sx={{marginLeft: '1rem'}}>
-      <h2>Find real <span sx={{color:'muted'}}>answers</span> to your questions</h2>
+      <h2>Find real <span sx={{color:'cta'}}>answers</span> to your questions</h2>
       <p>Read detailed info on course material and everything related to your future.</p>
     </section>
 
@@ -106,3 +105,4 @@ export default function BlogHome() {
   </div>
   )
 }
+

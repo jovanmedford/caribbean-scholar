@@ -2,19 +2,28 @@
 import { jsx } from 'theme-ui'
 import Img from 'gatsby-image'
 import { Link } from 'gatsby'
+import { text } from '@fortawesome/fontawesome-svg-core'
 
 
 export default function ListCard(props) {
     return(
-        <div className='ListCard' sx={{
-            width: ['100%','75%','50%'],
-            margin: '0 auto 0.5rem auto',
+      <Link to={`/blog/${props.category}/${props.slug}`} sx={{
+            marginTop:'0.5rem',
             backgroundColor: 'background',
             height: ['5rem', '8rem'],
-            overflow: 'hidden',
+            width: '100%',
             position: 'relative',
+            overflow: 'hidden',
+            color:'text',
+            textDecoration: 'none'
+      }}>
+        <div className='ListCard' sx={{
             display: 'flex',
-            alignItems: 'flex-start'
+            alignItems: 'flex-start',
+            ':hover': {
+              backgroundColor: 'primary',
+              cursor: 'pointer'
+            }
           }}>
 
             <Img fluid={props.fluid} sx ={{
@@ -24,20 +33,14 @@ export default function ListCard(props) {
             }}/>
 
             <div className='card-content' sx={{
-              padding: '0.8rem',
+              paddingLeft: '0.8rem',
               display: "inline-block"
               }}>
-              <h3 sx={{margin: 0}}>{props.category}</h3>
-              <p>{props.title}</p>
-              <Link to={`/blog/${props.category}/${props.slug}`}
-              sx={{
-              color: 'secondary',
-              textDecoration: 'none',
-              position: 'absolute',
-              bottom: 0,
-              right: 1
-              }}>Read</Link>
+                <h5 sx={{margin: 0}}>{props.title}</h5>
+                <p>{props.category}</p>
+
             </div>
           </div>
+     </Link>
     )
 }

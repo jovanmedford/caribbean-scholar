@@ -20,7 +20,7 @@ export default {
   colors: {
     text: '#253D5B',
     background: '#FEFFF1',
-    primary: '#6A994E',
+    primary: '#387CBD',
     secondary: '#FC9CC6',
     muted: '#67697C',
     cta: '#387CBD',
@@ -29,7 +29,7 @@ export default {
       dark: {
         text: '#FFF8F0', 
         background: '#253D5B',
-        primary: '#6A994E', 
+        primary: '#387CBD', 
       }
     }
   },

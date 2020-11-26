@@ -20,12 +20,17 @@ export default function Trending() {
               ul: {
                 display: 'block',
                 fontSize: '16px',
-                width: ['80%','80%','65%'],
+                width: ['80%','80%','45%'],
                 margin: '0 auto'
               },
     
               li: {
-                margin: '0.5rem 0'
+                margin: '0.5rem 0',
+
+                ':hover': {
+                  color: 'primary',
+                  cursor: 'pointer'
+                }
               }
           }}>
             <h4>Trending Topics</h4>

@@ -6,13 +6,21 @@ import { Link } from 'gatsby'
 
 export default function Card(props) {
     return(
+      <Link to={`/blog/${props.category}/${props.slug}`} sx={{
+        width: ['80%', '33%'],
+        backgroundColor: 'background',
+        height: ['17rem', '15rem'],
+        margin: ['1rem auto', '0'],
+        overflow: 'hidden',
+        position: 'relative',
+        color: 'text',
+        textDecoration: 'none'
+      }}>
         <div className='Card' sx={{
-            width: ['80%', '33%'],
-            backgroundColor: 'background',
-            height: ['17rem', '15rem'],
-            margin: ['1rem auto', '0'],
-            overflow: 'hidden',
-            position: 'relative'
+            ':hover': {
+              backgroundColor: 'primary',
+              cursor: 'pointer'
+            }
           }}>
 
             <Img fluid={props.fluid} sx ={{
@@ -25,15 +33,8 @@ export default function Card(props) {
               }}>
               <h3 sx={{margin: 0}}>{props.category}</h3>
               <p>{props.title}</p>
-              <Link to={`/blog/${props.category}/${props.slug}`}
-              sx={{
-              color: 'secondary',
-              textDecoration: 'none',
-              position: 'absolute',
-              bottom: 0,
-              right: 1
-              }}>Read</Link>
             </div>
           </div>
+      </Link>
     )
 }

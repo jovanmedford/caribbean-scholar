@@ -19,7 +19,7 @@ export default function Trending() {
               ul: {
                 display: 'block',
                 fontSize: '16px',
-                width: '80%',
+                width: ['80%','80%','65%'],
                 margin: '0 auto'
               },
     

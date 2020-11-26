@@ -36,7 +36,7 @@ export default function BlogHome( {data} ) {
         gridTemplateColumns: 'repeat(4, 1fr)',
         gridTemplateRows: 'repeat(3, 1fr)',
         gridGap: '5px',
-        width: ['100%','96%'],
+        width: ['100%','96%','80%'],
         margin: '0 auto',
         height: ['auto', '45rem']
       }}>

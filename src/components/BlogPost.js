@@ -16,16 +16,22 @@ export default function BlogPost({data}) {
             <Header />
             <PostHeader category={post.categories.nodes[0].name} title={post.title} 
             authorImg={Me} authorName={post.author.node.firstName + ' ' + post.author.node.lastName} date={post.date}/>
-            <Img fluid={source} sx={{height: '18rem'}}/>
+            <Img fluid={source} sx={{
+                height: ['18rem','18rem','18rem'],
+                width: ['100%','90%','50%'],
+                margin: '0 auto'
+            }}
+            
+            />
             <article sx={{
-                margin: bodyMargin,
+                margin: [bodyMargin, '3rem 8rem', '4rem 20rem'],
                 h3: {
                     fontFamily: 'heading',
-                    fontSize: '1.4rem',
-                    marginBottom: '0.4rem'
+                    fontSize: ['1.4rem','1.4rem','1.8rem'],
+                    marginBottom: '0.4rem',
                 },
                 p: {
-                    fontSize: '1.2rem',
+                    fontSize: ['1.2rem','1.5rem','1.4rem'],
                     lineHeight: '1.6',
                     marginTop: 0
                 }

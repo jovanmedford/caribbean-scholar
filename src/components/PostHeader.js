@@ -6,7 +6,7 @@ export default function PostHeader(props) {
 
     return(
     <section className='body' sx={{
-        margin: bodyMargin
+        margin: [bodyMargin, '0 8rem', '0 20rem']
     }}>
         <h3 sx={{
             marginBottom: 0,
@@ -14,6 +14,7 @@ export default function PostHeader(props) {
         }}>{props.category}</h3>
         <h1 sx={{
             marginTop: 0,
+            fontSize: '2.6rem',
             marginBottom: '1rem'}}>{props.title}</h1>
         <section className="bio" sx={{
             display: 'flex',
@@ -28,7 +29,7 @@ export default function PostHeader(props) {
             }}>
                 <img src={props.authorImg} sx={{
                     borderRadius: '100%',
-                    width: '2rem',
+                    width: '3rem',
                 }}/>
             </div>
             <div className="bio__info" sx={{

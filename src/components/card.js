@@ -9,9 +9,10 @@ export default function Card(props) {
         <div className='Card' sx={{
             width: ['80%', '33%'],
             backgroundColor: 'background',
-            height: ['17rem'],
+            height: ['17rem', '15rem'],
             margin: ['1rem auto', '0'],
-            overflow: 'hidden'
+            overflow: 'hidden',
+            position: 'relative'
           }}>
 
             <Img fluid={props.fluid} sx ={{
@@ -24,12 +25,14 @@ export default function Card(props) {
               }}>
               <h3 sx={{margin: 0}}>{props.category}</h3>
               <p>{props.title}</p>
-              <Link to={`/post/${props.slug}`}
+              <Link to={`/blog/${props.category}/${props.slug}`}
               sx={{
-              float:'right',
               color: 'secondary',
-              textDecoration: 'none'
-              }}>Read Now</Link>
+              textDecoration: 'none',
+              position: 'absolute',
+              bottom: 0,
+              right: 1
+              }}>Read</Link>
             </div>
           </div>
     )

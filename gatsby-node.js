@@ -9,6 +9,11 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       allWpPost {
         edges {
           node {
+            categories {
+              nodes{
+                name
+              }
+            }
             slug
             content
             title
@@ -23,10 +28,11 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     }
   
   //Create Blog Post Pages
-  const BlogPosts = result.data.allWpPost.edges
+  const BlogPosts = result.data.allWpPost.edges;
   BlogPosts.forEach(post => {
+    const category = post.node.categories.nodes[0].name;
     createPage({
-      path: `/post/${post.node.slug}`,
+      path: `/blog/${category}/${post.node.slug}`,
       component: BlogPostTemplate,
       context: {
         id: post.node.id,

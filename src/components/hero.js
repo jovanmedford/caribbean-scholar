@@ -42,15 +42,20 @@ export default function Hero() {
         </div>
         <div className='post-info' sx={{
           position: "absolute",
+          height: ['18rem', '22rem'],
           padding: '1.5rem',
           color: 'title',
           }}>
           <h2 sx={{
-            fontWeight: '700'
+            fontWeight: '700',
+            fontSize: ['1.8rem', '2.3rem']
           }}>The Complete Guide to Balancing
             Chemical Equations
           </h2>
-          <h3>By Carl Edwards<br/>in Chemistry</h3>
+          <h3 sx={{
+            position: 'absolute',
+            bottom: '2'
+          }}>By Carl Edwards<br/>in Chemistry</h3>
         </div>
         <Img fluid={source} sx={{
           width: '100%',

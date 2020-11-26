@@ -1,5 +1,6 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui'
+import { Link } from 'gatsby'
 
 export default function Trending() {
     return(
@@ -35,6 +36,7 @@ export default function Trending() {
               <li>PHYSICS</li>
               <li>HOME ECON</li>
             </ul>
+            <Link to='/filter'>See all</Link>
           </div>
     )
 }

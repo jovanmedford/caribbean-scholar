@@ -1,17 +1,14 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui'
-import Card from './card'
+import ListCard from './ListCard'
 
-export default function PostPreview(props) {
-  console.log(props.info[0])
+export default function ListPostPreview(props) {
     return (
         <div sx={{
-          display: 'flex',
-          flexWrap: 'wrap',
-          gridColumn: '1/4'
+
         }}>
             {props.info.map(post => (
-                <Card category={post.categories.nodes[0].name} 
+                <ListCard category={post.categories.nodes[0].name} 
                       title={post.title} slug={post.slug} 
                       fluid={post.featuredImage.node.localFile.childImageSharp.fluid}/>
             ))}

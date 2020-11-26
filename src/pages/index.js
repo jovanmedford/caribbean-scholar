@@ -2,36 +2,11 @@
 import { jsx } from 'theme-ui'
 import Header from '../components/header'
 import Hero from '../components/hero'
-import Card from '../components/card'
 import Cta from '../components/cta'
-import Ad from '../img//ad.jpg'
 import PostPreview from '../components/PostPreview'
+import Trending from '../components/Trending'
+import Advertisement from '../components/Ad'
 import { graphql } from 'gatsby'
-
-/*Images*/
-import Image1 from '../img/spanish.jpg'
-import geo from '../img/geo.jpg'
-import bim from '../img/bim.webp'
-
-
-const spanishPost = {
-  src: Image1,
-  category: 'Spanish',
-  title: '50 Things You Must Know Before The Spanish Exam'
-}
-
-const geoPost = {
-  src: geo,
-  category: 'Geography',
-  title: 'Contour Lines By Name and Nature'
-}
-
-const bimPost = {
-  src: bim,
-  category: 'Lifestyle',
-  title: 'Studying Abroad From At Home'
-}
-
 
 export default function BlogHome( {data} ) {
   return (
@@ -55,22 +30,22 @@ export default function BlogHome( {data} ) {
         <li>Accounts</li>
         <li>Economics</li>
       </ul>
+      
+      <div sx={{
+        display: ['block','grid'],
+        gridTemplateColumns: 'repeat(4, 1fr)',
+        gridTemplateRows: 'repeat(3, 1fr)',
+        gridGap: '5px',
+        width: ['100%','96%'],
+        margin: '0 auto',
+        height: ['auto', '45rem']
+      }}>
       <Hero />
-      <p sx={{
-        fontWeight: 'bold',
-        fontSize: '1rem',
-        marginLeft: '1rem', 
-        marginTop: '2rem'
-    }}>See All Topics</p>
+      <Trending />
+      <Advertisement />
+      <PostPreview info={data.csec.nodes}/>
+      </div>
 
-    <img src={Ad} sx={{
-      display: 'block',
-      width: '60%',
-      margin: '0 auto'
-    }}/>
-
-    
-    <PostPreview info={data.csec.nodes}/>
     <Cta />
 
     <section className='copy' sx={{marginLeft: '1rem'}}>
@@ -87,9 +62,6 @@ export default function BlogHome( {data} ) {
 
     <section className='recently-added' sx={{marginLeft: '1rem'}}>
       <h2>Recently Added</h2>
-      <Card post={spanishPost}/>
-      <Card post={spanishPost}/>
-      <Card post={spanishPost}/>
     </section>
 
     <button sx={{

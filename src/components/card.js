@@ -7,10 +7,10 @@ import { Link } from 'gatsby'
 export default function Card(props) {
     return(
         <div className='Card' sx={{
-            width: '80%',
-            backgroundColor: 'white',
-            height: '17rem',
-            margin: '1rem auto',
+            width: ['80%', '33%'],
+            backgroundColor: 'background',
+            height: ['17rem'],
+            margin: ['1rem auto', '0'],
             overflow: 'hidden'
           }}>
 
@@ -27,6 +27,8 @@ export default function Card(props) {
               <Link to={`/post/${props.slug}`}
               sx={{
               float:'right',
+              color: 'secondary',
+              textDecoration: 'none'
               }}>Read Now</Link>
             </div>
           </div>

@@ -19,7 +19,14 @@ export default function Hero() {
   const source = data.heroImage.childImageSharp.fluid
 
     return (
-    <div sx={{position: 'relative'}}>
+    <div sx={{
+      position: 'relative',
+      width: '100%',
+      gridRow: ['1/3', '1/2'],
+      gridColumn: ['1/3', '1/4'],
+      height: ['18rem', '22rem'],
+      display: 'inline-block'
+      }}>
         <div className='Overlay' sx={{
             position: 'absolute',
             width: '100%',
@@ -47,7 +54,7 @@ export default function Hero() {
         </div>
         <Img fluid={source} sx={{
           width: '100%',
-          height: '18rem',
+          height: ['18rem', '22rem'],
           zIndex: '-1'
         }}/>
     </div>

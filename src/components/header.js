@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faAlignJustify, faSearch, faMoon } from '@fortawesome/free-solid-svg-icons'
 import Logo from '../img/logopng.png'
 import { useColorMode } from 'theme-ui'
-
+import { Link } from 'gatsby'
 export default function Header() {
   const [colorMode, setColorMode] = useColorMode()
     return (
@@ -19,10 +19,10 @@ export default function Header() {
               <div className='Left'>
               <FontAwesomeIcon icon={faAlignJustify}/>
               </div>
-            <img src={Logo} alt={'Caribbean Scholar'} sx ={{
+            <Link to='/'><img src={Logo} alt={'Caribbean Scholar'} sx ={{
               width: '10rem',
               marginBottom: '2rem'
-              }}/>
+              }}/></Link>
               <div className='Right'>
             <FontAwesomeIcon icon={faSearch} sx={{
               marginRight: '0.5rem'

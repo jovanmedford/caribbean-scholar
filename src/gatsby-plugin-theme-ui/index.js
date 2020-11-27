@@ -17,6 +17,9 @@ export default {
   fontSizes: [
     12, 14, 16, 20, 24, 32, 48, 64,
   ],
+  breakpoints: [
+    '36em', '56em', '60em',
+  ],
   colors: {
     text: '#253D5B',
     background: '#FEFFF1',
@@ -44,4 +47,6 @@ export default {
       }
     }
   }
+
+
 }

@@ -18,13 +18,14 @@ export default function BlogPost({data}) {
             authorImg={Me} authorName={post.author.node.firstName + ' ' + post.author.node.lastName} date={post.date}/>
             <Img fluid={source} sx={{
                 height: ['18rem','18rem','18rem'],
-                width: ['100%','90%','50%'],
+                width: ['75%', '65%', '55%'],
                 margin: '0 auto'
             }}
             
             />
             <article sx={{
-                margin: [bodyMargin, '3rem 8rem', '4rem 20rem'],
+                width: ['75%', '65%', '55%'],
+                margin: '2rem auto',
                 h3: {
                     fontFamily: 'heading',
                     fontSize: ['1.4rem','1.4rem','1.8rem'],

@@ -6,7 +6,8 @@ export default function PostHeader(props) {
 
     return(
     <section className='body' sx={{
-        margin: [bodyMargin, '0 8rem', '0 20rem']
+        width: ['75%', '65%', '55%'],
+        margin: '0 auto'
     }}>
         <h3 sx={{
             marginBottom: 0,

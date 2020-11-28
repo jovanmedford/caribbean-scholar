@@ -24,9 +24,11 @@ export default function Header() {
               marginBottom: '2rem'
               }}/></Link>
               <div className='Right'>
-            <FontAwesomeIcon icon={faSearch} sx={{
-              marginRight: '0.5rem'
-            }}/>
+            <Link to='/filter' sx={{color: 'text'}}>
+                <FontAwesomeIcon icon={faSearch} sx={{
+                marginRight: '0.5rem'
+              }}/>
+            </Link>
             <FontAwesomeIcon icon={faMoon}
               onClick={e => {
                 setColorMode(colorMode === 'default' ? 'dark' : 'default')

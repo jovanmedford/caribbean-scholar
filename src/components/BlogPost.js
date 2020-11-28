@@ -6,13 +6,25 @@ import Img from 'gatsby-image'
 import Me from '../img/me.jpg'
 import PostHeader from '../components/PostHeader'
 
+import { Helmet } from 'react-helmet' 
+import { componentDidMount } from 'react'
+
+
 export default function BlogPost({data}) {
     const bodyMargin = '0rem 2rem';
     const post = data.wpPost;
     const source = post.featuredImage.node.localFile.childImageSharp.fluid;
-    
+
     return (
         <div>
+            <Helmet>
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css" integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous"/>
+<script type="module">
+    import renderMathInElement from "https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.mjs";
+    renderMathInElement(document.body);
+</script>
+            </Helmet>
+
             <Header />
             <PostHeader category={post.categories.nodes[0].name} title={post.title} 
             authorImg={Me} authorName={post.author.node.firstName + ' ' + post.author.node.lastName} date={post.date}/>
@@ -42,6 +54,7 @@ export default function BlogPost({data}) {
         </div>      
     )
 }
+
 
 
 export const query = graphql`

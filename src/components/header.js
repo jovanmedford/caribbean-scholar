@@ -1,10 +1,12 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faAlignJustify, faSearch, faMoon } from '@fortawesome/free-solid-svg-icons'
+import { faSearch, faMoon } from '@fortawesome/free-solid-svg-icons'
 import Logo from '../img/logopng.png'
 import { useColorMode } from 'theme-ui'
 import { Link } from 'gatsby'
+import DropdownMenu from './DropdownMenu'
+
 export default function Header() {
   const [colorMode, setColorMode] = useColorMode()
     return (
@@ -16,9 +18,8 @@ export default function Header() {
             margin: '2rem auto 0',
             height: '6rem',
             }}>
-              <div className='Left'>
-              <FontAwesomeIcon icon={faAlignJustify}/>
-              </div>
+              <DropdownMenu />
+              
             <Link to='/'><img src={Logo} alt={'Caribbean Scholar'} sx ={{
               width: '10rem',
               marginBottom: '2rem'

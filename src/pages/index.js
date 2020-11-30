@@ -10,27 +10,8 @@ import { graphql } from 'gatsby'
 
 export default function BlogHome( {data} ) {
   return (
-    <div sx={{fontFamily: 'heading',
-    ul: {
-      padding: '1rem 0',
-      width: '95%',
-      margin: '0 auto',
-      display: 'flex',
-      justifyContent: 'space-around'
-
-    },
-    li: {
-      listStyle: 'none',
-      display: 'inline-block',
-    }}}>
-      <Header />
-      <ul>
-        <li>Spanish</li>
-        <li>Business</li>
-        <li>Accounts</li>
-        <li>Economics</li>
-      </ul>
-      
+    <div>
+      <Header />      
       <div sx={{
         display: ['block','grid'],
         gridTemplateColumns: 'repeat(4, 1fr)',

@@ -13,7 +13,7 @@ export default function ListPostPreview(props) {
             {props.info.map(post => (
                 <ListCard category={post.categories.nodes[0].name} 
                       title={post.title} slug={post.slug} 
-                      fluid={post.featuredImage.node.localFile.childImageSharp.fluid}/>
+                />
             ))}
         </div>
     );

@@ -3,13 +3,15 @@ import { jsx } from 'theme-ui'
 import Header from '../components/header'
 import { graphql, Link} from 'gatsby'
 import ListPostPreview from '../components/ListPostPreview'
+import TagsBar from '../components/tags-bar'
 
 export default function Filter({data}) {
   console.log(data.allWpPost.nodes)
     return(
         <div>
           <Header />
-          <input></input>
+          <TagsBar />
+          <input sx={{margin: '0 auto', display: 'block'}}></input>
           <ListPostPreview info={data.allWpPost.nodes}/>
         </div>
     )
@@ -18,7 +20,22 @@ export default function Filter({data}) {
 export const query = graphql`
     query {
       allWpPost {
-            ...PreviewInformation
+          nodes {
+        categories {
+          nodes {
+            name
+          }
         }
+        author {
+          node {
+            firstName
+            lastName
+          }
+        }
+        slug
+        title
+        modified(formatString: "MMMM Do, YYYY")
     }
+  }
+}
 `

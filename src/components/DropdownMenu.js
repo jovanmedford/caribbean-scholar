@@ -3,42 +3,60 @@ import { jsx } from 'theme-ui'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faAlignJustify, faSearch, faMoon } from '@fortawesome/free-solid-svg-icons'
 import Overlay from './Overlay'
+import { useState } from 'react'
 
 export default function DropdownMenu() {
+  const [state, setState] = useState({
+    isOpen: false,
+    display: 'none'
+  })
+
+  const handleClick = () => {
+    let { isOpen, display } = state;
+    isOpen = !isOpen;
+    display = isOpen ? 'block' : 'none';   
+    setState({
+      isOpen,
+      display
+    })
+  }
+
     return (
         <div className='Left'>
-              <FontAwesomeIcon icon={faAlignJustify}/>
-              <Overlay />
+              <FontAwesomeIcon icon={faAlignJustify} onClick={handleClick} sx={{
+                ':hover':{
+                  cursor: 'pointer',
+                  color: 'primary'
+                }}}/>
                 <nav sx={{
                   position: 'absolute',
                   zIndex: '5',
                   top: '6rem',
-                  display: 'block', 
-                  fontSize: '1.3rem',
-                  color: 'background',
-                  backgroundColor: 'text',
-                  width: ['75%','70%','65'],
-                  padding: '0.5rem',
-                  borderRadius: '4px',
+                  display: state.display, 
+                  fontSize: '1rem',
+                  color: 'text',
+                  backgroundColor: 'muted',
+                  width: ['80%','70%','65'],
+                  padding: '0.5rem 0 0 0',
+                  borderRadius: '2px',
                   listStyle: 'none',
                   boxShadow: '1px 1px 2px 1px grey',
 
                     li: {
                       width: '100%',
-                      borderBottom: '0.25px solid',
-                      borderColor: 'muted',
-                      paddingLeft: '1rem',
+                      paddingLeft: '0.5rem',
+                      fontWeight: '500',
 
                       ':hover': {
-                        color: 'primary',
-                        cursor: 'pointer'
+                        cursor: 'pointer',
+                        borderLeft: '3px solid'
                       }
                     }
                 }}>
                     <li>Home</li>
                     <li>Contributors</li>
                     <li>Partners</li>
-                    <li sx={{borderStyle: 'none'}}>Go to Course Page</li>
+                    <li sx={{backgroundColor: 'text', color: 'muted'}}>Go to Course Page</li>
                 </nav>
               </div>
     )

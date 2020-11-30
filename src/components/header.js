@@ -18,7 +18,7 @@ export default function Header() {
             margin: '2rem auto 0',
             height: '6rem',
             }}>
-            <div>Dropdown</div>
+            <DropdownMenu />
             <Link to='/'><img src={Logo} alt={'Caribbean Scholar'} sx ={{
               width: '10rem',
               marginBottom: '2rem'

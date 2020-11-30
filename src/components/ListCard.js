@@ -33,7 +33,7 @@ export default function ListCard(props) {
               }}>
                 <h5 sx={{margin: 0}}>{props.title}</h5>
                 <p>{props.category}</p>
-
+                
             </div>
           </div>
      </Link>

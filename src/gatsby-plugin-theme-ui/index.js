@@ -26,7 +26,7 @@ export default {
     primary: '#f6ff7247',
     secondary: '#FC9CC6',
     accent: '#6ddc94',
-    muted: '#e2efffd1',
+    muted: '#fffffb',
     cta: '#387CBD',
     title: 'white',
     modes: {
@@ -34,6 +34,7 @@ export default {
         text: '#fafaf2', 
         background: '#253D5B',
         primary: '#387CBD', 
+        muted: '#2b415d'
       }
     }
   },

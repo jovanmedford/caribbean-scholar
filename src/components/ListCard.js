@@ -1,6 +1,5 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui'
-import Img from 'gatsby-image'
 import { Link } from 'gatsby'
 import { text } from '@fortawesome/fontawesome-svg-core'
 
@@ -22,15 +21,11 @@ export default function ListCard(props) {
             alignItems: 'flex-start',
             ':hover': {
               backgroundColor: 'primary',
+              borderLeft: '2px solid',
+              borderLeftColor: 'muted',
               cursor: 'pointer'
             }
           }}>
-
-            <Img fluid={props.fluid} sx ={{
-              width:'20%',
-              height:['5rem', '8rem'],
-              display: "inline-block"
-            }}/>
 
             <div className='card-content' sx={{
               paddingLeft: '0.8rem',

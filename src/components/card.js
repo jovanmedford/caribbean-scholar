@@ -18,7 +18,7 @@ export default function Card(props) {
       }}>
         <div className='Card' sx={{
             ':hover': {
-              backgroundColor: 'primary',
+              backgroundColor: 'muted',
               cursor: 'pointer'
             }
           }}>

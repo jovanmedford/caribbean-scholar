@@ -11,7 +11,7 @@ export default function PostHeader(props) {
     }}>
         <h3 sx={{
             marginBottom: 0,
-            color:'primary'
+            color:'accent'
         }}>{props.category}</h3>
         <h1 sx={{
             marginTop: 0,

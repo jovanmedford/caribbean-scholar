@@ -22,15 +22,16 @@ export default {
   ],
   colors: {
     text: '#253D5B',
-    background: '#f7f7ef',
+    background: '#fafaf2',
     primary: '#f6ff7247',
     secondary: '#FC9CC6',
-    muted: '#67697C',
+    accent: '#6ddc94',
+    muted: '#e2efffd1',
     cta: '#387CBD',
     title: 'white',
     modes: {
       dark: {
-        text: '#f7f7ef', 
+        text: '#fafaf2', 
         background: '#253D5B',
         primary: '#387CBD', 
       }

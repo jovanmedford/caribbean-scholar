@@ -42,20 +42,11 @@ export default function Filter(props) {
           <TagsBar />
           <input placeholder='Search a topic' onChange={handleInputChange} sx={{
             margin: '0.5rem auto 2rem auto', 
-            display: 'block',
-            fontSize: '1rem',
             width: '80%',
             height: '2rem',
-            border: 'none',
             borderBottom: '0.1rem solid',
             backgroundColor: 'white',
             maxWidth: '25rem',
-            ':focus': {
-              outline: 'none'
-            },
-            '::placeholder': {
-              color: 'lightgray'
-            }
             }}></input>
           <ListPostPreview info={posts}/>
         </div>

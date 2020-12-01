@@ -19,7 +19,7 @@ export default function BlogHome( {data} ) {
         gridGap: '5px',
         width: ['100%','96%','80%'],
         margin: '0 auto',
-        height: ['auto', '45rem']
+        height: ['auto', '39rem']
       }}>
       <Hero />
       <Trending />

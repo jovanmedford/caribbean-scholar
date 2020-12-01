@@ -23,7 +23,7 @@ export default {
   colors: {
     text: '#253D5B',
     background: '#fafaf2',
-    primary: '#f6ff7247',
+    primary: 'aliceblue',
     secondary: '#FC9CC6',
     accent: '#6ddc94',
     muted: '#fffffb',
@@ -37,6 +37,16 @@ export default {
         muted: '#2b415d'
       }
     }
+  },
+  buttons: {
+    primary: {
+      color: 'white',
+      border: 'none',
+      margin: '1px auto 2rem',
+      width: '18rem',
+      height: '2.2rem',
+      fontSize: '1rem'
+    } 
   },
   styles: {
     root: {
@@ -54,6 +64,23 @@ export default {
 
       li: {
         listStyle: 'none'
+      },
+
+      button: {
+        display: 'block'
+      },
+
+      input: {
+        display: 'block',
+        fontSize: '1rem',
+        border: 'none',
+
+        ':focus': {
+          outline: 'none'
+        },
+        '::placeholder': {
+          color: 'lightgray'
+        }
       }
     }
   }

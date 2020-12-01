@@ -5,12 +5,24 @@ export default function Cta() {
     return (
         <div className='call-to-action' sx={{
             backgroundColor: 'cta',
-            height: '12.5rem',
-            padding: '1rem'
+            width: ['100%','96%','80%'],
+            padding: '1rem',
+            margin: '0 auto'
           }}>
-            <h2 sx={{color: 'title'}}>Free Guide: Learning How To Learn</h2>
-            <input type='text' placeholder='Email Address'/>
-            <button>Free Access</button>
+            <h2 sx={{
+              color: 'title',
+              fontSize: '2rem',
+              textAlign: 'center'
+              }}>Free Guide: Learning How To Learn</h2>
+            <input type='text' placeholder='Email Address'sx={{
+              margin: '0 auto',
+              width: '18rem',
+              height: '2.2rem'
+            }}/>
+            <button sx={{
+              variant: 'buttons.primary',
+              background: '#253D5B'
+            }}>Free Access</button>
           </div>
     )
 }

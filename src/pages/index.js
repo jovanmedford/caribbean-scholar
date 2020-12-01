@@ -29,12 +29,18 @@ export default function BlogHome( {data} ) {
 
     <Cta />
 
-    <section className='copy' sx={{marginLeft: '1rem'}}>
+    <section className='copy' sx={{
+      margin: '2rem auto',
+      width: ['100%','96%','80%']
+      }}>
       <h2>Find real <span sx={{color:'cta'}}>answers</span> to your questions</h2>
       <p>Read detailed info on course material and everything related to your future.</p>
     </section>
 
-    <section className='top-posts' sx={{margin: '1rem'}}>
+    <section className='top-posts' sx={{
+      margin: '1rem auto',
+      width: ['100%','96%','80%']
+  }}>
       <h2>Top Posts</h2>
       <PostPreview info={data.top.nodes}/>
     </section>

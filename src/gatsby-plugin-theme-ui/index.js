@@ -46,6 +46,14 @@ export default {
         fontFamily: 'heading',
         fontSize: '2rem',
         fontWeight: 'heading'
+      }, 
+
+      ul: {
+        padding: '0'
+      },
+
+      li: {
+        listStyle: 'none'
       }
     }
   }

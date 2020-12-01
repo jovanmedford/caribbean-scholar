@@ -15,17 +15,18 @@ export default function Trending() {
             backgroundColor: 'background',
             color:'text',
               h4: {
-                textAlign: 'center'
+                textAlign: 'center',
+                marginBottom: '2rem'
               },
               ul: {
                 display: 'block',
                 fontSize: '16px',
-                width: ['80%','80%','45%'],
+                width: '7.5rem',
                 margin: '0 auto'
               },
     
               li: {
-                margin: '0.5rem 0',
+                margin: '1rem 0',
 
                 ':hover': {
                   color: 'primary',
@@ -34,14 +35,13 @@ export default function Trending() {
               }
           }}>
             <h4>Trending Topics</h4>
-            <ul>
-              <li>PRODUCTIVITY</li>
-              <li>CAREER</li>
-              <li>MATH</li>
-              <li>PHYSICS</li>
-              <li>HOME ECON</li>
-            </ul>
-            <Link to='/filter'>See all</Link>
+              <ul>
+                <li>PRODUCTIVITY</li>
+                <li>CAREER</li>
+                <li>MATH</li>
+                <li>PHYSICS</li>
+                <li>HOME ECON</li>
+              </ul>
           </div>
     )
 }

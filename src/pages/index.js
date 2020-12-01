@@ -12,7 +12,7 @@ export default function BlogHome( {data} ) {
   return (
     <div>
       <Header />      
-      <div sx={{
+      <section sx={{
         display: ['block','grid'],
         gridTemplateColumns: 'repeat(4, 1fr)',
         gridTemplateRows: 'repeat(3, 1fr)',
@@ -25,7 +25,7 @@ export default function BlogHome( {data} ) {
       <Trending />
       <Advertisement />
       <PostPreview info={data.csec.nodes}/>
-      </div>
+      </section>
 
     <Cta />
 

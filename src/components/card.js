@@ -7,7 +7,7 @@ import { Link } from 'gatsby'
 export default function Card(props) {
     return(
       <Link to={`/blog/${props.category}/${props.slug}`} sx={{
-        width: ['80%', '33%'],
+        width: ['80%', '33.33%'],
         backgroundColor: 'background',
         height: ['17rem', '15rem'],
         margin: ['1rem auto', '0'],

@@ -56,7 +56,15 @@ export default function Header() {
               <div className='Right' sx={{
                 position: 'absolute',
                 right: '0',
-                top: '50%'
+                top: '50%',
+
+                svg: {
+                  transition: 'font-size 0.35s ease',
+                  ':hover':{
+                    fontSize: '1.2em',
+                    cursor: 'pointer'
+                }
+              }
               }}>
                 <Link to='/filter' sx={{color: 'text'}}>
                     <FontAwesomeIcon icon={faSearch} sx={{

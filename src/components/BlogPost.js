@@ -7,11 +7,9 @@ import Me from '../img/me.jpg'
 import PostHeader from '../components/PostHeader'
 
 import { Helmet } from 'react-helmet' 
-import { componentDidMount } from 'react'
 
 
 export default function BlogPost({data}) {
-    const bodyMargin = '0rem 2rem';
     const post = data.wpPost;
     const source = post.featuredImage.node.localFile.childImageSharp.fluid;
 

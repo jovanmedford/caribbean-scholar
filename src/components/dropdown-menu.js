@@ -1,8 +1,7 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faAlignJustify, faSearch, faMoon } from '@fortawesome/free-solid-svg-icons'
-import Overlay from './Overlay'
+import { faAlignJustify } from '@fortawesome/free-solid-svg-icons'
 import { useState } from 'react'
 
 export default function DropdownMenu() {
@@ -23,7 +22,9 @@ export default function DropdownMenu() {
 
     return (
         <div className='Left'>
-              <FontAwesomeIcon icon={faAlignJustify} onClick={handleClick} sx={{
+              <FontAwesomeIcon icon={faAlignJustify} onClick={handleClick} 
+              sx={{
+                display: ['inline-block','none'],
                 ':hover':{
                   cursor: 'pointer',
                   color: 'primary'

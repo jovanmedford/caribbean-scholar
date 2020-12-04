@@ -1,22 +1,44 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui'
-import { graphql, useStaticQuery } from 'gatsby'
+import { graphql, Link, useStaticQuery } from 'gatsby'
 import Img from 'gatsby-image'
 
 export default function Hero() {
   const data = useStaticQuery(graphql`
-    query {
-      heroImage: file(relativePath: {eq: "img/mattridley.jpg"}) {
-            childImageSharp {
-              fluid(maxWidth: 1200) {
-                ...GatsbyImageSharpFluid
+      query {
+        wpPost(tags: {nodes: {elemMatch: {name: {eq: "Main"}}}}) {
+            content
+            title
+            slug
+            date(formatString: "YYYY-MM-DD")
+            author {
+                node {
+                firstName
+                lastName
+                }
+            }
+            categories {
+                nodes {
+                name
+                }
+            }
+            featuredImage {
+                node {
+                  localFile {
+                    childImageSharp {
+                      fluid(maxWidth: 1200) {
+                        ...GatsbyImageSharpFluid
+                      }
+                    }
+                  }
+                }
               }
-        }
-      }
+            }
     }
-  `
-  )
-  const source = data.heroImage.childImageSharp.fluid
+  `)
+
+const hero = data.wpPost;
+const category = hero.categories.nodes[0].name;
 
     return (
     <div sx={{
@@ -27,7 +49,8 @@ export default function Hero() {
       height: ['18rem', '22rem'],
       display: 'inline-block'
       }}>
-        <div className='Overlay' sx={{
+      <Link to={`/blog/${category}/${hero.slug}`}>
+        <div className='overlay' sx={{
             position: 'absolute',
             width: '100%',
             height: '100%',
@@ -37,7 +60,10 @@ export default function Hero() {
             right: 0,
             backgroundColor: 'black',
             zIndex: '-0.5',
-            opacity: '19%'
+            opacity: '19%',
+            ':hover': {
+              display: 'none'
+            }
           }}>
         </div>
         <div className='post-info' sx={{
@@ -49,19 +75,24 @@ export default function Hero() {
           <h2 sx={{
             fontWeight: '700',
             fontSize: ['1.8rem', '2.3rem']
-          }}>The Complete Guide to Balancing
-            Chemical Equations
+          }}>
+            {hero.title}
           </h2>
           <h3 sx={{
             position: 'absolute',
             bottom: '2'
-          }}>By Carl Edwards<br/>in Chemistry</h3>
+          }}>
+            By {hero.author.node.firstName} {hero.author.node.lastName}
+            <br/>in {hero.categories.nodes[0].name}
+          </h3>
         </div>
-        <Img fluid={source} sx={{
+        <Img  fluid={hero.featuredImage.node.localFile.childImageSharp.fluid}
+        sx={{
           width: '100%',
           height: ['18rem', '22rem'],
           zIndex: '-1'
         }}/>
+      </Link>
     </div>
     )
 }

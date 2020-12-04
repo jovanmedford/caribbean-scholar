@@ -11,7 +11,7 @@ export default function Header() {
   const [colorMode, setColorMode] = useColorMode()
     return (
         <header sx={{
-            width: ['85%','80%'],
+            width: ['85%','75%'],
             margin: '3rem auto',
             height: '2rem',
             position: 'relative'

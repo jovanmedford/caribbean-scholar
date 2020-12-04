@@ -46,8 +46,8 @@ export default {
       width: '18rem',
       height: '2.2rem',
       fontSize: '1rem'
-    } 
-  },
+    }
+  },  
   styles: {
     root: {
       fontFamily: 'body',

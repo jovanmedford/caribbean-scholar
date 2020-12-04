@@ -17,17 +17,31 @@ export default function Header() {
             position: 'relative'
             }}>
             
-          <div className='Right' sx={{
+          <div className='Left' sx={{
               position: 'absolute',
               left: '0',
-              top: '50%'
+              top: '50%',
+               a: {
+                  padding: '0.2rem',
+                  ':hover':{
+                    backgroundColor: 'text',
+                    color: 'background',
+                    cursor: 'pointer'
+                  }
+                }
             }}>
-              <DropdownMenu />
-              <Link sx={{display:['none','inline-block']}}>Home</Link>
+              <DropdownMenu/>
+              <Link sx={{
+                display:['none','inline-block'],
+                }}>
+                  Home
+              </Link>
               <a sx={{
                 marginLeft: '0.75rem',
                 display:['none','inline-block']
-                }}>Courses</a>
+                }}>
+                  Courses
+                </a>
           </div>
           
           <Link to='/'>

@@ -5,7 +5,7 @@ import Hero from '../components/hero'
 import Cta from '../components/cta'
 import PostPreview from '../components/PostPreview'
 import Trending from '../components/Trending'
-import Advertisement from '../components/Ad'
+import Advertisement from '../components/ad'
 import { graphql } from 'gatsby'
 
 export default function BlogHome( {data} ) {

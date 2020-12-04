@@ -29,7 +29,7 @@ export default function Trending() {
                 margin: '1rem 0',
 
                 ':hover': {
-                  color: 'primary',
+                  textDecoration: 'underline',
                   cursor: 'pointer'
                 }
               }

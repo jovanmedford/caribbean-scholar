@@ -21,6 +21,7 @@ export default function Header() {
               position: 'absolute',
               left: '0',
               top: '50%',
+              width: '100%',
                a: {
                   textDecoration: 'none',
                   color: 'text',

@@ -3,6 +3,8 @@ import { jsx } from 'theme-ui'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faAlignJustify } from '@fortawesome/free-solid-svg-icons'
 import { useState } from 'react'
+import { Link } from 'gatsby'
+import Overlay from './Overlay'
 
 export default function DropdownMenu() {
   const [state, setState] = useState({
@@ -27,12 +29,11 @@ export default function DropdownMenu() {
                 display: ['inline-block','none'],
                 ':hover':{
                   cursor: 'pointer',
-                  color: 'primary'
+                  color: 'accent'
                 }}}/>
                 <nav sx={{
                   position: 'absolute',
                   zIndex: '5',
-                  top: '6rem',
                   display: state.display, 
                   fontSize: '1rem',
                   color: 'text',
@@ -54,10 +55,8 @@ export default function DropdownMenu() {
                       }
                     }
                 }}>
-                    <li>Home</li>
-                    <li>Contributors</li>
-                    <li>Partners</li>
-                    <li sx={{backgroundColor: 'text', color: 'muted'}}>Go to Course Page</li>
+                    <li><Link to='/'>Home</Link></li>
+                    <li><a href='https://jovan-s-school-e0e3.thinkific.com/'>Go to Course Page</a></li>
                 </nav>
               </div>
     )

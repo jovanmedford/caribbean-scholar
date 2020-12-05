@@ -19,10 +19,11 @@ export default function ListCard(props) {
         <div className='ListCard' sx={{
             display: 'flex',
             alignItems: 'flex-start',
+            borderLeft: '2px solid',
+            borderLeftColor: 'accent',
             ':hover': {
-              backgroundColor: 'primary',
               borderLeft: '2px solid',
-              borderLeftColor: 'muted',
+              borderLeftColor: 'secondary',
               cursor: 'pointer'
             }
           }}>

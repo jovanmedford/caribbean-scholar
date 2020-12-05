@@ -5,23 +5,24 @@ export default function TagsBar() {
     return (
         <div sx={{
             ul: {
-                padding: '1rem 0',
-                width: '95%',
-                margin: '0 auto',
-                display: 'flex',
-                justifyContent: 'space-around'
-          
+                textAlign: 'center'
               },
               li: {
                 listStyle: 'none',
                 display: 'inline-block',
+                backgroundColor: 'muted',  
+                padding: '0.25rem 0.75rem',
+                marginRight:'1rem',
+                ':hover': {
+                    backgroundColor: 'text',
+                    color: 'background',
+                    cursor: 'pointer'
+                }
               }}}
         >
         <ul>
-            <li>Spanish</li>
-            <li>Business</li>
-            <li>Accounts</li>
-            <li>Economics</li>
+            <li>CAPE</li>
+            <li>CSEC</li>
         </ul>
     </div>
     )

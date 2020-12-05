@@ -5,9 +5,12 @@ import ListCard from './ListCard'
 export default function ListPostPreview(props) {
     return (
         <div sx={{
-          display: 'flex',
+          display: ['flex','grid'],
+          gridTemplateColumns: '1fr 1fr',
+          columnGap: '1rem',
+          maxWidth: '30rem',
           flexWrap: 'wrap',
-          width: ['90%','75%','50%'],
+          width: ['90%','80%'],
           margin: '0 auto'
         }}>
             {props.info.map(post => (

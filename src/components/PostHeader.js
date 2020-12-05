@@ -16,33 +16,27 @@ export default function PostHeader(props) {
         <h1 sx={{
             marginTop: 0,
             fontSize: '2.6rem',
-            marginBottom: '1rem'}}>{props.title}</h1>
+            marginBottom: '0'}}>{props.title}</h1>
         <section className="bio" sx={{
-            display: 'flex',
-            justifyContent: 'space-between',
-            alignItems: 'flex-end',
             height: '2.5rem',
             width: '100%',
-            marginBottom: '0.5rem'
+            marginBottom: '1rem'
         }}>
-            <div className="bio__image" sx={{
-            
-            }}>
+            <div className="bio__image" sx={{display: 'inline-block'}}>
                 <img src={props.authorImg} sx={{
+                    margin: '0 1rem 1rem 0',
                     borderRadius: '100%',
                     width: ['2rem','3rem']
                 }}/>
             </div>
             <div className="bio__info" sx={{
-                width: '65%'
+                display: 'inline-block',
+                verticalAlign: 'top'
             }}>
                 <span>{props.authorName}</span>
                 <br/>
                 <span sx={{fontSize: 'rem'}}>Last Edited: {props.date}</span>
             </div>
-            <span sx={{
-                fontWeight: '700'
-                }}><li>2 min</li></span>
         </section>
     </section>
     )

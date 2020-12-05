@@ -22,6 +22,8 @@ export default function Header() {
               left: '0',
               top: '50%',
                a: {
+                  textDecoration: 'none',
+                  color: 'text',
                   padding: '0.2rem',
                   ':hover':{
                     backgroundColor: 'text',
@@ -31,12 +33,12 @@ export default function Header() {
                 }
             }}>
               <DropdownMenu/>
-              <Link sx={{
+              <Link to='/' sx={{
                 display:['none','inline-block'],
                 }}>
                   Home
               </Link>
-              <a sx={{
+              <a href='https://jovan-s-school-e0e3.thinkific.com/' sx={{
                 marginLeft: '0.75rem',
                 display:['none','inline-block']
                 }}>

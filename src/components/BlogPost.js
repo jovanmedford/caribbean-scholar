@@ -43,7 +43,7 @@ export default function BlogPost({data}) {
                     marginBottom: '1rem',
                 },
                 p: {
-                    fontSize: ['1.2rem','1.4rem', '1.6rem'],
+                    fontSize: '1.2rem',
                     lineHeight: '1.6',
                     marginBottom: '1rem',
                     marginTop: 0

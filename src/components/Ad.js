@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui'
-import Ad from '../img//ad.jpg'
+import Ad from '../img/ad.jpg'
 
 export default function Advertisement() {
     return(

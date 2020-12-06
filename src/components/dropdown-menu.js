@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faAlignJustify } from '@fortawesome/free-solid-svg-icons'
 import { useState, useEffect, useRef } from 'react'
 import { Link } from 'gatsby'
-import Overlay from './Overlay'
+
 
 export default function DropdownMenu() {
   const [state, setState] = useState({
@@ -48,15 +48,15 @@ export default function DropdownMenu() {
                 <nav sx={{
                   position: 'absolute',
                   zIndex: '5',
+                  top: '2rem',
                   display: [state.display,'none'], 
                   fontSize: '1rem',
                   color: 'text',
                   backgroundColor: 'muted',
                   width: ['80%','70%','65'],
-                  padding: '0.5rem 0 0 0',
+                  padding: '0.5rem 0 0.5rem 0',
                   borderRadius: '2px',
                   listStyle: 'none',
-                  boxShadow: '1px 1px 1px 1px grey',
 
                     li: {
                       width: '100%',

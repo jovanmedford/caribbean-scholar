@@ -4,12 +4,23 @@ import Ad from '../img/bim.webp'
 
 export default function Advertisement() {
     return(
-        <img src={Ad} sx={{
+        <div sx={{
             display: 'block',
             width: ['60%', '100%'],
+            padding: '0.8rem',
             margin: '0 auto',
             gridColumn: '4',
-            gridRow: '2/3'
-          }}/>
+            gridRow: '2/3',
+            backgroundColor: 'text',
+            height: ['100%', '50%']
+        }}>
+           <h2 sx={{
+               color: 'background',
+               textAlign: 'center',
+           }}>
+               Go to School
+           </h2>
+        </div>
+        
     )
 }

@@ -71,7 +71,7 @@ export default function BlogHome( {data} ) {
 export const query = graphql`
 
 query {
-  top: allWpPost(filter: {tags: {nodes: {elemMatch: {name: {eq: "Top Post"}}}}}){
+  top: allWpPost(limit: 3, filter: {tags: {nodes: {elemMatch: {name: {eq: "Top Post"}}}}}){
     ...PreviewInformation
   }
 

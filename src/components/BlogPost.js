@@ -6,6 +6,7 @@ import Img from 'gatsby-image'
 import Me from '../img/me.jpg'
 import PostHeader from '../components/PostHeader'
 import { Helmet } from 'react-helmet' 
+import SEO from './seo'
 
 
 export default function BlogPost({data}) {
@@ -15,6 +16,7 @@ export default function BlogPost({data}) {
 
     return (
         <div>
+            <SEO img={source} title={post.title} author={name}/>
             <Helmet>
             <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css" integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous"/>
             <script type="module">

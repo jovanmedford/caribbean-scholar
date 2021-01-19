@@ -1,9 +1,8 @@
 import React from "react"
-import PropTypes from "prop-types"
 import { Helmet } from "react-helmet"
 
 export default function SEO(props){
-    const {excerpt, keyword, author, title} = props
+    const {excerpt, meta, keyword, author, title, img} = props
     return (
         <Helmet
         title={title}
@@ -19,6 +18,10 @@ export default function SEO(props){
             {
                 property: `og:title`,
                 content: title
+            },
+            {
+                property: `og:image`,
+                content: img
             },
             {
                 property: `og:description`,
@@ -41,7 +44,7 @@ export default function SEO(props){
                 content: excerpt,
             },
         ].concat(
-            metaImage
+            img
             ? [
                 {
                     property: 'og:image',
@@ -65,5 +68,6 @@ SEO.defaultProps = {
     excerpt: '',
     keyword: '',
     author: '',
-    title: ''
+    title: '',
+    meta: []
 }

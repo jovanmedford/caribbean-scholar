@@ -3,7 +3,7 @@ const path = require('path')
 module.exports = {
   siteMetadata: {
     title: 'Caribbean Scholar | The #1 Online Learning Community in the West Indies',
-    siteURL: 'https://www.thecaribbeanscholar.com/',
+    siteURL: 'https://thecaribbeanscholar.com',
     description: 'High-quality information on all things CAPE, CSEC and your future at large. Make the most of detailed SBA guides, subject roadmaps and crash courses.'
   },
   plugins: [
@@ -26,7 +26,7 @@ module.exports = {
     {
       resolve: `gatsby-source-wordpress-experimental`,
       options: {
-        url: "http://writers.flywheelsites.com/graphql"
+        url: "https://writers.flywheelsites.com/graphql"
       }
     },
     'gatsby-plugin-react-helmet',

@@ -47,7 +47,10 @@ export default function BlogHome( {data} ) {
 
     <Cta /> 
 
-    <section className='recently-added' sx={{marginLeft: '1rem'}}>
+    <section className='recently-added' sx={{
+      margin: '1rem auto',
+      width: ['96%','96%','80%']
+  }}>
       <h2>Recently Added</h2>
     </section>
 

@@ -39,7 +39,7 @@ export default function Header() {
                 }}>
                   Home
               </Link>
-              <a href='https://jovan-s-school-e0e3.thinkific.com/' sx={{
+              <a href='https://school.thecaribbeanscholar.com/collections' sx={{
                 marginLeft: '0.75rem',
                 display:['none','inline-block']
                 }}>

@@ -65,7 +65,7 @@ export default function DropdownMenu() {
                       }
                 }}>
                     <li><Link to='/'>Home</Link></li>
-                    <li><a href='https://jovan-s-school-e0e3.thinkific.com/'>Go to Course Page</a></li>
+                    <li><a href='https://school.thecaribbeanscholar.com/collections'>Go to Course Page</a></li>
                 </nav>
               </div>
     )

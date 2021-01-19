@@ -44,9 +44,12 @@ export default function Filter(props) {
             margin: '0.5rem auto 2rem auto', 
             width: '80%',
             height: '2rem',
-            borderBottom: '0.1rem solid',
+            border: '0.1rem solid',
+            borderRadius: '6px',
+            paddingLeft: '1rem',
             backgroundColor: 'white',
-            maxWidth: '25rem',
+            background: 'none',
+            maxWidth: '25rem'
             }}></input>
           <ListPostPreview info={posts}/>
         </div>

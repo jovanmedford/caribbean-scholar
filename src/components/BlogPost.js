@@ -5,13 +5,13 @@ import { graphql } from 'gatsby'
 import Img from 'gatsby-image'
 import Me from '../img/me.jpg'
 import PostHeader from '../components/PostHeader'
-
 import { Helmet } from 'react-helmet' 
 
 
 export default function BlogPost({data}) {
     const post = data.wpPost;
     const source = post.featuredImage.node.localFile.childImageSharp.fluid;
+    const name = post.author.node.firstName + ' ' + post.author.node.lastName;
 
     return (
         <div>
@@ -22,38 +22,41 @@ export default function BlogPost({data}) {
             renderMathInElement(document.body);
             </script>
             </Helmet>
+            
+            
             <Header />
             <PostHeader category={post.categories.nodes[0].name} title={post.title} 
-            authorImg={Me} authorName={post.author.node.firstName + ' ' + post.author.node.lastName} date={post.date}/>
+            authorImg={Me} authorName={name} date={post.date}/>
             <Img fluid={source} sx={{
                 height: ['18rem','18rem','18rem'],
                 width: ['75%', '65%', '60%'],
                 margin: '0 auto'
-            }}
+            }}/>
             
-            />
             <article sx={{
                 width: ['75%', '65%', '60%'],
                 margin: '2rem auto',
                 h2: {
-                    fontSize: ['1.8rem','2.4rem','2.8rem']
+                    fontSize: ['1.8rem','2.4rem','2.4rem'],
+                    fontWeight: '400'
                 },
                 h3: {
                     fontSize: ['1.5rem','2rem', '2.2rem'],
                     marginBottom: '1rem',
+                    fontWeight: '400'
                 },
                 p: {
-                    fontSize: '1.2rem',
+                    fontSize: ['1.2rem','1.2rem','1.4rem'],
                     lineHeight: '1.6',
                     marginBottom: '1rem',
                     marginTop: 0
                 },
                 blockQuote: {
                     backgroundColor: 'muted',
-                    borderLeft: 'solid 3px',
                     margin: '0 auto',
                     borderColor: 'text',
                     fontWeight: 'normal',
+                    fontStyle: 'italic',
 
                     p: {
                         paddingLeft: '1rem'
@@ -79,6 +82,10 @@ export const query = graphql`
                 firstName
                 lastName
                 }
+            }
+            seo {
+                focuskw
+                metaDesc
             }
             categories {
                 nodes {

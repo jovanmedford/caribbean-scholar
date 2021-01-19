@@ -1,7 +1,7 @@
 // example base theme from @theme-ui/presets
 export default {
   fonts: {
-    body: 'Lato, system-ui, sans-serif',
+    body: 'Avenir Next, system-ui, sans-serif',
     heading: 'Avenir Next, sans-serif',
     monospace: 'Menlo, monospace',
   },
@@ -34,7 +34,7 @@ export default {
         text: '#fafaf2', 
         background: '#253D5B',
         primary: '#387CBD', 
-        muted: '#2b415d'
+        muted: '#6d95c6'
       }
     }
   },

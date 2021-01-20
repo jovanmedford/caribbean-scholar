@@ -17,7 +17,7 @@ export default function SEO(props){
     `
     )
     const metaDescription = excerpt || site.siteMetadata.description;
-    console.log(site)
+    console.log(metaImage)
     const image = 
         metaImage && metaImage.src
         ? metaImage.src : null;

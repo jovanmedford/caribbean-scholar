@@ -18,7 +18,8 @@ export default function Footer() {
             margin: '0 auto'
         }}>
             <div className="footer-social" sx={{
-                width: '25%'
+                width: '25%',
+                minWidth: '5rem'
                 }}>
                 <h4 sx={{
                     width: '6rem',
@@ -64,13 +65,13 @@ export default function Footer() {
                 <h4>Company</h4>
                     <ul>
                         <li>About</li>
-                        <li>Contact Us</li>
+                        <li>Contact</li>
                     </ul>
                 </div>
             </section>
 
             <section className="footer-balance" sx={{
-                 width: ['0%','50%']
+                 width: ['0%','90%']
             }}>
 
             </section>
@@ -78,7 +79,9 @@ export default function Footer() {
 
         </section>
         <section className="footer-legal" sx={{
-                textAlign: 'center'
+                fontSize: '0.8rem',
+                margin: '0 auto',
+                width: '80%'
             }}>
               <p><FontAwesomeIcon icon={faCopyright}/> Caribbean Scholar {new Date().getFullYear()}</p>
         </section>

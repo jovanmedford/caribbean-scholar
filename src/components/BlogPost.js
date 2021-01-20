@@ -16,9 +16,11 @@ export default function BlogPost({data}) {
     const socialImage = childImageSharp.resize;
     const name = post.author.node.firstName + ' ' + post.author.node.lastName;
 
+    console.log(socialImage)
+
     return (
         <div>
-            <SEO img={socialImage} title={post.title} author={name}/>
+            <SEO image={socialImage} title={post.title} author={name}/>
             <Helmet>
             <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css" integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous"/>
             <script type="module">

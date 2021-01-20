@@ -1,15 +1,32 @@
 import React from "react"
 import { Helmet } from "react-helmet"
+import { useStaticQuery, graphql} from "gatsby"
 
 export default function SEO(props){
-    const {excerpt, meta, keyword, author, title, img} = props
+    const {excerpt, image: metaImage, keyword, author, title, meta} = props;
+    const { site } = useStaticQuery(
+        graphql`
+            query {
+                site {
+                    siteMetadata {
+                        siteUrl
+                    }
+                }
+            }
+        `
+    )
+    const metaDescription = excerpt || site.siteMetadata.metaDescription;
+    const image = 
+        metaImage && metaImage.src
+        ? `${site.siteMetadata.siteUrl}${metaImage.src}` : null;
+
     return (
         <Helmet
         title={title}
         meta={[
             {
             name: `description`,
-            content: excerpt,
+            content: metaDescription,
             },
             {
                 name: `keywords`,
@@ -25,7 +42,7 @@ export default function SEO(props){
             },
             {
                 property: `og:description`,
-                content: excerpt,
+                content: metaDescription,
             },
             {
                 property: `og:type`,
@@ -41,14 +58,22 @@ export default function SEO(props){
             },
             {
                 name: `twitter:description`,
-                content: excerpt,
+                content: metaDescription,
             },
         ].concat(
-            img
+            metaImage
             ? [
                 {
                     property: 'og:image',
-                    content: ''
+                    content: image
+                },
+                {
+                    property: "og:image:width",
+                    content: metaImage.width
+                },
+                {
+                    property: "og:image:height",
+                    content: metaImage.height
                 }
             ] : [
                     {
@@ -69,5 +94,6 @@ SEO.defaultProps = {
     keyword: '',
     author: '',
     title: '',
-    meta: []
+    meta: [],
+    metaImage
 }

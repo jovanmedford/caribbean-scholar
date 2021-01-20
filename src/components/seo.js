@@ -87,7 +87,11 @@ export default function SEO(props){
                 {
                     property: "og:image:height",
                     content: metaImage.height
-                }
+                },
+                {
+                    name: "twitter:card",
+                    content: "summary_large_image",
+                },
             ] : [
                     {
                 name: "twitter:card",

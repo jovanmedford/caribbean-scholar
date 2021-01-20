@@ -7,6 +7,7 @@ import PostPreview from '../components/PostPreview'
 import Trending from '../components/Trending'
 import Advertisement from '../components/advertisement'
 import { graphql } from 'gatsby'
+import Footer from '../components/footer'
 
 export default function BlogHome( {data} ) {
   return (
@@ -63,6 +64,8 @@ export default function BlogHome( {data} ) {
       width: '8rem'
     }}>Load More...</button>
     <hr></hr>
+    
+    <Footer />
   </div>
   )
 }

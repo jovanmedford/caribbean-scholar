@@ -9,11 +9,11 @@ export default function SEO(props){
             query {
                 site {
                     siteMetadata {
-                        siteUrl
-                    }
-                }
+                      siteURL
             }
-        `
+        }
+    }
+    `
     )
     const metaDescription = excerpt || site.siteMetadata.metaDescription;
     const image = 
@@ -38,7 +38,7 @@ export default function SEO(props){
             },
             {
                 property: `og:image`,
-                content: img
+                content: image
             },
             {
                 property: `og:description`,
@@ -95,5 +95,5 @@ SEO.defaultProps = {
     author: '',
     title: '',
     meta: [],
-    metaImage
+    metaImage: ''
 }

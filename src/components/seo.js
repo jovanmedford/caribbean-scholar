@@ -18,8 +18,7 @@ export default function SEO(props){
     const metaDescription = excerpt || site.siteMetadata.metaDescription;
     const image = 
         metaImage && metaImage.src
-        ? `${site.siteMetadata.siteUrl}${metaImage.src}` : null;
-
+        ? metaImage.src : null;
     return (
         <Helmet
         title={title}

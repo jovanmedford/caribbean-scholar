@@ -63,7 +63,7 @@ export default function BlogHome( {data} ) {
       height: '2.5rem',
       width: '8rem'
     }}>Load More...</button>
-    <hr></hr>
+    
     
     <Footer />
   </div>

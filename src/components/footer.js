@@ -3,7 +3,7 @@ import { jsx } from 'theme-ui'
 import { Link } from 'gatsby'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCopyright } from '@fortawesome/free-regular-svg-icons'
-import { faFacebookSquare, faYoutubeSquare } from '@fortawesome/free-brands-svg-icons'
+import { faFacebookSquare, faYoutube } from '@fortawesome/free-brands-svg-icons'
 
 export default function Footer() {
     return(
@@ -36,7 +36,7 @@ export default function Footer() {
                             }
                         }}>
                         <li><a href="#"><FontAwesomeIcon icon={faFacebookSquare}/></a></li>
-                        <li><a href="#"><FontAwesomeIcon icon={faYoutubeSquare}/></a></li>
+                        <li><a href="https://www.youtube.com/channel/UCnkPw_8rCoJmXw-Qiib09fg"><FontAwesomeIcon icon={faYoutube}/></a></li>
                     </ul>
                 </div>
        

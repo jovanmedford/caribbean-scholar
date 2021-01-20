@@ -10,12 +10,14 @@ export default function SEO(props){
                 site {
                     siteMetadata {
                       siteURL
+                      description
             }
         }
     }
     `
     )
-    const metaDescription = excerpt || site.siteMetadata.metaDescription;
+    const metaDescription = excerpt || site.siteMetadata.description;
+    console.log(site)
     const image = 
         metaImage && metaImage.src
         ? metaImage.src : null;

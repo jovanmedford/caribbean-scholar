@@ -3,7 +3,7 @@ import { Helmet } from "react-helmet"
 import { useStaticQuery, graphql} from "gatsby"
 
 export default function SEO(props){
-    const {excerpt, image: metaImage, keyword, author, title, meta} = props;
+    const {excerpt, image: metaImage, keyword, author, title, meta, pathname} = props;
     const { site } = useStaticQuery(
         graphql`
             query {
@@ -20,9 +20,22 @@ export default function SEO(props){
     const image = 
         metaImage && metaImage.src
         ? metaImage.src : null;
+    const canonical = 
+        pathname ? `${site.siteMetadata.siteURL}${pathname}` : null;
+
     return (
         <Helmet
         title={title}
+        link = {
+            canonical
+                ? [
+                    {
+                        rel: "canonical",
+                        href: canonical,   
+                    },
+                  ]
+                : []
+        }
         meta={[
             {
             name: `description`,

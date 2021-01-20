@@ -3,7 +3,6 @@ import { jsx } from 'theme-ui'
 import Card from './card'
 
 export default function PostPreview(props) {
-  console.log(props.info[0])
     return (
         <div sx={{
           display: 'flex',

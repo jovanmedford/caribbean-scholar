@@ -6,7 +6,7 @@ import Img from 'gatsby-image'
 export default function Hero() {
   const data = useStaticQuery(graphql`
       query {
-        wpPost(tags: {nodes: {elemMatch: {name: {eq: "Main"}}}}) {
+        wpPost(section: {name: {eq: "hero"}}) {
             content
             title
             slug

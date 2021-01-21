@@ -25,7 +25,7 @@ export default function BlogHome( {data} ) {
       <Hero />
       <Trending />
       <Advertisement />
-      <PostPreview info={data.csec.nodes}/>
+      <PostPreview info={data.featured.nodes}/>
       </section>
 
     <Cta />
@@ -43,7 +43,7 @@ export default function BlogHome( {data} ) {
       width: ['96%','96%','80%']
   }}>
       <h2>Top Posts</h2>
-      <PostPreview info={data.top.nodes}/>
+      <PostPreview info={data.topPost.nodes}/>
     </section>
 
     <Cta /> 
@@ -63,8 +63,7 @@ export default function BlogHome( {data} ) {
       height: '2.5rem',
       width: '8rem'
     }}>Load More...</button>
-    
-    
+        
     <Footer />
   </div>
   )
@@ -74,11 +73,11 @@ export default function BlogHome( {data} ) {
 export const query = graphql`
 
 query {
-  top: allWpPost(limit: 3, filter: {tags: {nodes: {elemMatch: {name: {eq: "Top Post"}}}}}){
+  featured: allWpPost(limit: 3, filter: {section: {name: {eq: "featured"}}}){
     ...PreviewInformation
   }
 
-  csec: allWpPost(filter: {tags: {nodes: {elemMatch: {name: {eq: "CSEC"}}}}}){
+  topPost: allWpPost(limit: 3, filter: {section: {name: {eq: "topPost"}}}){
     ...PreviewInformation
   }
 }

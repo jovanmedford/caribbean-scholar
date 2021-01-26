@@ -1,8 +1,8 @@
 // example base theme from @theme-ui/presets
 export default {
   fonts: {
-    body: 'Avenir Next, system-ui, sans-serif',
-    heading: 'Avenir Next, sans-serif',
+    body: 'Montserrat, system-ui, sans-serif',
+    heading: 'Montserrat, sans-serif',
     monospace: 'Menlo, monospace',
   },
   fontWeights: {

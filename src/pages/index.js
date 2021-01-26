@@ -1,10 +1,22 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui'
 import Header from '../components/header'
-import Owl from '../img/owl72.png'
+import Owl from '../img/owlforweb.png'
+import Boy from '../img/boy.jpg'
 import Footer from '../components/footer'
 import MainHeader from '../components/mainHeader'
+import { useEffect, useState } from 'react'
 export default function Home() {
+    const mobileWidth = 640;
+    const [isMobile, setMobile] = useState(window.innerWidth < mobileWidth);
+    const updateMedia = () => {
+        setMobile(window.innerWidth < mobileWidth);
+    }
+    useEffect(() => {
+        window.addEventListener("resize", updateMedia);
+        return () => window.removeEventListener("resize", updateMedia);
+    });
+
     return (
         <div sx={{
         }}>
@@ -20,7 +32,7 @@ export default function Home() {
                     <h1>Own Your Education.</h1>
                     <p>Join the #1 Online Learning Community in the Caribbean</p>
                 </div>
-                <img src={Owl} sx={{
+                <img src={isMobile ? Owl : Boy} sx={{
                     display: 'block',
                     margin: '0 auto',
                 }}/>

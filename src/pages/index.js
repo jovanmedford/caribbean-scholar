@@ -10,6 +10,7 @@ import Footer from '../components/footer'
 //Import components
 import MainHeader from '../components/mainHeader'
 import IconAndText from '../components/iconAndText'
+import TargetAudience from '../components/targetAudience'
 import { faImage, faClock} from '@fortawesome/free-regular-svg-icons'
 import {faCheck} from '@fortawesome/free-solid-svg-icons'
 import Header from '../components/header'
@@ -54,6 +55,17 @@ export default function Home() {
                     margin: '0 auto',
                     width: '10rem'
                 }}/>
+             </section>
+
+             <section className='learningForAll'>
+                 <span>A New Learning Experience For All West Indians</span>
+                 <h2>Thrive From Home!</h2>
+
+                <TargetAudience image={Boy} audience='Students' heading='Learning Can Be Fun.' 
+                        message='Imagine what life could be like if you enjoyed learning'/>
+                <TargetAudience image={Spout} audience='Parents' heading='Only The Best For Your Child.' 
+                        message='The most complete online experience for CAPE and CSEC students online.' isReverse={true}/> 
+                <TargetAudience image={Laptop} audience='Adults' heading='You can Finally Go Back To School, minus the School' message='Our programs are perfect for busy adults looking to do CXC’s. '/>
              </section>
             
             <h1 sx={{

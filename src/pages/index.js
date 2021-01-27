@@ -38,11 +38,18 @@ export default function Home() {
                 <img src={isMobile ? Owl : Boy} sx={{
                     display: 'block',
                     margin: '0 auto',
+                    
                 }}/>
              </section>
             
-            <h1>What Do We Offer?</h1>
-             <section>
+            <h1 sx={{
+                fontWeight: 'bold',
+                textAlign: 'center'
+            }}>What Do We Offer?</h1>
+             <section sx={{
+                 display: 'flex',
+                 flexWrap: 'wrap'
+             }}>
                  <IconAndText heading="High Quality Content" icon={faImage} text={"Beautifully designed material to help make learning fun."}/>
                  <IconAndText heading="Learn at Your Own Pace" icon={faClock} text= {"Take your time - skip ahead, rewatch or pause as much as you like."}/>
                  <IconAndText heading="Interactive Quizzes" icon={faCheck} text={"Check in with yourself to see how you're coming along"}/>

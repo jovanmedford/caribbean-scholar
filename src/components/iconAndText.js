@@ -12,7 +12,9 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
  export default function IconAndText({icon, heading, text}) {
      return (
         <div className='offering' sx={{
-            textAlign: 'center'
+            textAlign: 'center',
+            padding: '1rem 0',
+            width: ['100%','33.33%']
         }}>
             <FontAwesomeIcon icon={icon} sx={{
                 fontSize: '3rem'

@@ -1,6 +1,5 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui'
-import Ad from '../img/bim.webp'
 
 export default function Advertisement() {
     return(

@@ -9,7 +9,7 @@ import Advertisement from '../components/advertisement'
 import { graphql } from 'gatsby'
 import Footer from '../components/footer'
 
-export default function BlogHome( {data} ) {
+export default function Blog( {data} ) {
   return (
     <div>
       <Header />      

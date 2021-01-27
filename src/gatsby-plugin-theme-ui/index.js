@@ -22,7 +22,7 @@ export default {
   ],
   colors: {
     text: '#253D5B',
-    background: '#fafaf2',
+    background: 'white',
     primary: 'aliceblue',
     secondary: '#FC9CC6',
     accent: '#6ddc94',

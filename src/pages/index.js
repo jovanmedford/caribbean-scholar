@@ -6,6 +6,9 @@ import Boy from '../img/boy.jpg'
 import Footer from '../components/footer'
 import MainHeader from '../components/mainHeader'
 import { useEffect, useState } from 'react'
+import { faImage, faClock} from '@fortawesome/free-regular-svg-icons'
+import {faCheck} from '@fortawesome/free-solid-svg-icons'
+import IconAndText from '../components/iconAndText'
 export default function Home() {
     const mobileWidth = 640;
     const [isMobile, setMobile] = useState(window.innerWidth < mobileWidth);
@@ -36,6 +39,13 @@ export default function Home() {
                     display: 'block',
                     margin: '0 auto',
                 }}/>
+             </section>
+            
+            <h1>What Do We Offer?</h1>
+             <section>
+                 <IconAndText heading="High Quality Content" icon={faImage} text={"Beautifully designed material to help make learning fun."}/>
+                 <IconAndText heading="Learn at Your Own Pace" icon={faClock} text= {"Take your time - skip ahead, rewatch or pause as much as you like."}/>
+                 <IconAndText heading="Interactive Quizzes" icon={faCheck} text={"Check in with yourself to see how you're coming along"}/>
              </section>
             <Footer />
         </div> 

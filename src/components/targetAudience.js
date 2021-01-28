@@ -27,7 +27,7 @@ export default function TargetAudience({image, audience, heading, message, isRev
                 paddingLeft: ['0','5rem']
             }}>
                <span>{audience}</span>
-               <h3>{heading}.</h3>
+               <h3>{heading}</h3>
                <p>{message}</p>
             </div>
         </div>

@@ -45,13 +45,11 @@ export default function Home() {
                     margin: '0 auto'            
                 }}>
                     <h1 sx={{
-                        fontWeight: 'bold',
-                        margin: '0',
                         textAlign: 'center'
                     }}>Take Control of Your Education</h1>
-                    <p sx={{
+                    <span sx={{
                         textAlign: 'center'
-                    }}>Join the #1 Online Learning Community in the Caribbean</p>
+                    }}>Join the #1 Online Learning Community in the Caribbean</span>
                 </div>
                 <img src={isMobile ? Students : Students} sx={{
                     display: 'block',
@@ -62,7 +60,7 @@ export default function Home() {
 
              <section className='learningForAll' sx={{
                  width: '80%',
-                 margin: '0 auto'
+                 margin: '6rem auto 0 auto'
              }}>
                  <div sx={{
                      textAlign: 'center'
@@ -70,20 +68,20 @@ export default function Home() {
                  <span>A New Learning Experience For All West Indians</span>
                  <h2>Thrive From Home!</h2>
                  </div>
-                <TargetAudience image={Boy} audience='Students' heading='Learning Can Be Fun.' 
+                <TargetAudience image={Boy} audience='Students' heading='Learning Can Be Fun' 
                         message='Imagine what life could be like if you enjoyed learning'/>
-                <TargetAudience image={Spout} audience='Parents' heading='Only The Best For Your Child.' 
+                <TargetAudience image={Spout} audience='Parents' heading='Only The Best For Your Child' 
                         message='The most complete online experience for CAPE and CSEC students online.' isReverse={true}/> 
                 <TargetAudience image={Laptop} audience='Adults' heading='You can Finally Go Back To School, minus the School' message='Our programs are perfect for busy adults looking to do CXC’s. '/>
              </section>
             
-            <h1 sx={{
-                fontWeight: 'bold',
+            <h2 sx={{
                 textAlign: 'center'
-            }}>What Do We Offer?</h1>
+            }}>Why Caribbean Scholar Courses?</h2>
              <section sx={{
                  display: 'flex',
-                 flexWrap: 'wrap'
+                 flexWrap: 'wrap',
+                 backgroundColor: 'aliceblue'
              }}>
                  <IconAndText heading="High Quality Content" icon={faImage} text={"Beautifully designed material to help make learning fun."}/>
                  <IconAndText heading="Learn at Your Own Pace" icon={faClock} text= {"Take your time - skip ahead, rewatch or pause as much as you like."}/>

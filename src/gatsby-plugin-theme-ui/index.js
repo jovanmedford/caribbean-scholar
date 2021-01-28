@@ -15,7 +15,7 @@ export default {
     heading: 1.125,
   },
   fontSizes: [
-    12, 14, 16, 20, 24, 32, 48, 64,
+   '1rem', '1.25rem', '1.5rem', '2rem', '3rem', '4rem',
   ],
   breakpoints: [
     '36em', '56em', '60em',
@@ -54,9 +54,30 @@ export default {
 
       h1: {
         fontFamily: 'heading',
-        fontSize: '2rem',
-        fontWeight: 'heading'
+        fontWeight:'bold',
+        fontSize: [4,5],
+        fontWeight: 'heading',
+        lineSpacing: 'heading'
       }, 
+
+      h2: {
+        fontSize: [3,4],
+        lineSpacing: 'heading'
+      },
+
+      h3: {
+        fontSize: [2,3],
+        lineSpacing: 'heading'
+      },
+
+      span: {
+        display: 'block',
+        fontSize: 1
+      },
+
+      p: {
+        fontSize: 0,
+      },
 
       ul: {
         padding: '0'

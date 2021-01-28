@@ -33,7 +33,7 @@ export default function TargetAudience({image, audience, heading, message, isRev
             }}>
                <span>{audience}</span>
                <h3>{heading}</h3>
-               <p>{message}</p>
+               <p sx={{fontSize:1}}>{message}</p>
             </div>
         </div>
     );

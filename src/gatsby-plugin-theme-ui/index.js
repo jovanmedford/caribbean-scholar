@@ -43,7 +43,7 @@ export default {
       color: 'white',
       border: 'none',
       margin: '1px auto 2rem',
-      width: '18rem',
+      width: ['10rem','18rem'],
       height: '2.2rem',
       fontSize: '1rem'
     }
@@ -72,6 +72,7 @@ export default {
 
       span: {
         display: 'block',
+        fontWeight: 'semibold',
         fontSize: 1
       },
 
@@ -82,7 +83,9 @@ export default {
       },
 
       p: {
-        fontSize: 0,
+        fontSize: 1,
+        lineHeight: 'body',
+        margin: 0
       },
 
       ul: {

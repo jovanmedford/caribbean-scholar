@@ -8,8 +8,6 @@ import { faFacebookSquare, faYoutube } from '@fortawesome/free-brands-svg-icons'
 export default function Footer() {
     return(
         <footer sx={{
-            borderTop: '0.5px solid',
-            borderTopColor: 'text'
         }}>
         <section sx={{
             display: 'flex',

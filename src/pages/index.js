@@ -9,6 +9,7 @@ import Boy from '../img/boy-at-desk.svg'
 import Footer from '../components/footer'
 //Import components
 import MainHeader from '../components/mainHeader'
+import Cta from '../components/cta'
 import Students from '../img/Students.svg'
 import IconAndText from '../components/iconAndText'
 import TargetAudience from '../components/targetAudience'
@@ -52,10 +53,10 @@ export default function Home() {
                         textAlign: 'center'
                     }}>Join the #1 Online Learning Community in the Caribbean</p>
                 </div>
-                <img src={isMobile ? Owl : Students} sx={{
+                <img src={isMobile ? Students : Students} sx={{
                     display: 'block',
                     margin: '0 auto',
-                    width: ['10rem','40rem']
+                    width: ['22rem','24rem','40rem']
                 }}/>
              </section>
 
@@ -88,6 +89,7 @@ export default function Home() {
                  <IconAndText heading="Learn at Your Own Pace" icon={faClock} text= {"Take your time - skip ahead, rewatch or pause as much as you like."}/>
                  <IconAndText heading="Interactive Quizzes" icon={faCheck} text={"Check in with yourself to see how you're coming along"}/>
              </section>
+             <Cta />
             <Footer />
         </div> 
     )

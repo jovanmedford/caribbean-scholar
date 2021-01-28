@@ -10,7 +10,11 @@ export default function TargetAudience({image, audience, heading, message, isRev
     return(
         <div sx={{
             display: 'flex',
-            flexDirection: ['column', desktopFlexDirection]
+            flexDirection: ['column', desktopFlexDirection],
+            margin: '5rem 0',
+            h3: {
+                margin: '0'
+            }
         }}>
             <img src={image} sx={{
                 width: '16rem',
@@ -19,7 +23,8 @@ export default function TargetAudience({image, audience, heading, message, isRev
                 }}/>
             <div sx={{
                 width: '80%',
-                margin: '0 auto'
+                margin: '0 auto',
+                paddingLeft: ['0','5rem']
             }}>
                <span>{audience}</span>
                <h3>{heading}.</h3>

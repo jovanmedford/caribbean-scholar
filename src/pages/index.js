@@ -9,6 +9,7 @@ import Boy from '../img/boy-at-desk.svg'
 import Footer from '../components/footer'
 //Import components
 import MainHeader from '../components/mainHeader'
+import Students from '../img/Students.svg'
 import IconAndText from '../components/iconAndText'
 import TargetAudience from '../components/targetAudience'
 import { faImage, faClock} from '@fortawesome/free-regular-svg-icons'
@@ -16,7 +17,7 @@ import {faCheck} from '@fortawesome/free-solid-svg-icons'
 import Header from '../components/header'
 
 export default function Home() {
-    const mobileWidth = 640;
+    const mobileWidth = 800;
     const [isMobile, setMobile] = useState(window.innerWidth < mobileWidth);
     const updateMedia = () => {
         setMobile(window.innerWidth < mobileWidth);
@@ -35,6 +36,7 @@ export default function Home() {
                  display: 'flex',
                  flexDirection: 'column',
                  padding: '3rem 0',
+                 marginBottom: '3rem'
              }}>
                 <div sx={{
                     color: 'white',  
@@ -50,17 +52,23 @@ export default function Home() {
                         textAlign: 'center'
                     }}>Join the #1 Online Learning Community in the Caribbean</p>
                 </div>
-                <img src={isMobile ? Owl : Owl} sx={{
+                <img src={isMobile ? Owl : Students} sx={{
                     display: 'block',
                     margin: '0 auto',
-                    width: '10rem'
+                    width: ['10rem','40rem']
                 }}/>
              </section>
 
-             <section className='learningForAll'>
+             <section className='learningForAll' sx={{
+                 width: '80%',
+                 margin: '0 auto'
+             }}>
+                 <div sx={{
+                     textAlign: 'center'
+                 }}>
                  <span>A New Learning Experience For All West Indians</span>
                  <h2>Thrive From Home!</h2>
-
+                 </div>
                 <TargetAudience image={Boy} audience='Students' heading='Learning Can Be Fun.' 
                         message='Imagine what life could be like if you enjoyed learning'/>
                 <TargetAudience image={Spout} audience='Parents' heading='Only The Best For Your Child.' 

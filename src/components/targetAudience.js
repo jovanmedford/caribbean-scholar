@@ -7,24 +7,29 @@ import { jsx } from 'theme-ui'
 
 export default function TargetAudience({image, audience, heading, message, isReverse}) {
     const desktopFlexDirection = isReverse ? 'row-reverse' : 'row';
+    const dekstopFlexPadding = isReverse ? '0 1% 0 0' : '0 0 0 1%';
     return(
         <div sx={{
             display: 'flex',
             flexDirection: ['column', desktopFlexDirection],
             margin: '5rem 0',
+            height: ['18rem','25rem'],
             h3: {
                 margin: '0'
             }
         }}>
             <img src={image} sx={{
-                width: '16rem',
+                width: ['16rem','49%'],
                 margin: '0 auto',
                 display: 'block'
                 }}/>
             <div sx={{
-                width: '80%',
+                width: ['80%','49%'],
+                padding: dekstopFlexPadding,
                 margin: '0 auto',
-                paddingLeft: ['0','5rem']
+                display:'flex',
+                flexDirection: 'column',
+                justifyContent: 'center'
             }}>
                <span>{audience}</span>
                <h3>{heading}</h3>

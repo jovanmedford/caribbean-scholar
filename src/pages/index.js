@@ -62,7 +62,7 @@ export default function Home() {
                         message='Imagine what life could be like if you enjoyed learning'/>
                 <TargetAudience image={Spout} audience='Parents' heading='Only The Best For Your Child' 
                         message='The most complete online experience for CAPE and CSEC students online.' isReverse={true}/> 
-                <TargetAudience image={Laptop} audience='Adults' heading='You can Finally Go Back To School, minus the School' message='Our programs are perfect for busy adults looking to do CXC’s. '/>
+                <TargetAudience image={Laptop} audience='Adults' heading='You can Finally Go Back To School' message='Our programs are perfect for busy adults looking to do CXC’s. '/>
              </section>
             
             <h2 sx={{

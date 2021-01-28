@@ -18,16 +18,6 @@ import {faCheck} from '@fortawesome/free-solid-svg-icons'
 import Header from '../components/header'
 
 export default function Home() {
-    const mobileWidth = 800;
-    const [isMobile, setMobile] = useState(window.innerWidth < mobileWidth);
-    const updateMedia = () => {
-        setMobile(window.innerWidth < mobileWidth);
-    }
-    useEffect(() => {
-        window.addEventListener("resize", updateMedia);
-        return () => window.removeEventListener("resize", updateMedia);
-    });
-
     return (
         <div sx={{
         }}>
@@ -36,7 +26,7 @@ export default function Home() {
                  backgroundColor: '#0F325A',
                  display: 'flex',
                  flexDirection: 'column',
-                 padding: '3rem 0',
+                 paddingTop: '3rem',
                  marginBottom: '3rem'
              }}>
                 <div sx={{
@@ -51,10 +41,10 @@ export default function Home() {
                         textAlign: 'center'
                     }}>Join the #1 Online Learning Community in the Caribbean</span>
                 </div>
-                <img src={isMobile ? Students : Students} sx={{
+                <img src={Students} sx={{
                     display: 'block',
                     margin: '0 auto',
-                    width: ['22rem','24rem','40rem']
+                    width: ['100%','24rem','40rem']
                 }}/>
              </section>
 

@@ -7,7 +7,7 @@ export default {
   },
   fontWeights: {
     body: 400,
-    heading: 400,
+    semibold: 500,
     bold: 700,
   },
   lineHeights: {
@@ -73,6 +73,12 @@ export default {
       span: {
         display: 'block',
         fontSize: 1
+      },
+
+      a: {
+        color: 'white',
+        textDecoration: 'none',
+        fontWeight: 'semibold'
       },
 
       p: {

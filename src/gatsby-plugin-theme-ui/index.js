@@ -1,13 +1,13 @@
 // example base theme from @theme-ui/presets
 export default {
   fonts: {
-    body: 'Avenir Next, system-ui, sans-serif',
-    heading: 'Avenir Next, sans-serif',
+    body: 'Montserrat, system-ui, sans-serif',
+    heading: 'Montserrat, sans-serif',
     monospace: 'Menlo, monospace',
   },
   fontWeights: {
     body: 400,
-    heading: 400,
+    semibold: 500,
     bold: 700,
   },
   lineHeights: {
@@ -15,14 +15,14 @@ export default {
     heading: 1.125,
   },
   fontSizes: [
-    12, 14, 16, 20, 24, 32, 48, 64,
+   '1rem', '1.25rem', '1.5rem', '2rem', '3rem', '4rem',
   ],
   breakpoints: [
     '36em', '56em', '60em',
   ],
   colors: {
     text: '#253D5B',
-    background: '#fafaf2',
+    background: 'white',
     primary: 'aliceblue',
     secondary: '#FC9CC6',
     accent: '#6ddc94',
@@ -43,7 +43,7 @@ export default {
       color: 'white',
       border: 'none',
       margin: '1px auto 2rem',
-      width: '18rem',
+      width: ['10rem','18rem'],
       height: '2.2rem',
       fontSize: '1rem'
     }
@@ -54,9 +54,39 @@ export default {
 
       h1: {
         fontFamily: 'heading',
-        fontSize: '2rem',
-        fontWeight: 'heading'
+        fontWeight:'bold',
+        fontSize: [4,5],
+        fontWeight: 'heading',
+        lineSpacing: 'heading'
       }, 
+
+      h2: {
+        fontSize: [3,4],
+        lineSpacing: 'heading'
+      },
+
+      h3: {
+        fontSize: [2,3],
+        lineSpacing: 'heading'
+      },
+
+      span: {
+        display: 'block',
+        fontWeight: 'semibold',
+        fontSize: 1
+      },
+
+      a: {
+        color: 'white',
+        textDecoration: 'none',
+        fontWeight: 'semibold'
+      },
+
+      p: {
+        fontSize: 1,
+        lineHeight: 'body',
+        margin: 0
+      },
 
       ul: {
         padding: '0'

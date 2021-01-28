@@ -31,7 +31,11 @@ export default function Card(props) {
             }}/>
 
             <div className='card-content' sx={{
-              padding: '0.8rem'
+              padding: '0.8rem',
+              minHeight: '8rem',
+                p: {
+                  marginTop: '0',
+                }
               }}>
               <h3 sx={{margin: 0}}>{props.category}</h3>
               <p>{props.title}</p>

@@ -34,10 +34,10 @@ export default function Header() {
                 }
             }}>
               <DropdownMenu/>
-              <Link to='/' sx={{
+              <Link to='/blog' sx={{
                 display:['none','inline-block'],
                 }}>
-                  Home
+                  Blog
               </Link>
               <a href='https://school.thecaribbeanscholar.com/collections' sx={{
                 marginLeft: '0.75rem',

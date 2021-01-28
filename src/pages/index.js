@@ -40,7 +40,7 @@ export default function Home() {
                         textAlign: 'center',
                         marginBottom:'2rem'
                     }}>Join the #1 Online Learning Community in the Caribbean</span>
-                    <LinkButton to='https://school.thecaribbeanscholar.com/' text='Get Started'/>
+                    <LinkButton link='https://school.thecaribbeanscholar.com/' text='Get Started'/>
                 </div>
                 <img src={Students} alt="Caribbean Students Excited For Learning" sx={{
                     display: 'block',
@@ -117,7 +117,7 @@ export default function Home() {
                      }}>
                      <h2>Try Our Pre-Algebra Course For Free!</h2>
                      <p>Come get a full demo or the Caribbean Scholar experience before you spend a dime.</p>
-                     <LinkButton to='https://school.thecaribbeanscholar.com/courses/pre-algebra' text="Let's Go!" />
+                     <LinkButton link='https://school.thecaribbeanscholar.com/courses/pre-algebra' text="Let's Go!" />
                      </div>
              </section>
             <Footer />

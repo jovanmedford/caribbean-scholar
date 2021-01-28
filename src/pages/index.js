@@ -87,10 +87,25 @@ export default function Home() {
                  </div>
              </section>
              
+             <section sx={{
+                 backgroundColor: '#0F325A',
+                 width: ['100%','80%'],
+                 margin: '5rem auto',
+                 padding: ['2rem','3rem','4rem'],
+                 color: 'white'
+                 }}>
+                     <div sx={{
+                         
+                     }}>
+                     <h2 sx={{margin:'0'}}>Try Our Pre-Algebra Course For Free!</h2>
+                     <p sx={{marginBottom:'1rem'}}>Come get a full demo or the Caribbean Scholar experience before you spend a dime.</p>
+                     <LinkButton link='https://school.thecaribbeanscholar.com/courses/pre-algebra' text="Let's Go!" />
+                     </div>
+             </section>
 
              <section className='addtional-resources' sx={{
                  width:['80%'],
-                 margin: '0 auto'
+                 margin: '0 auto 5rem auto'
              }}>
                 <h2>Additional Resources</h2>
                  <div>
@@ -105,21 +120,7 @@ export default function Home() {
              </section>
 
 
-             <section sx={{
-                 backgroundColor: '#0F325A',
-                 width: ['100%','80%'],
-                 margin: '5rem auto',
-                 padding: ['2rem','3rem','4rem'],
-                 color: 'white'
-                 }}>
-                     <div sx={{
-                         
-                     }}>
-                     <h2>Try Our Pre-Algebra Course For Free!</h2>
-                     <p>Come get a full demo or the Caribbean Scholar experience before you spend a dime.</p>
-                     <LinkButton link='https://school.thecaribbeanscholar.com/courses/pre-algebra' text="Let's Go!" />
-                     </div>
-             </section>
+            
             <Footer />
         </div> 
     )

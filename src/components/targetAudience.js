@@ -13,7 +13,7 @@ export default function TargetAudience({image, audience, heading, message, isRev
             display: 'flex',
             flexDirection: ['column', desktopFlexDirection],
             margin: '5rem 0',
-            height: ['18rem','25rem'],
+            height: ['','25rem'],
             h3: {
                 margin: '0'
             }

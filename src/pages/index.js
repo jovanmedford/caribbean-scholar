@@ -42,7 +42,7 @@ export default function Home() {
                     }}>Join the #1 Online Learning Community in the Caribbean</span>
                     <LinkButton link='https://school.thecaribbeanscholar.com/' text='Get Started'/>
                 </div>
-                <img src={Students} alt="Caribbean Students Excited For Learning" sx={{
+                <img src={Students} alt="Caribbean Students Excited To Learn" sx={{
                     display: 'block',
                     margin: '0 auto',
                     width: ['100%','24rem','40rem']

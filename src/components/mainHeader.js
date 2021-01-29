@@ -38,7 +38,7 @@ export default function mainHeader() {
                 }}>
                     <li><Link to='/blog'>Blog</Link></li>
                     <li><a href='https://school.thecaribbeanscholar.com/collections'>Courses</a></li>
-                    <li><Link to='#'>Resources</Link></li>
+                    <li><Link to='/resources'>Resources</Link></li>
                     <li><Link to='#'>About</Link></li>
                 </ul>
             </div>

@@ -7,6 +7,7 @@ import Laptop from '../img/Desktop.svg'
 import Boy from '../img/boy-at-desk.svg'
 import Footer from '../components/footer'
 //Import components
+import HomeHero from '../components/homeHero'
 import MainHeader from '../components/mainHeader'
 import LinkButton from '../components/linkButton'
 import Students from '../img/Students.svg'
@@ -22,33 +23,9 @@ export default function Home() {
         <div sx={{
         }}>
             <MainHeader />
-             <section className="Hero" sx={{
-                 backgroundColor: '#0F325A',
-                 display: 'flex',
-                 flexDirection: 'column',
-                 paddingTop: '3rem',
-                 marginBottom: '3rem'
-             }}>
-                <div sx={{
-                    color: 'white',  
-                    width: '85%',
-                    margin: '0 auto'            
-                }}>
-                    <h1 sx={{
-                        textAlign: 'center'
-                    }}>Take Control of Your Education</h1>
-                    <span sx={{
-                        textAlign: 'center',
-                        marginBottom:'2rem'
-                    }}>Join the #1 Online Learning Community in the Caribbean</span>
-                    <LinkButton link='https://school.thecaribbeanscholar.com/' text='Get Started'/>
-                </div>
-                <img src={Students} alt="Caribbean Students Excited To Learn" sx={{
-                    display: 'block',
-                    margin: '0 auto',
-                    width: ['100%','24rem','40rem']
-                }}/>
-             </section>
+            <HomeHero copy='Take Control of Your Education' tagline='Join the #1 Online Learning Community in the Caribbean'
+                        link='https://school.thecaribbeanscholar.com/' image={Students} buttonText='Get Started'/>
+        
 
              <section className='learningForAll' sx={{
                  width: '80%',

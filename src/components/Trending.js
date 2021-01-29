@@ -30,11 +30,10 @@ export default function Trending() {
 
                 ':hover': {
                   textDecoration: 'underline',
-                  cursor: 'pointer'
                 }
               }
           }}>
-            <h4>Trending Topics</h4>
+            <h4>Incoming Topics</h4>
               <ul>
                 <li>PRODUCTIVITY</li>
                 <li>CAREER</li>

@@ -72,12 +72,12 @@ const category = hero.categories.nodes[0].name;
           padding: '1.5rem',
           color: 'title',
           }}>
-          <h2 sx={{
+          <h1 sx={{
             fontWeight: '700',
             fontSize: ['1.8rem', '2.3rem']
           }}>
             {hero.title}
-          </h2>
+          </h1>
           <h3 sx={{
             position: 'absolute',
             bottom: '2'

@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx } from 'theme-ui'
+import { jsx, useColorMode } from 'theme-ui'
 import Header from '../components/header'
 import Hero from '../components/hero'
 import Cta from '../components/cta'
@@ -10,9 +10,11 @@ import { graphql } from 'gatsby'
 import Footer from '../components/footer'
 
 export default function Blog( {data} ) {
+  const [colorMode, setColorMode] = useColorMode()
+    setColorMode('light')
   return (
     <div>
-      <Header />      
+      <Header />  
       <section sx={{
         display: ['block','grid'],
         gridTemplateColumns: 'repeat(4, 1fr)',
@@ -31,40 +33,27 @@ export default function Blog( {data} ) {
     <Cta />
 
     <section className='copy' sx={{
-      margin: '2rem auto',
+      margin: '5rem auto',
       width: ['96%', '96%','80%']
       }}>
-      <h2>Find real <span sx={{color:'cta'}}>answers</span> to your questions</h2>
-      <p>Read detailed info on course material and everything related to your future.</p>
+      <h3>Find real <span sx=
+      {{
+        color:'cta', 
+        fontSize: ['2','3'],
+        display: 'inline-block'
+        }}>
+          answers</span> to your questions.</h3>
+      <span>Read detailed info on course material and everything related to your future.</span>
     </section>
 
     <section className='top-posts' sx={{
       margin: '1rem auto',
       width: ['96%','96%','80%']
   }}>
-      <h2>Top Posts</h2>
+      <h2 sx={{fontWeight: 'semibold'}}>Top Posts</h2>
       <PostPreview info={data.topPost.nodes}/>
     </section>
-
-   
-
-    <section className='recently-added' sx={{
-      margin: '1rem auto',
-      width: ['96%','96%','80%']
-  }}>
-      <h2>Recently Added</h2>
-    </section>
-
-    <button sx={{
-      display: 'block',
-      margin: '0 auto',
-      background: 'none',
-      border: 'darkblue 0.5px solid',
-      height: '2.5rem',
-      width: '8rem'
-    }}>Load More...</button>
     
-    <Cta />
     <Footer />
   </div>
   )

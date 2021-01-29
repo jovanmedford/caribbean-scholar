@@ -30,8 +30,11 @@ export default function mainHeader() {
                     justifyContent:'space-between',
                         li: {
                             display: ['none', 'block'],
-                            margin: '0 0.5rem'
-                        }
+                            margin: '0 0.5rem',
+                        },
+                        'a:hover': {
+                            color: 'secondary'
+                        } 
                 }}>
                     <li><Link to='/blog'>Blog</Link></li>
                     <li><a href='https://school.thecaribbeanscholar.com/collections'>Courses</a></li>

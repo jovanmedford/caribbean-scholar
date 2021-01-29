@@ -27,18 +27,13 @@ export default function Header() {
                   textDecoration: 'none',
                   color: 'text',
                   padding: '0.2rem',
-                  ':hover':{
-                    backgroundColor: 'text',
-                    color: 'background',
-                    cursor: 'pointer'
-                  }
                 }
             }}>
               <DropdownMenu/>
-              <Link to='/blog' sx={{
+              <Link to='/' sx={{
                 display:['none','inline-block'],
                 }}>
-                  Blog
+                  Home
               </Link>
               <a href='https://school.thecaribbeanscholar.com/collections' sx={{
                 marginLeft: '0.75rem',
@@ -48,7 +43,7 @@ export default function Header() {
                 </a>
           </div>
           
-          <Link to='/'>
+          <Link to='/blog'>
             <img src={Logo} alt={'Caribbean Scholar'} sx ={{
               width: '10rem',
               position: 'absolute',
@@ -63,9 +58,7 @@ export default function Header() {
                 top: '50%',
 
                 svg: {
-                  transition: 'font-size 0.35s ease',
                   ':hover':{
-                    fontSize: '1.2em',
                     cursor: 'pointer'
                 }
               }

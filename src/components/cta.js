@@ -1,13 +1,13 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui'
 
-export default function Cta() {
+export default function Cta({size}) {
     return (
         <div className='call-to-action' sx={{
             backgroundColor: 'cta',
             width: ['100%','96%','80%'],
             padding: '1rem',
-            margin: '0 auto'
+            margin: '0 auto 5rem auto'
           }}>
             <h2 sx={{
               color: 'title',

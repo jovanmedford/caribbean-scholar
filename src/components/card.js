@@ -37,7 +37,7 @@ export default function Card(props) {
                   marginTop: '0',
                 }
               }}>
-              <h3 sx={{margin: 0}}>{props.category}</h3>
+              <h4 sx={{margin: 0}}>{props.category}</h4>
               <p>{props.title}</p>
             </div>
           </div>

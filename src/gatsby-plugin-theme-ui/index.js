@@ -78,6 +78,11 @@ export default {
         lineSpacing: 'heading'
       },
 
+      h4: {
+        fontSize: 1,
+        lineSpacing: 'heading'
+      },
+
       span: {
         display: 'block',
         fontWeight: 'semibold',
@@ -91,7 +96,7 @@ export default {
       },
 
       p: {
-        fontSize: 1,
+        fontSize: 0,
         lineHeight: 'body',
         margin: 0
       },

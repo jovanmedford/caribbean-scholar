@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx } from 'theme-ui'
+import { jsx, useColorMode } from 'theme-ui'
 import { Link } from 'gatsby'
 //Import images
 import Spout from '../img/Spout.svg'
@@ -16,7 +16,8 @@ import { faImage, faClock} from '@fortawesome/free-regular-svg-icons'
 import {faCheck} from '@fortawesome/free-solid-svg-icons'
 
 export default function Home() {
-
+    const [colorMode, setColorMode] = useColorMode()
+    setColorMode('home')
     return (
         <div sx={{
         }}>

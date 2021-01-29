@@ -21,15 +21,23 @@ export default {
     '36em', '56em', '60em',
   ],
   colors: {
-    text: '#253D5B',
-    background: 'white',
-    primary: 'aliceblue',
-    secondary: '#FC9CC6',
-    accent: '#6ddc94',
-    muted: '#fffffb',
-    cta: '#387CBD',
-    title: 'white',
     modes: {
+      home: {
+        background: 'white',
+        text: '#0F325A',
+        primary: 'aliceblue',
+        secondary: '#FC9CC6'
+      },
+      light: {
+        text: '#253D5B',
+        background: 'white',
+        primary: 'aliceblue',
+        secondary: '#FC9CC6',
+        accent: '#6ddc94',
+        muted: '#fffffb',
+        cta: '#387CBD',
+        title: 'white',
+      },
       dark: {
         text: '#fafaf2', 
         background: '#253D5B',

@@ -1,7 +1,9 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui'
 import { Link } from 'gatsby'
+import DropDownMenu from '../components/dropdown-menu'
 import Logo from '../img/logopng.png'
+import DropdownMenu from '../components/dropdown-menu'
 
 export default function mainHeader() {
     return (
@@ -22,6 +24,7 @@ export default function mainHeader() {
             <div sx={{
 
             }}>
+                <DropdownMenu />
                 <ul sx={{
                     display: ['none','flex'],
                     justifyContent:'space-between',

@@ -40,7 +40,7 @@ export default function DropdownMenu() {
         <div className='Left' ref={container}>
               <FontAwesomeIcon icon={faAlignJustify} onClick={handleClick} 
               sx={{
-                display: ['inline-block','none'],
+                display: ['block','none'],
                 ':hover':{
                   cursor: 'pointer',
                   color: 'accent'

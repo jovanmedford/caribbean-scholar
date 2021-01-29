@@ -9,6 +9,7 @@ import DropdownMenu from './dropdown-menu'
 
 export default function Header() {
   const [colorMode, setColorMode] = useColorMode()
+  setColorMode(colorMode === 'home' ? 'light' : colorMode)
     return (
         <header sx={{
             width: ['85%','75%'],
@@ -76,7 +77,7 @@ export default function Header() {
                 </Link>
                 <FontAwesomeIcon icon={faMoon}
                   onClick={e => {
-                    setColorMode(colorMode === 'default' ? 'dark' : 'default')
+                    setColorMode(colorMode === 'light' ? 'dark' : 'light')
                   }}
                 />
             </div> 

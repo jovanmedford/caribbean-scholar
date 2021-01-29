@@ -18,9 +18,11 @@ export default function mainHeader() {
                 width: '80%',
                 margin: '0 auto'
             }}>
-            <img src={Logo} sx={{
+                <Link to='/'>
+                <img src={Logo} sx={{
                 width: '9rem'
             }}/>
+                </Link>
             <div sx={{
 
             }}>

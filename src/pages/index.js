@@ -7,6 +7,7 @@ import Laptop from '../img/Desktop.svg'
 import Boy from '../img/boy-at-desk.svg'
 import Footer from '../components/footer'
 //Import components
+import SEO from '../components/seo'
 import HomeHero from '../components/homeHero'
 import MainHeader from '../components/mainHeader'
 import LinkButton from '../components/linkButton'
@@ -22,6 +23,9 @@ export default function Home() {
     return (
         <div sx={{
         }}>
+            <SEO title='Caribbean Scholar | Take Control of Your Education' 
+                excerpt='High quality material on all things CXC and your future at large. 
+                Our content is perfect for any West Indian looking for quality online learning.'/>
             <MainHeader />
             <HomeHero copy='Take Control of Your Education' tagline='Join the #1 Online Learning Community in the Caribbean'
                         link='https://school.thecaribbeanscholar.com/' image={Students} buttonText='Get Started'/>

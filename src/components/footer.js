@@ -80,11 +80,10 @@ export default function Footer() {
 
         </section>
         <section className="footer-legal" sx={{
-                fontSize: '0.8rem',
                 margin: '0 auto',
                 width: '80%'
             }}>
-              <p><FontAwesomeIcon icon={faCopyright}/> Caribbean Scholar {new Date().getFullYear()}</p>
+              <p sx={{ fontSize: '1rem',}}><FontAwesomeIcon icon={faCopyright}/> Caribbean Scholar {new Date().getFullYear()}</p>
         </section>
         </footer>
     );

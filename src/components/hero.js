@@ -38,6 +38,7 @@ export default function Hero() {
   `)
 
 const hero = data.wpPost;
+console.log(hero);
 const category = hero.categories.nodes[0].name;
 
     return (

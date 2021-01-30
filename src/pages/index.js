@@ -96,7 +96,7 @@ export default function Home() {
                  </div>
                  <div>
                     <h3>Dowloadables</h3>
-                    <p>Reference material for you to use on the <Link to='#' sx={{color:'secondary'}}>go</Link>.</p>
+                    <p>Reference material for you to use on the <Link to='/resources' sx={{color:'secondary'}}>go</Link>.</p>
                  </div>
                 
              </section>

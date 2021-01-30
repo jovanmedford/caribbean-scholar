@@ -21,6 +21,8 @@ export default {
     '36em', '56em', '60em',
   ],
   colors: {
+    background: 'white',
+        text: '#0F325A',
     modes: {
       home: {
         background: 'white',
@@ -79,7 +81,7 @@ export default {
       },
 
       h4: {
-        fontSize: 1,
+        fontSize: 0,
         lineSpacing: 'heading'
       },
 

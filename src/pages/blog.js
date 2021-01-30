@@ -11,7 +11,7 @@ import Footer from '../components/footer'
 
 export default function Blog( {data} ) {
   const [colorMode, setColorMode] = useColorMode()
-    setColorMode('light')
+  setColorMode('dark')
   return (
     <div>
       <Header />  

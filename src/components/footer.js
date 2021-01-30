@@ -33,7 +33,7 @@ export default function Footer() {
                             },
                             a: {
                                 color: 'white',
-                                fontSize: '1.5rem'
+                                fontSize: '1.5rem',
                             }
                         }}>
                         <li><a href="#"><FontAwesomeIcon icon={faFacebookSquare}/></a></li>
@@ -46,7 +46,11 @@ export default function Footer() {
                 display: 'flex',
                 minWidth: '9rem',
                 maxWidth: '15rem',
-                justifyContent: 'space-between'
+                justifyContent: 'space-between',
+                
+                a: {
+                    fontWeight: 'normal'
+                }
             }}>
             
                
@@ -54,9 +58,9 @@ export default function Footer() {
                 <div className="footer-explore">
                     <h4 className="footer-title">Explore</h4>
                     <ul>
-                        <li>Home</li>
-                        <li>Courses</li>
-                        <li>Search</li>
+                        <li><Link to='/'>Home</Link></li>
+                        <li><a href="https://school.thecaribbeanscholar.com/">Courses</a></li>
+                        <li><Link to='/resources'>Resources</Link></li>
                     </ul>
                 </div>
                 
@@ -65,8 +69,9 @@ export default function Footer() {
                 }}>
                 <h4>Company</h4>
                     <ul>
-                        <li>About</li>
-                        <li>Contact</li>
+                        <li><Link to='/about'>About</Link></li>
+                        <li><Link to='/blog'>Blog</Link></li>
+                        <li><Link to='/contact'>Contact</Link></li>
                     </ul>
                 </div>
             </section>

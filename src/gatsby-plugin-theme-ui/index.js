@@ -22,28 +22,22 @@ export default {
   ],
   colors: {
     background: 'white',
-        text: '#0F325A',
+    text: '#0F325A',
+    primary: '#00A99D',
+    secondary: '#FC9CC6',
+    accent: '#6ddc94',
+    cta: '#387CBD',
     modes: {
       home: {
         background: 'white',
-        text: '#0F325A',
-        primary: 'aliceblue',
-        secondary: '#FC9CC6'
       },
       light: {
-        text: '#253D5B',
-        background: 'white',
-        primary: 'aliceblue',
-        secondary: '#FC9CC6',
-        accent: '#6ddc94',
-        muted: '#fffffb',
-        cta: '#387CBD',
+        muted: '#fffffb',   
         title: 'white',
       },
       dark: {
-        text: '#fafaf2', 
-        background: '#253D5B',
-        primary: '#387CBD', 
+        text: 'white', 
+        background: '#0F325A', 
         muted: '#6d95c6'
       }
     }

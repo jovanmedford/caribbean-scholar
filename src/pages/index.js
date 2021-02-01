@@ -45,7 +45,7 @@ export default function Home() {
                         message='Imagine what life could be like if you enjoyed learning'/>
                 <TargetAudience image={Spout} audience='Parents' heading='Only The Best For Your Child' 
                         message='The most complete online experience for CAPE and CSEC students.' isReverse={true}/> 
-                <TargetAudience image={Laptop} audience='Adults' heading='You can Finally Go Back To School' message='Our programs are perfect for busy adults looking to do CXC’s. '/>
+                <TargetAudience image={Laptop} audience='Adults' heading='You can Finally Go Back To School' message='Our programs are perfect for busy adults looking to do CXCs. '/>
              </section>
             
 
@@ -92,7 +92,7 @@ export default function Home() {
                 <h2>Additional Resources</h2>
                  <div>
                     <h3>Caribbean Scholar Blog</h3>
-                    <p>In-depth guides on CXC’s, Sbas and much more. Take a <Link to='/blog' sx={{color:'secondary'}}>look</Link>.</p>
+                    <p>In-depth guides on CXCs, Sbas and much more. Take a <Link to='/blog' sx={{color:'secondary'}}>look</Link>.</p>
                  </div>
                  <div>
                     <h3>Dowloadables</h3>

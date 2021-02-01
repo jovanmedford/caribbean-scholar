@@ -17,11 +17,10 @@ export default function Card(props) {
         textDecoration: 'none'
       }}>
         <div className='Card' sx={{
-          backgroundColor: 'muted',
           boxShadow: '0px 0px 0px',
             ':hover': {
               cursor: 'pointer',
-              backgroundColor: 'primary',
+              backgroundColor:'muteds'
             }
           }}>
 

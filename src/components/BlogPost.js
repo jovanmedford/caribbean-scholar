@@ -44,19 +44,19 @@ export default function BlogPost({data}) {
                 width: ['75%', '65%', '60%'],
                 margin: '2rem auto',
                 h2: {
-                    fontSize: ['1.8rem','2.4rem','2.4rem'],
-                    fontWeight: '400'
+                    fontSize: [3,4],
+                    fontWeight: 600
                 },
                 h3: {
-                    fontSize: ['1.5rem','2rem', '2.2rem'],
-                    marginBottom: '1rem',
-                    fontWeight: '400'
+                    fontSize: [2,3],
+                    marginTop: '1rem',
+                    fontWeight: 'semibold'
                 },
                 p: {
-                    fontSize: ['1.2rem','1.2rem','1.4rem'],
-                    lineHeight: '1.6',
-                    marginBottom: '1rem',
-                    marginTop: 0
+                    fontSize: [1,2],
+                    lineHeight: '2',
+                    fontWeight: '400',
+                    margin: '1rem 0',
                 },
                 blockQuote: {
                     backgroundColor: 'muted',

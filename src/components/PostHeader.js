@@ -15,14 +15,19 @@ export default function PostHeader(props) {
         }}>{props.category}</h3>
         <h1 sx={{
             marginTop: 0,
-            fontSize: '2.6rem',
+            fontSize: [4,5],
+            fontWeight: '500',
             marginBottom: '0'}}>{props.title}</h1>
         <section className="bio" sx={{
-            height: '2.5rem',
             width: '100%',
-            marginBottom: '1rem'
+            marginBottom: '1rem',
+            display: 'flex'
         }}>
-            <div className="bio__image" sx={{display: 'inline-block'}}>
+            <div className="bio__image" sx={{
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'center'
+                }}>
                 <img src={props.authorImg} sx={{
                     margin: '0 1rem 1rem 0',
                     borderRadius: '100%',
@@ -34,7 +39,6 @@ export default function PostHeader(props) {
                 verticalAlign: 'top'
             }}>
                 <span>{props.authorName}</span>
-                <br/>
                 <span sx={{fontSize: 'rem'}}>Last Edited: {props.date}</span>
             </div>
         </section>

@@ -16,7 +16,11 @@ export default function Footer() {
             display: 'flex',
             justifyContent: 'space-around',
             width: '80%',
-            margin: '0 auto'
+            margin: '0 auto',
+
+            'a:hover':{
+                color: 'secondary'
+            }
         }}>
             <div className="footer-social" sx={{
                 width: '25%',
@@ -34,7 +38,7 @@ export default function Footer() {
                             a: {
                                 color: 'white',
                                 fontSize: '1.5rem',
-                            }
+                            },
                         }}>
                         <li><a href="#"><FontAwesomeIcon icon={faFacebookSquare}/></a></li>
                         <li><a href="https://www.youtube.com/channel/UCnkPw_8rCoJmXw-Qiib09fg"><FontAwesomeIcon icon={faYoutube}/></a></li>

@@ -9,7 +9,6 @@ export default function mainHeader() {
     return (
         <header sx={{
             backgroundColor: '#0F325A',
-            height: '4rem', 
             paddingTop: '2.5rem'
         }}>
             <div sx={{
@@ -38,10 +37,10 @@ export default function mainHeader() {
                             color: 'secondary'
                         } 
                 }}>
-                    <li><Link to='/blog'>Blog</Link></li>
-                    <li><a href='https://school.thecaribbeanscholar.com/collections'>Courses</a></li>
-                    <li><Link to='/resources'>Resources</Link></li>
                     <li><Link to='/about'>About</Link></li>
+                    <li><Link to='/resources'>Resources</Link></li>
+                    <li><a href='https://school.thecaribbeanscholar.com/collections'>Courses</a></li>     
+                    <li><Link to='/blog'>Blog</Link></li> 
                 </ul>
             </div>
             </div>

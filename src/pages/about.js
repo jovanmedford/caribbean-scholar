@@ -21,7 +21,18 @@ export default function About({data}){
                 p: {
                     fontSize: '1.2rem',
                     lineHeight: '2',
-                    margin: '0.4rem'
+                    margin: '0.4rem 0'
+                },
+                ul: {
+                    width: ['80%','60%'],
+                    margin: '1rem 2rem'
+                },
+                li: {
+                    fontSize: '1.2rem',
+                    listStyle: 'disc'
+                },
+                a: {
+                    color: 'secondary'
                 }
             }}dangerouslySetInnerHTML={{__html: post.content}}/>
             <Footer />

@@ -38,7 +38,7 @@ export default function Blog( {data} ) {
       }}>
       <h3>Find real <span sx=
       {{
-        color:'secondary', 
+        color:'cta', 
         fontSize: ['2','3'],
         display: 'inline-block'
         }}>

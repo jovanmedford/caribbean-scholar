@@ -43,6 +43,9 @@ export default function BlogPost({data}) {
             <article sx={{
                 width: ['75%', '65%', '60%'],
                 margin: '2rem auto',
+                ul: {
+                   paddingLeft: '5rem'
+                },
                 h2: {
                     fontSize: [3,4],
                     fontWeight: 600
@@ -58,15 +61,30 @@ export default function BlogPost({data}) {
                     fontWeight: '400',
                     margin: '1rem 0',
                 },
+                li: {
+                    fontSize: [1,2],
+                    listStyle: 'disc',
+                    margin: '0.5rem 0'
+                },
+                a: {
+                    color: 'secondary'
+                },
+                span: {
+                    display: 'initial',
+                },
                 blockQuote: {
-                    backgroundColor: 'muted',
-                    margin: '0 auto',
+                    padding: '2rem 3rem',
+                    backgroundColor: 'primary',
+                    color: 'white',
+                    borderLeft: '5px solid',
+                    margin: '2rem auto',
                     borderColor: 'text',
                     fontWeight: 'normal',
-                    fontStyle: 'italic',
-
                     p: {
-                        paddingLeft: '1rem'
+                    },
+                    cite: {
+                        fontSize: '1.2rem',
+                        marginTop: '1rem'
                     }
                 }
             }}

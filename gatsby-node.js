@@ -6,7 +6,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 
   return graphql(`
     query {
-      allWpPost {
+      allWpPost(filter: {section: {name: {ne: "company"}}}) {
         edges {
           node {
             categories {

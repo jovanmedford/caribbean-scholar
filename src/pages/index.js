@@ -23,8 +23,8 @@ export default function Home() {
     return (
         <div sx={{
         }}>
-            <SEO title='Caribbean Scholar | Take Control of Your Education' 
-                excerpt='High quality material on all things CXC and your future at large. 
+            <SEO title='Caribbean Scholar | High Quality Online CXC Resources ' 
+                excerpt='Polished material on all things CXC and your future at large. 
                 Our content is perfect for any West Indian looking for quality online learning.'/>
             <MainHeader />
             <HomeHero copy='Take Control of Your Education' tagline='Join the #1 Online Learning Community in the Caribbean'

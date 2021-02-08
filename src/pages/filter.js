@@ -1,9 +1,8 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui'
 import Header from '../components/header'
-import { graphql, Link} from 'gatsby'
+import { graphql } from 'gatsby'
 import ListPostPreview from '../components/ListPostPreview'
-import TagsBar from '../components/tags-bar'
 import { useState } from 'react'
 
 export default function Filter(props) {
@@ -39,7 +38,6 @@ export default function Filter(props) {
     return(
         <div>
           <Header />
-          <TagsBar />
           <input placeholder='Search a topic' onChange={handleInputChange} sx={{
             margin: '0.5rem auto 2rem auto', 
             width: '80%',
@@ -58,7 +56,7 @@ export default function Filter(props) {
 
 export const query = graphql`
     query {
-      allWpPost {
+      allWpPost(filter: {section: {name: {ne: "company"}}}) {
           nodes {
         categories {
           nodes {

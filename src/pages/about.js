@@ -18,6 +18,9 @@ export default function About({data}){
             <article  sx={{
                 width: ['80%','60%',],
                 margin: '3rem auto',
+                h4: {
+                    fontSize: '2rem'
+                },
                 p: {
                     fontSize: '1.2rem',
                     lineHeight: '2',

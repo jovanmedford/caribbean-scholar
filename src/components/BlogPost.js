@@ -73,7 +73,7 @@ export default function BlogPost({data}) {
                     display: 'initial',
                 },
                 blockQuote: {
-                    padding: '2rem 3rem',
+                    padding: '1rem 2rem',
                     backgroundColor: 'primary',
                     color: 'white',
                     borderLeft: '5px solid',

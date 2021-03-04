@@ -42,7 +42,7 @@ console.log(hero);
 const category = hero.categories.nodes[0].name;
 
     return (
-    <div sx={{
+    <section sx={{
       position: 'relative',
       width: '100%',
       gridRow: ['1/3', '1/2'],
@@ -51,22 +51,6 @@ const category = hero.categories.nodes[0].name;
       display: 'inline-block'
       }}>
       <Link to={`/blog/${category}/${hero.slug}`}>
-        <div className='overlay' sx={{
-            position: 'absolute',
-            width: '100%',
-            height: '100%',
-            top: 0,
-            bottom: 0,
-            left: 0,
-            right: 0,
-            backgroundColor: 'black',
-            zIndex: '-0.5',
-            opacity: '19%',
-            ':hover': {
-              display: 'none'
-            }
-          }}>
-        </div>
         <div className='post-info' sx={{
           position: "absolute",
           height: ['18rem', '22rem'],
@@ -94,6 +78,6 @@ const category = hero.categories.nodes[0].name;
           zIndex: '-1'
         }}/>
       </Link>
-    </div>
+    </section>
     )
 }

@@ -25,7 +25,6 @@ export default function Blog( {data} ) {
         height: ['auto', '39rem']
       }}>
       <Hero />
-      <Trending />
       <Advertisement />
       <PostPreview info={data.featured.nodes}/>
       </section>

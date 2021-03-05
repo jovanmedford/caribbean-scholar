@@ -4,7 +4,7 @@ import { graphql, Link, useStaticQuery } from 'gatsby'
 import Img from 'gatsby-image'
 import { text } from '@fortawesome/fontawesome-svg-core';
 
-export default function blogHomepageHero() {
+export default function BlogHomepageHero() {
   const data = useStaticQuery(graphql`
       query {
         wpPost(section: {name: {eq: "hero"}}) {
@@ -90,7 +90,7 @@ console.log(hero.cleanExcerpt)
           }}>
             By {hero.author.node.firstName} {hero.author.node.lastName}
           </p>
-            </div>
+          </div>
       </div>
     </section>
     )

@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { jsx, useColorMode } from 'theme-ui'
 import Header from '../components/header'
-import blogHomepageHero from '../components/hero'
+import BlogHomepageHero from '../components/blogHomepageHero'
 import Cta from '../components/cta'
 import PostPreview from '../components/PostPreview'
 import Trending from '../components/Trending'
@@ -15,7 +15,7 @@ export default function Blog( {data} ) {
   return (
     <div>
       <Header />
-      <blogHomepageHero />  
+      <BlogHomepageHero />  
       <section sx={{
         display: ['block','grid'],
         gridTemplateColumns: 'repeat(4, 1fr)',

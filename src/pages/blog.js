@@ -15,9 +15,15 @@ export default function Blog( {data} ) {
   return (
     <div>
       <Header />
+      <h1 sx={{
+        fontSize: 1,
+        marginTop: '6rem',
+        textAlign: 'center',  
+      }}>
+         Caribbean Scholar Blog
+      </h1>
       <BlogHomepageHero />  
       <PostPreview info={data.featured.nodes}/>
-
       <Cta />
 
     <section className='copy' sx={{

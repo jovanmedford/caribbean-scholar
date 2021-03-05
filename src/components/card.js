@@ -7,9 +7,9 @@ import { Link } from 'gatsby'
 export default function Card(props) {
     return(
       <Link to={`/blog/${props.category}/${props.slug}`} sx={{
-        width: ['80%', '33.33%'],
+        width: ['80%', '33%'],
         backgroundColor: 'background',
-        margin: ['0.5rem auto', '0 1rem 0 0'],
+        margin: ['0.5rem auto','0'],
         overflow: 'hidden',
         position: 'relative',
         color: 'text',
@@ -24,7 +24,7 @@ export default function Card(props) {
           }}>
 
             <Img fluid={props.fluid} sx ={{
-              height:'10rem',
+              height:'12rem',
               width:'100%'
             }}/>
 

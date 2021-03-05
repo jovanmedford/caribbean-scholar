@@ -50,7 +50,7 @@ console.log(hero.cleanExcerpt)
       flexWrap: 'wrap',
       justifyContent: 'space-between',
       width: ['100%','96%','80%'],
-      margin: '10rem auto 3rem auto'
+      margin: '6rem auto 3rem auto'
       }}>
       <Link to={`/blog/${category}/${hero.slug}`}         sx={{
           width: ['100%','50%'],

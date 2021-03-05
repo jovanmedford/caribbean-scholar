@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { jsx, useColorMode } from 'theme-ui'
 import Header from '../components/header'
-import Hero from '../components/hero'
+import blogHomepageHero from '../components/hero'
 import Cta from '../components/cta'
 import PostPreview from '../components/PostPreview'
 import Trending from '../components/Trending'
@@ -14,7 +14,8 @@ export default function Blog( {data} ) {
   setColorMode('dark')
   return (
     <div>
-      <Header />  
+      <Header />
+      <blogHomepageHero />  
       <section sx={{
         display: ['block','grid'],
         gridTemplateColumns: 'repeat(4, 1fr)',
@@ -24,7 +25,6 @@ export default function Blog( {data} ) {
         margin: '0 auto',
         height: ['auto', '39rem']
       }}>
-      <Hero />
       <Advertisement />
       <PostPreview info={data.featured.nodes}/>
       </section>

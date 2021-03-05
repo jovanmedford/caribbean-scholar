@@ -13,7 +13,7 @@ export default function Cta({size}) {
               color: 'title',
               fontSize: '2rem',
               textAlign: 'center'
-              }}>Free Guide: Learning How To Learn</h2>
+              }}>Free Guide: The Essential Algebra Workshop</h2>
             <input type='text' placeholder='Email Address'sx={{
               margin: '0 auto',
               width: '18rem',
@@ -22,7 +22,7 @@ export default function Cta({size}) {
             <button sx={{
               variant: 'buttons.primary',
               background: '#253D5B'
-            }}>Free Access</button>
+            }}>Sign Up</button>
           </div>
     )
 }

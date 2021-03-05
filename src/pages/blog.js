@@ -17,7 +17,7 @@ export default function Blog( {data} ) {
       <Header />
       <h1 sx={{
         fontSize: 1,
-        marginTop: '6rem',
+        marginTop: '4rem',
         textAlign: 'center',  
       }}>
          Caribbean Scholar Blog
@@ -42,11 +42,15 @@ export default function Blog( {data} ) {
 
     <section className='top-posts' sx={{
       margin: '1rem auto',
-      width: ['96%','96%','80%']
   }}>
-      <h2 sx={{fontWeight: 'semibold'}}>Top Posts</h2>
+      <h2 sx={{
+        fontWeight: 'semibold',
+        width: ['96%','96%','80%'],
+        margin: '0 auto'
+        }}>Top Posts</h2>
       <PostPreview info={data.topPost.nodes}/>
     </section>
+    
     
     <Footer />
   </div>

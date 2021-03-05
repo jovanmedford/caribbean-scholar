@@ -50,17 +50,19 @@ console.log(hero.cleanExcerpt)
       flexWrap: 'wrap',
       justifyContent: 'space-between',
       width: ['100%','96%','80%'],
-      margin: '6rem auto 3rem auto'
+      margin: '3rem auto 3rem auto'
       }}>
       <Link to={`/blog/${category}/${hero.slug}`}         sx={{
           width: ['100%','50%'],
-          backgroundColor: '#FEEED1'
+          backgroundColor: '#FEEED1',
+          minHeight: '18rem'
         }}>
         <Img  fluid={hero.featuredImage.node.localFile.childImageSharp.fluid} sx={{height:'100%'}}/>
       </Link>
       <div className='post-info' sx={{
           color: 'text',
-          width: ['100%', '50%'],
+          width: ['80%', '50%'],
+          margin: ['1rem auto', '0'],
           position: 'relative'
           }}>
             <div sx={{

@@ -9,8 +9,7 @@ export default function Card(props) {
       <Link to={`/blog/${props.category}/${props.slug}`} sx={{
         width: ['80%', '33.33%'],
         backgroundColor: 'background',
-        height: ['17rem', '15rem'],
-        margin: ['1rem auto', '0'],
+        margin: ['0.5rem auto', '0 1rem 0 0'],
         overflow: 'hidden',
         position: 'relative',
         color: 'text',
@@ -25,7 +24,7 @@ export default function Card(props) {
           }}>
 
             <Img fluid={props.fluid} sx ={{
-              height:'7.5rem',
+              height:'10rem',
               width:'100%'
             }}/>
 
@@ -36,8 +35,13 @@ export default function Card(props) {
                   marginTop: '0',
                 }
               }}>
-              <h4 sx={{margin: 0}}>{props.category}</h4>
-              <p>{props.title}</p>
+              <h4 sx={{
+                margin: 0,
+                color: 'accent'
+              }}>{props.category}</h4>
+              <p sx={{
+                fontSize: 1
+              }}>{props.title}</p>
             </div>
           </div>
       </Link>

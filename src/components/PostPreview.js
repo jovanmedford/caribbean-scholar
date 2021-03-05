@@ -7,7 +7,8 @@ export default function PostPreview(props) {
         <div sx={{
           display: 'flex',
           flexWrap: 'wrap',
-          gridColumn: '1/4'
+          width: ['100%','96%','80%'],
+          margin: '2rem auto'
         }}>
             {props.info.map(post => (
                 <Card category={post.categories.nodes[0].name} 

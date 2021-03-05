@@ -16,20 +16,9 @@ export default function Blog( {data} ) {
     <div>
       <Header />
       <BlogHomepageHero />  
-      <section sx={{
-        display: ['block','grid'],
-        gridTemplateColumns: 'repeat(4, 1fr)',
-        gridTemplateRows: 'repeat(3, 1fr)',
-        gridGap: '5px',
-        width: ['100%','96%','80%'],
-        margin: '0 auto',
-        height: ['auto', '39rem']
-      }}>
-      <Advertisement />
       <PostPreview info={data.featured.nodes}/>
-      </section>
 
-    <Cta />
+      <Cta />
 
     <section className='copy' sx={{
       margin: '5rem auto',
@@ -62,7 +51,7 @@ export default function Blog( {data} ) {
 export const query = graphql`
 
 query {
-  featured: allWpPost(limit: 3, filter: {section: {name: {eq: "featured"}}}){
+  featured: allWpPost(limit: 2, filter: {section: {name: {eq: "featured"}}}){
     ...PreviewInformation
   }
 

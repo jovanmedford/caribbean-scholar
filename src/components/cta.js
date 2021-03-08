@@ -13,7 +13,7 @@ export default function Cta({size}) {
               color: 'title',
               fontSize: '2rem',
               textAlign: 'center'
-              }}>Free Guide: The Essential Algebra Workshop</h2>
+              }}>Free Guide: Make Algebra Make Sense</h2>
             <input type='text' placeholder='Email Address'sx={{
               margin: '0 auto',
               width: '18rem',

@@ -90,7 +90,7 @@ featuredImage {
   node {
     localFile {
       childImageSharp {
-        fluid(maxWidth: 1200) {
+        fluid {
           base64
           tracedSVG
           srcWebp

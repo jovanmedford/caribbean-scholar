@@ -13,7 +13,7 @@ export default function Cta({size}) {
               color: 'title',
               fontSize: '2rem',
               textAlign: 'center'
-              }}>Free Guide: Make Algebra Make Sense</h2>
+              }}>Free E-book: Make Algebra Make Sense</h2>
             <input type='text' placeholder='Email Address'sx={{
               margin: '0 auto',
               width: '18rem',
@@ -21,7 +21,7 @@ export default function Cta({size}) {
             }}/>
             <button sx={{
               variant: 'buttons.primary',
-              background: '#253D5B'
+              backgroundColor: 'ctabutton'
             }}>Sign Up</button>
           </div>
     )

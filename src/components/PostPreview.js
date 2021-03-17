@@ -5,7 +5,6 @@ import AdditionalPostsList from './additionalPostsList'
 
 export default function PostPreview(props) {
     const postsCount = props.info.length;
-    console.log(postsCount)
     return (
         <div sx={{
           display: 'flex',
@@ -13,7 +12,7 @@ export default function PostPreview(props) {
           position: 'relative',
           flexWrap: 'wrap',
           width: ['100%','96%','80%'],
-          margin: '4rem auto'
+          margin: '4.2rem auto 2rem auto'
         }}>
             {props.info.map(post => (
                 <Card category={post.categories.nodes[0].name} 

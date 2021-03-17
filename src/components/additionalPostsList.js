@@ -1,30 +1,53 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui'
+import { Link, graphql, useStaticQuery } from 'gatsby'
 
 export default function AdditionalPostsList() {
+    const data = useStaticQuery(graphql`
+    query {
+         allWpPost(limit: 3, filter: {section: {name: {eq: "additionalPost"}}}){
+            nodes {
+            title
+            slug
+            categories {
+              nodes {
+                name
+              }
+            }
+            }
+          }
+    }
+`)
+    const additionalPosts = data.allWpPost.nodes;
+    console.log(additionalPosts)
     return(
-        <aside className='more-featured-posts' sx={{
+        <aside className='additional-posts' sx={{
             display: ['none','block'],
             position: 'relative',
             top: '-60px',
-            width: '25%',
-
-            p: {
+            width: '33%',
+            a: {
                 fontSize: '1rem',
-                fontWeight: 'semibold'
+                fontWeight: 'semibold',
+                color: 'text'
             }
         }}>
-            <h3 sx={{
-                fontSize: '1.3rem',
-                color: '#C8707A',
-                marginBottom: '0.5rem'
-            }}>Learning to Learn </h3>
-            <p className>Embracing your procrastination habits - becoming consistent</p>
-            <hr/>
-            <p className>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean.</p>
-            <hr/>
-            <p className>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean.</p>              
-
+            <div className="additionl-posts__container" sx={{
+                width: '80%',
+                marginLeft: '5%'
+            }}>
+                <h3 sx={{
+                    fontSize: '1.3rem',
+                    color: '#C8707A',
+                    marginBottom: '0.5rem'
+                }}>Learning to Learn </h3>
+                {additionalPosts.map(post => (
+                    <div>
+                    <Link to={`/blog/${post.categories.nodes[0].name}/${post.slug}`}> {post.title} </Link>
+                    <hr/>
+                    </div>
+                ))}
+                </div>           
         </aside>
     )
 }

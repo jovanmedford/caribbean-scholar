@@ -17,7 +17,7 @@ export default function Blog( {data} ) {
       <Header />
       <h1 sx={{
         fontSize: 1,
-        marginTop: '4rem',
+        marginTop: '4.5rem',
         textAlign: 'center',  
       }}>
          Caribbean Scholar Blog
@@ -26,19 +26,6 @@ export default function Blog( {data} ) {
       <PostPreview info={data.featured.nodes}/>
       <Cta />
 
-    <section className='copy' sx={{
-      margin: '5rem auto',
-      width: ['96%', '96%','80%']
-      }}>
-      <h3>Find real <span sx=
-      {{
-        color:'cta', 
-        fontSize: ['2','3'],
-        display: 'inline-block'
-        }}>
-          answers</span> to your questions.</h3>
-      <span>Read detailed info on course material and everything related to your future.</span>
-    </section>
 
     <section className='top-posts' sx={{
       margin: '1rem auto',
@@ -48,7 +35,7 @@ export default function Blog( {data} ) {
         width: ['96%','96%','80%'],
         margin: '0 auto'
         }}>Top Posts</h2>
-      <PostPreview info={data.topPost.nodes}/>
+      <PostPreview info={data.topPost.nodes} additionalPosts={data.additionalPost.nodes}/>
     </section>
     
     
@@ -65,6 +52,18 @@ query {
     ...PreviewInformation
   }
 
+  additionalPost: allWpPost(limit: 3, filter: {section: {name: {eq: "additionalPost"}}}){
+    nodes {
+    title
+    slug
+    categories {
+      nodes {
+        name
+      }
+    }
+    
+    }
+  }
   topPost: allWpPost(limit: 3, filter: {section: {name: {eq: "topPost"}}}){
     ...PreviewInformation
   }

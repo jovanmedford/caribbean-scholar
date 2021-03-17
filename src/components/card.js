@@ -35,12 +35,12 @@ export default function Card(props) {
                   marginTop: '0',
                 }
               }}>
-              <h4 sx={{
+              <p sx={{
                 margin: 0,
                 color: 'accent'
-              }}>{props.category}</h4>
+              }}>{props.category}</p>
               <p sx={{
-                fontSize: 1
+                fontSize: '1rem'
               }}>{props.title}</p>
             </div>
           </div>

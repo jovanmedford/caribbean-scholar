@@ -22,11 +22,12 @@ export default {
   ],
   colors: {
     background: 'white',
-    text: '#0F325A',
+    text: '#484E55',
     primary: '#00A99D',
     secondary: '#FC9CC6',
-    accent: '#6ddc94',
-    cta: '#387CBD',
+    accent: '#e02067',
+    cta: '#0F325A',
+    ctaButton: '#00A99D',
     modes: {
       home: {
         background: 'white',
@@ -37,8 +38,11 @@ export default {
       },
       dark: {
         text: 'white', 
+        cta: '#3A93E5',
         background: '#0F325A', 
-        muted: '#6d95c6'
+        muted: '#6d95c6',
+        accent: '#38c6ff',
+        ctaButton: '#0F325A'
       }
     }
   },

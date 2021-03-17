@@ -53,20 +53,18 @@ console.log(hero.cleanExcerpt)
       margin: '10rem auto 3rem auto'
       }}>
       <Link to={`/blog/${category}/${hero.slug}`}         sx={{
-          width: ['100%','50%'],
-          backgroundColor: '#FEEED1'
+          width: ['100%','50%']
         }}>
         <Img  fluid={hero.featuredImage.node.localFile.childImageSharp.fluid} sx={{height:'100%'}}/>
       </Link>
       <div className='post-info' sx={{
           color: 'text',
           width: ['100%', '50%'],
-          position: 'relative'
+          position: 'relative',
           }}>
             <div sx={{
               margin:'0 auto',
-              width:['100%','90%']
-              
+              width:['100%','90%'],
           }}>
           <span sx={{color:'accent'}}>
           {hero.categories.nodes[0].name}

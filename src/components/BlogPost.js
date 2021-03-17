@@ -7,6 +7,7 @@ import Me from '../img/me.jpg'
 import PostHeader from '../components/PostHeader'
 import { Helmet } from 'react-helmet' 
 import SEO from './seo'
+import Footer from './footer'
 
 
 export default function BlogPost({data}) {
@@ -55,6 +56,10 @@ export default function BlogPost({data}) {
                     marginTop: '1rem',
                     fontWeight: 'semibold'
                 },
+                h4: {
+                    margin: '1rem 0 0 0',
+                    fontSize: [1,2]
+                },
                 p: {
                     fontSize: [1,2],
                     lineHeight: '2',
@@ -90,6 +95,7 @@ export default function BlogPost({data}) {
             }}
             dangerouslySetInnerHTML={{__html: post.content}}>
             </article>
+            <Footer />
         </div>      
     )
 }

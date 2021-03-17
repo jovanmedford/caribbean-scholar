@@ -4,8 +4,7 @@ import Header from '../components/header'
 import BlogHomepageHero from '../components/blogHomepageHero'
 import Cta from '../components/cta'
 import PostPreview from '../components/PostPreview'
-import Trending from '../components/Trending'
-import Advertisement from '../components/advertisement'
+import ActiveCampaignForm from '../components/activeCampaignForm'
 import { graphql } from 'gatsby'
 import Footer from '../components/footer'
 
@@ -24,7 +23,7 @@ export default function Blog( {data} ) {
       </h1>
       <BlogHomepageHero />  
       <PostPreview info={data.featured.nodes}/>
-      <Cta />
+      <ActiveCampaignForm />
 
 
     <section className='top-posts' sx={{

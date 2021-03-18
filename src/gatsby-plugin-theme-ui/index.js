@@ -1,8 +1,10 @@
+import "@fontsource/poppins"
+
 // example base theme from @theme-ui/presets
 export default {
   fonts: {
-    body: 'Montserrat, system-ui, sans-serif',
-    heading: 'Montserrat, sans-serif',
+    body: 'Poppins, system-ui, sans-serif',
+    heading: 'Poppins, sans-serif',
     monospace: 'Menlo, monospace',
   },
   fontWeights: {

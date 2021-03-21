@@ -9,23 +9,24 @@ export default function mainHeader() {
     return (
         <header sx={{
             backgroundColor: '#0F325A',
-            paddingTop: '2.5rem'
+            variant: 'myPadding.outer'
         }}>
             <div sx={{
                 display: 'flex',
                 justifyContent: 'space-between',
-                width: '80%',
-                margin: '0 auto'
             }}>
                 <Link to='/'>
                 <img src={Logo} sx={{
-                width: '9rem'
+                width: '11em'
             }}/>
                 </Link>
             <div sx={{
 
             }}>
-                <DropdownMenu />
+                <button sx={{
+                    display: ['block','none'],
+                    background: 'none',
+                }}>Menu</button>
                 <ul sx={{
                     display: ['none','flex'],
                     justifyContent:'space-between',

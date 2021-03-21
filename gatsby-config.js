@@ -31,7 +31,7 @@ module.exports = {
     `gatsby-transformer-sharp`, 
     `gatsby-plugin-sharp`,
     {
-      resolve: `gatsby-source-wordpress-experimental`,
+      resolve: `gatsby-source-wordpress`,
       options: {
         url: "https://writers.flywheelsites.com/graphql"
       }

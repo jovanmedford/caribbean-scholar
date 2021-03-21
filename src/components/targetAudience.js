@@ -12,28 +12,30 @@ export default function TargetAudience({image, audience, heading, message, isRev
         <div sx={{
             display: 'flex',
             flexDirection: ['column', desktopFlexDirection],
-            margin: '5rem 0',
-            height: ['','25rem'],
+            marginTop: '7.5rem',
             h3: {
                 margin: '0'
             }
         }}>
             <img src={image} sx={{
-                width: ['16rem','49%'],
+                width: ['', '15rem','15rem','22rem'],
                 margin: '0 auto',
                 display: 'block'
                 }}/>
             <div sx={{
                 width: ['80%','49%'],
                 padding: dekstopFlexPadding,
-                margin: '0 auto',
-                display:'flex',
-                flexDirection: 'column',
-                justifyContent: 'center'
+                margin: '1.5rem auto 0 auto',
+                display:'block',
             }}>
-               <span>{audience}</span>
-               <h3>{heading}</h3>
-               <p sx={{fontSize:1}}>{message}</p>
+               <span sx={{
+                   color: 'cta',
+                   textTransform: 'uppercase',
+                   fontWeight: 'bold',
+                   fontSize: ['1em','1em','1.25em','1.25em'] 
+                   }}>{audience}</span>
+               <h3 sx={{color: 'heading2'}}>{heading}</h3>
+               <p>{message}</p>
             </div>
         </div>
     );

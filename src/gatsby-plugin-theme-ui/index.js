@@ -1,11 +1,11 @@
 import "@fontsource/poppins"
+import "@fontsource/poppins/700.css"
 
 // example base theme from @theme-ui/presets
 export default {
   fonts: {
     body: 'Poppins, system-ui, sans-serif',
     heading: 'Poppins, sans-serif',
-    monospace: 'Menlo, monospace',
   },
   fontWeights: {
     body: 400,
@@ -17,13 +17,30 @@ export default {
     heading: 1.125,
   },
   fontSizes: [
-   '1rem', '1.25rem', '1.5rem', '2rem', '3rem', '4rem',
+   '1em', '1.25em', '1.5em', '2em', '3em', '4em',
   ],
   breakpoints: [
-    '36em', '56em', '60em',
+    '37.5em','56em', '75em',
   ],
+  spacing: {
+    homepageHero: {
+      padding: ['3em 3em','3em 3em','3em 3em','4.5em 7.5em']
+      
+    }
+  },
+  myMargin: {
+    outer: {
+      margin: ['3em 3em','3em 3em','3em 3em','4.5em 7.5em']
+    }
+  },
+  myPadding: {
+    outer: {
+      padding: ['3em 3em','3em 3em','3em 3em', '4.5em 7.5em']
+    }
+  },
   colors: {
     background: 'white',
+    heading2: '#DC611B',
     text: '#484E55',
     primary: '#00A99D',
     secondary: '#FC9CC6',
@@ -52,10 +69,11 @@ export default {
     primary: {
       color: 'white',
       border: 'none',
-      margin: '1px auto 2rem',
-      width: ['10rem','18rem'],
-      height: '2.2rem',
-      fontSize: '1rem'
+      padding: '1rem 3rem',
+      margin: '0 auto',
+      textTransform: 'uppercase',
+      fontWeight: 'bold',
+      fontSize: '1em'
     }
   },  
   styles: {
@@ -67,16 +85,18 @@ export default {
         fontWeight:'bold',
         fontSize: [4,5],
         fontWeight: 'heading',
-        lineSpacing: 'heading'
+        lineSpacing: 'heading',
+        lineHeight: '125%'
       }, 
 
       h2: {
         fontSize: [3,4],
-        lineSpacing: 'heading'
+        lineSpacing: 'heading',
+        lineHeight: '125%'
       },
 
       h3: {
-        fontSize: [2,3],
+        fontSize: [2,2,3],
         lineSpacing: 'heading'
       },
 
@@ -98,7 +118,7 @@ export default {
       },
 
       p: {
-        fontSize: 0,
+        fontSize: [0,1,1,2],
         lineHeight: 'body',
         margin: 0
       },

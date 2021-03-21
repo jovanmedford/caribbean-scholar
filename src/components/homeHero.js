@@ -8,20 +8,19 @@ export default function HomeHero({copy,tagline,image, buttonText, link}) {
                  backgroundColor: '#0F325A',
                  display: 'flex',
                  flexDirection: 'column',
-                 paddingTop: '3rem',
-                 marginBottom: '3rem'
+                 marginBottom: '12rem'
              }}>
                 <div sx={{
                     color: 'white',  
-                    width: '85%',
-                    margin: '0 auto'            
+                    margin: '0 7.5rem'           
                 }}>
                     <h1 sx={{
-                        textAlign: 'center'
+                        textAlign: 'center',
+                        margin: '0 0 3rem 0'
                     }}>{copy}</h1>
                     <span sx={{
                         textAlign: 'center',
-                        marginBottom:'2rem'
+                        marginBottom:'3rem'
                     }}>{tagline}</span>
                     <LinkButton link={link} text={buttonText} display={buttonDisplay}/>
                 </div>

@@ -14,8 +14,7 @@ import LinkButton from '../components/linkButton'
 import Students from '../img/Students.svg'
 import IconAndText from '../components/iconAndText'
 import TargetAudience from '../components/targetAudience'
-import { faImage, faClock} from '@fortawesome/free-regular-svg-icons'
-import {faCheck} from '@fortawesome/free-solid-svg-icons'
+import {faVideo, faBook, faPencilRuler} from '@fortawesome/free-solid-svg-icons'
 
 export default function Home() {
     const [colorMode, setColorMode] = useColorMode()
@@ -32,17 +31,16 @@ export default function Home() {
         
 
              <section className='learningForAll' sx={{
-                 width: '80%',
-                 margin: '6rem auto 0 auto'
+                 margin: ['0 0.5rem 12rem 0.5rem','0 0.5rem 12rem 0.5rem',
+                            '0 0 12rem 3rem','0 0 12rem 7.5rem']
              }}>
-                 <div sx={{
-                     textAlign: 'center'
-                 }}>
-                 <span>A New Learning Experience For All West Indians</span>
-                 <h2>Thrive From Home!</h2>
+                 <div>
+                 <h2 sx={{
+                     textAlign:['center', 'center', 'left', 'left']
+                 }}>Online Courses For Everyone</h2>
                  </div>
-                <TargetAudience image={Boy} audience='Students' heading='Learning Can Be Fun' 
-                        message='Imagine what life could be like if you enjoyed learning'/>
+                <TargetAudience image={Boy} audience='Students' heading='The Search is Over' 
+                        message='Access all your CXC material in one place. No more scavenging the internet for information.'/>
                 <TargetAudience image={Spout} audience='Parents' heading='Only The Best For Your Child' 
                         message='The most complete online experience for CAPE and CSEC students.' isReverse={true}/> 
                 <TargetAudience image={Laptop} audience='Adults' heading='You can Finally Go Back To School' message='Our programs are perfect for busy adults looking to do CXCs. '/>
@@ -50,49 +48,54 @@ export default function Home() {
             
 
              <section className="benefits" sx={{
-                 backgroundColor: 'aliceblue',
-                 margin: '4rem 0',
-                 padding: '2rem 0'
+                 backgroundColor: '#D0E9FF42',
+                 variant: 'myPadding.outer',
+                 marginBottom: '12rem'
              }}>
                 <h2 sx={{
-                textAlign: 'center',
-                }}>Why Caribbean Scholar Courses?</h2>
+                    marginBottom: '3rem'
+                }}>Why Caribbean Scholar?</h2>
                  <div sx={{
                      display: 'flex',
                      flexWrap: 'wrap',
-                     margin: '0 auto',
-                     width:['100%','80%']
                  }}>
-                    <IconAndText heading="High Quality Content" icon={faImage} text={"Beautifully designed material to help make learning fun."}/>
-                    <IconAndText heading="Learn at Your Own Pace" icon={faClock} text= {"Take your time - skip ahead, rewatch or pause as much as you like."}/>
-                    <IconAndText heading="Interactive Quizzes" icon={faCheck} text={"Check in with yourself to see how you're coming along"}/>
+                    <IconAndText icon={faVideo} text={"Beautifully designed material to help make learning fun."}/>
+                    <IconAndText icon={faBook} text= {"Supplementary textbook included in your subscription."}/>
+                    <IconAndText icon={faPencilRuler} text={"Extensive worksheets that reinforce your learning."}/>
                  </div>
              </section>
              
              <section sx={{
                  backgroundColor: '#0F325A',
-                 width: ['100%','80%'],
-                 margin: '5rem auto',
-                 padding: ['2rem','3rem','4rem'],
+                 margin: ['0 1rem 12rem 1rem ', '0 1rem 12rem 1rem ','0 3rem 12rem 3rem'],
+                 variant: 'myPadding.outer',
                  color: 'white'
                  }}>
                      <div sx={{
                          
                      }}>
-                     <h2 sx={{margin:'0'}}>Try Our Pre-Algebra Course For Free!</h2>
-                     <p sx={{marginBottom:'1rem'}}>Come get a full demo or the Caribbean Scholar experience before you spend a dime.</p>
+                     <h2 sx={{margin:'0 0 2rem 0'}}>Try Our Pre-Algebra Course!</h2>
+                     <p sx={{marginBottom:'2rem'}}>Get a full demo of the Caribbean Scholar experience before you spend a dime.</p>
                      <LinkButton link='https://school.thecaribbeanscholar.com/courses/pre-algebra' text="Let's Go!" />
                      </div>
              </section>
 
              <section className='addtional-resources' sx={{
-                 width:['80%'],
-                 margin: '0 auto 5rem auto'
+                 padding : ['0 3rem','0 3rem','0 3rem','0 7.5rem'],
+                 margin: '0 auto 12rem auto',
+                 h2: {
+                     margin: '0 0 2rem 0'
+                 },
+                 h3: {
+                    fontSize: '2',
+                    margin: '1rem 0 0.25rem 0'
+                 }
              }}>
                 <h2>Additional Resources</h2>
                  <div>
-                    <h3>Caribbean Scholar Blog</h3>
-                    <p>In-depth guides on CXCs, Sbas and much more. Take a <Link to='/blog' sx={{color:'secondary'}}>look</Link>.</p>
+                    <h3>Blog</h3>
+                    <p>More content is on the way! For now you can start refining your
+                        study habits with our Learnig How To Learn guides. Take a <Link to='/blog' sx={{color:'secondary'}}>look</Link>.</p>
                  </div>
                  <div>
                     <h3>Dowloadables</h3>

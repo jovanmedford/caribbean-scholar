@@ -45,7 +45,7 @@ export default function Header() {
           
           <Link to='/blog'>
             <img src={Logo} alt={'Caribbean Scholar'} sx ={{
-              width: '10rem',
+              width: '11em',
               position: 'absolute',
               top: '50%',
               left: '50%',

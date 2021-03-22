@@ -19,7 +19,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
             <FontAwesomeIcon icon={icon} sx={{
                 fontSize: '3em',
                 marginBottom: '0.5rem',
-                color: '#78c305'
+                color: '#4caf50'
             }}/>
             <p sx={{
                 width: '80%',

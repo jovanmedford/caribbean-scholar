@@ -38,7 +38,7 @@ export default function AdditionalPostsList() {
             }}>
                 <h3 sx={{
                     fontSize: '1.3rem',
-                    color: '#C8707A',
+                    color: 'accent',
                     marginBottom: '0.5rem'
                 }}>Learning to Learn </h3>
                 {additionalPosts.map(post => (

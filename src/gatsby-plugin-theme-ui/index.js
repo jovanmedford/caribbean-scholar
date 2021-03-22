@@ -118,7 +118,7 @@ export default {
       },
 
       p: {
-        fontSize: [0,1,1,2],
+        fontSize: [1,2],
         lineHeight: 'body',
         margin: 0
       },

@@ -48,12 +48,13 @@ export default function BlogPost({data}) {
                    paddingLeft: '5rem'
                 },
                 h2: {
+                    margin: '1rem 0',
                     fontSize: [3,4],
                     fontWeight: 600
                 },
                 h3: {
                     fontSize: [2,3],
-                    marginTop: '1rem',
+                    margin: '0.5rem 0',
                     fontWeight: 'semibold'
                 },
                 h4: {
@@ -61,8 +62,8 @@ export default function BlogPost({data}) {
                     fontSize: [1,2]
                 },
                 p: {
-                    fontSize: [1,2],
-                    lineHeight: '2',
+                    fontSize: [0,1],
+                    lineHeight: '1.8',
                     fontWeight: '400',
                     margin: '1rem 0',
                 },
@@ -76,6 +77,10 @@ export default function BlogPost({data}) {
                 },
                 span: {
                     display: 'initial',
+
+                    '.rt-reading-time': {
+                        display: 'inline-flex'
+                    }
                 },
                 blockQuote: {
                     padding: '1rem 2rem',

@@ -14,7 +14,8 @@ export default function ListCard(props) {
             position: 'relative',
             overflow: 'hidden',
             color:'text',
-            textDecoration: 'none'
+            textDecoration: 'none',
+
       }}>
         <div className='ListCard' sx={{
             display: 'flex',
@@ -30,7 +31,11 @@ export default function ListCard(props) {
 
             <div className='card-content' sx={{
               paddingLeft: '0.8rem',
-              display: "inline-block"
+              display: "inline-block",
+              
+               p: {
+                fontsize: '1rem'
+               }
               }}>
                 <h5 sx={{margin: 0}}>{props.title}</h5>
                 <p>{props.category}</p>

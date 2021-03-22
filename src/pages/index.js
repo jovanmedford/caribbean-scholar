@@ -15,6 +15,8 @@ import Students from '../img/Students.svg'
 import IconAndText from '../components/iconAndText'
 import TargetAudience from '../components/targetAudience'
 import {faVideo, faBook, faPencilRuler} from '@fortawesome/free-solid-svg-icons'
+//Import Utilities
+import { Spacing } from '../utils/spacing'
 
 export default function Home() {
     const [colorMode, setColorMode] = useColorMode()
@@ -31,8 +33,9 @@ export default function Home() {
         
 
              <section className='learningForAll' sx={{
-                 margin: ['0 0.5rem 12rem 0.5rem','0 0.5rem 12rem 0.5rem',
-                            '0 0 12rem 3rem','0 0 12rem 7.5rem']
+                 margin: [`0 0.5rem ${Spacing.mobile.vertical.extraLarge} 0.5rem`,
+                          `0 0 ${Spacing.tablet.vertical.extraLarge} 3rem`,
+                          `0 0.5rem ${Spacing.desktop.vertical.extraLarge} 7.5rem`]
              }}>
                  <div>
                  <h2 sx={{
@@ -50,10 +53,13 @@ export default function Home() {
              <section className="benefits" sx={{
                  backgroundColor: '#D0E9FF42',
                  variant: 'myPadding.outer',
-                 marginBottom: '12rem'
+                 marginBottom:  [`${Spacing.mobile.vertical.extraLarge}`,
+                                 `${Spacing.tablet.vertical.extraLarge}`,
+                                 `${Spacing.desktop.vertical.extraLarge}`],
              }}>
                 <h2 sx={{
-                    marginBottom: '3rem'
+                    marginBottom: '3rem',
+                    textAlign: ['center', 'cetner', 'left']
                 }}>Why Caribbean Scholar?</h2>
                  <div sx={{
                      display: 'flex',
@@ -67,14 +73,16 @@ export default function Home() {
              
              <section sx={{
                  backgroundColor: '#0F325A',
-                 margin: ['0 1rem 12rem 1rem ', '0 1rem 12rem 1rem ','0 3rem 12rem 3rem'],
+                 margin: [`0 0 ${Spacing.mobile.vertical.extraLarge} 0`,
+                          `0 1rem ${Spacing.tablet.vertical.extraLarge} 1rem `,
+                          `0 3rem ${Spacing.desktop.vertical.extraLarge} 3rem`],
                  variant: 'myPadding.outer',
                  color: 'white'
                  }}>
                      <div sx={{
                          
                      }}>
-                     <h2 sx={{margin:'0 0 2rem 0'}}>Try Our Pre-Algebra Course!</h2>
+                     <h2 sx={{margin:'0 0 2rem 0'}}>Try Our Algebra Course!</h2>
                      <p sx={{marginBottom:'2rem'}}>Get a full demo of the Caribbean Scholar experience before you spend a dime.</p>
                      <LinkButton link='https://school.thecaribbeanscholar.com/courses/pre-algebra' text="Let's Go!" />
                      </div>
@@ -82,7 +90,9 @@ export default function Home() {
 
              <section className='addtional-resources' sx={{
                  padding : ['0 3rem','0 3rem','0 3rem','0 7.5rem'],
-                 margin: '0 auto 12rem auto',
+                 margin: [`0 auto ${Spacing.mobile.vertical.extraLarge} auto`,
+                          `0 auto ${Spacing.tablet.vertical.extraLarge} auto`,
+                          `0 auto ${Spacing.desktop.vertical.extraLarge} auto`],
                  h2: {
                      margin: '0 0 2rem 0'
                  },

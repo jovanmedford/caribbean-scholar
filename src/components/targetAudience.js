@@ -1,5 +1,6 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui'
+import { Spacing } from '../utils/spacing'
 
 /**
  * Displays an image and description that caters to main audiences on landing page
@@ -12,13 +13,15 @@ export default function TargetAudience({image, audience, heading, message, isRev
         <div sx={{
             display: 'flex',
             flexDirection: ['column', desktopFlexDirection],
-            marginTop: '7.5rem',
+            marginTop: [`${Spacing.mobile.vertical.large}`,
+                        `${Spacing.tablet.vertical.large}`,
+                        `${Spacing.desktop.vertical.large}`],
             h3: {
                 margin: '0'
             }
         }}>
             <img src={image} sx={{
-                width: ['', '15rem','15rem','22rem'],
+                width: ['18.75rem','18.75rem','25rem'],
                 margin: '0 auto',
                 display: 'block'
                 }}/>

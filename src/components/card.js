@@ -33,6 +33,7 @@ export default function Card(props) {
               minHeight: '8rem',
                 p: {
                   marginTop: '0',
+                  fontSize: '1rem'
                 }
               }}>
               <p sx={{
@@ -40,7 +41,6 @@ export default function Card(props) {
                 color: 'accent'
               }}>{props.category}</p>
               <p sx={{
-                fontSize: '1rem'
               }}>{props.title}</p>
             </div>
           </div>

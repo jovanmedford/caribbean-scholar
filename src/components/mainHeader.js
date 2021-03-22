@@ -1,15 +1,22 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui'
 import { Link } from 'gatsby'
-import DropDownMenu from '../components/dropdown-menu'
 import Logo from '../img/logopng.png'
-import DropdownMenu from '../components/dropdown-menu'
+import { Spacing } from '../utils/spacing'
+import MenuService from '../components/menuService'
+
 
 export default function mainHeader() {
     return (
         <header sx={{
             backgroundColor: '#0F325A',
-            variant: 'myPadding.outer'
+            padding: [`${Spacing.mobile.vertical.small} ${Spacing.mobile.horizontal.large}`,
+                    `${Spacing.desktop.vertical.medium} ${Spacing.desktop.horizontal.large}`,
+                    `${Spacing.desktop.vertical.medium} ${Spacing.desktop.horizontal.large}`
+                ],
+            position: ['sticky','static'],
+            top: 0,
+            width:'100%'
         }}>
             <div sx={{
                 display: 'flex',
@@ -23,10 +30,7 @@ export default function mainHeader() {
             <div sx={{
 
             }}>
-                <button sx={{
-                    display: ['block','none'],
-                    background: 'none',
-                }}>Menu</button>
+                <MenuService type={0}/>
                 <ul sx={{
                     display: ['none','flex'],
                     justifyContent:'space-between',

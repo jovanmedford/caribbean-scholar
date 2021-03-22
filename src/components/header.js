@@ -5,7 +5,7 @@ import { faSearch, faMoon } from '@fortawesome/free-solid-svg-icons'
 import Logo from '../img/logopng.png'
 import { useColorMode } from 'theme-ui'
 import { Link } from 'gatsby'
-import DropdownMenu from './dropdown-menu'
+import MenuService from './dropdown-menu'
 
 export default function Header() {
   const [colorMode, setColorMode] = useColorMode()
@@ -29,7 +29,7 @@ export default function Header() {
                   padding: '0.2rem',
                 }
             }}>
-              <DropdownMenu/>
+              <MenuService type={1}/>
               <Link to='/' sx={{
                 display:['none','inline-block'],
                 }}>

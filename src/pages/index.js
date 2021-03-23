@@ -24,12 +24,14 @@ export default function Home() {
     return (
         <div sx={{
         }}>
-            <SEO title='Caribbean Scholar | High Quality Online CXC Resources ' 
+            <SEO title='Caribbean Scholar | High Quality CXC Online Courses' 
                 excerpt='Polished material on all things CXC and your future at large. 
                 Our content is perfect for any West Indian looking for quality online learning.'/>
             <MainHeader />
             <HomeHero copy='Take Control of Your Education' tagline='Join the #1 Online Learning Community in the Caribbean'
-                        link='https://school.thecaribbeanscholar.com/' image={Students} buttonText='Get Started'/>
+                        link='https://school.thecaribbeanscholar.com/' image={Students} buttonText='Get Started'
+                        alt = 'Students from Barbados, Trinidad and Jamaica celebrating education.'
+                        />
         
 
              <section className='learningForAll' sx={{
@@ -40,13 +42,13 @@ export default function Home() {
                  <div>
                  <h2 sx={{
                      textAlign:['center', 'center', 'left', 'left']
-                 }}>Online Courses For Everyone</h2>
+                 }}>Premium Virtual Learning</h2>
                  </div>
-                <TargetAudience image={Boy} audience='Students' heading='The Search is Over' 
+                <TargetAudience image={Boy} alt="antiguan student sits at desk and waves" audience='Students' heading='The Search is Over' 
                         message='Access all your CXC material in one place. No more scavenging the internet for information.'/>
-                <TargetAudience image={Spout} audience='Parents' heading='Only The Best For Your Child' 
+                <TargetAudience image={Spout} alt="plant being watered by a spout" audience='Parents' heading='Only The Best For Your Child' 
                         message='The most complete online experience for CAPE and CSEC students.' isReverse={true}/> 
-                <TargetAudience image={Laptop} audience='Adults' heading='You can Finally Go Back To School' message='Our programs are perfect for busy adults looking to do CXCs. '/>
+                <TargetAudience image={Laptop} alt="latop with words learn from home on screen" audience='Adults' heading='You can Finally Go Back To School' message='Our programs are perfect for busy adults looking to do CXCs. '/>
              </section>
             
 
@@ -105,11 +107,16 @@ export default function Home() {
                  <div>
                     <h3>Blog</h3>
                     <p>More content is on the way! For now you can start refining your
-                        study habits with our Learnig How To Learn guides. Take a <Link to='/blog' sx={{color:'secondary'}}>look</Link>.</p>
+                        study habits with our Learnig How To Learn guides. Take a <Link to='/blog' sx={{
+                            color:'accent',
+                            fontWeight: 'bold'
+                            }}>look</Link>.</p>
                  </div>
                  <div>
                     <h3>Dowloadables</h3>
-                    <p>Reference material for you to use on the <Link to='/resources' sx={{color:'secondary'}}>go</Link>.</p>
+                    <p>Reference material for you to use on the <Link to='/resources' sx={{
+                        color:'accent',
+                        fontWeight: 'bold'}}>go</Link>.</p>
                  </div>
                 
              </section>

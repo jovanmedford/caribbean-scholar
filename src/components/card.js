@@ -23,7 +23,7 @@ export default function Card(props) {
             }
           }}>
 
-            <Img fluid={props.fluid} sx ={{
+            <Img fluid={props.fluid} alt={props.altText}sx ={{
               height:'12rem',
               width:'100%'
             }}/>

@@ -1,9 +1,6 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faAlignJustify } from '@fortawesome/free-solid-svg-icons'
 import { useState, useEffect, useRef } from 'react'
-import { Link } from 'gatsby'
 
 import DropdownMenu from './dropdown-menu'
 import SidebarMenu from './sidebar'

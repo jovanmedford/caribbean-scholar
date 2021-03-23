@@ -6,7 +6,7 @@ import { Spacing } from '../utils/spacing'
  * Displays an image and description that caters to main audiences on landing page
  */
 
-export default function TargetAudience({image, audience, heading, message, isReverse}) {
+export default function TargetAudience({image, alt, audience, heading, message, isReverse}) {
     const desktopFlexDirection = isReverse ? 'row-reverse' : 'row';
     const dekstopFlexPadding = isReverse ? '0 1% 0 0' : '0 0 0 1%';
     return(
@@ -20,7 +20,7 @@ export default function TargetAudience({image, audience, heading, message, isRev
                 margin: '0'
             }
         }}>
-            <img src={image} sx={{
+            <img src={image} alt={alt} sx={{
                 width: ['18.75rem','18.75rem','25rem'],
                 margin: '0 auto',
                 display: 'block'

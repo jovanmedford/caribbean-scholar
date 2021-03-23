@@ -4,6 +4,7 @@ import Header from '../components/header'
 import { graphql } from 'gatsby'
 import ListPostPreview from '../components/ListPostPreview'
 import { useState } from 'react'
+import SEO from '../components/seo'
 
 export default function Filter(props) {
   const { data } = props
@@ -37,6 +38,8 @@ export default function Filter(props) {
     
     return(
         <div>
+          <SEO title='Filter | Find The Blog Post You Need' 
+                excerpt='This search engine will help you find relevant CXC material.'/>
           <Header />
           <input placeholder='Search a topic' onChange={handleInputChange} sx={{
             margin: '0.5rem auto 2rem auto', 

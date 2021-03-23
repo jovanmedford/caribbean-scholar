@@ -2,40 +2,10 @@
 import { jsx } from 'theme-ui'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faAlignJustify } from '@fortawesome/free-solid-svg-icons'
-import { useState, useEffect, useRef } from 'react'
 import { Link } from 'gatsby'
 
 
-export default function DropdownMenu() {
-  const [state, setState] = useState({
-    isOpen: false,
-    display: 'none'
-  })
-
-  const handleClick = () => {
-    let { isOpen, display } = state;
-    isOpen = !isOpen;
-    display = isOpen ? 'block' : 'none';   
-    setState({
-      isOpen,
-      display
-    })
-  }
-
-  const handleClickOutside = event => {
-    if (container.current && !container.current.contains(event.target)) {
-      setState({
-        isOpen: false,
-        display: 'none'
-      })
-    }
-  }
-
-  const container = useRef();
-  useEffect(() => {
-    document.addEventListener("mousedown", handleClickOutside);
-  })
-
+export default function DropdownMenu({handleClick, state, container}) {
     return (
         <div className='Left' ref={container}>
               <FontAwesomeIcon icon={faAlignJustify} onClick={handleClick} 

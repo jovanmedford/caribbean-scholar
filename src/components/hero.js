@@ -28,6 +28,7 @@ export default function blogHomepageHero() {
             }
             featuredImage {
                 node {
+                  altText
                   localFile {
                     childImageSharp {
                       fluid(maxWidth: 1200) {
@@ -43,7 +44,6 @@ export default function blogHomepageHero() {
 
 const hero = data.wpPost;
 const category = hero.categories.nodes[0].name;
-console.log(hero.cleanExcerpt)
     return (
     <section sx={{
       display: 'flex',
@@ -55,7 +55,7 @@ console.log(hero.cleanExcerpt)
       <Link to={`/blog/${category}/${hero.slug}`}         sx={{
           width: ['100%','50%']
         }}>
-        <Img  fluid={hero.featuredImage.node.localFile.childImageSharp.fluid} sx={{height:'100%'}}/>
+        <Img  alt={altText} fluid={hero.featuredImage.node.localFile.childImageSharp.fluid} sx={{height:'100%'}}/>
       </Link>
       <div className='post-info' sx={{
           color: 'text',

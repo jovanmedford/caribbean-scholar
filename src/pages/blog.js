@@ -7,12 +7,15 @@ import PostPreview from '../components/PostPreview'
 import ActiveCampaignForm from '../components/activeCampaignForm'
 import { graphql } from 'gatsby'
 import Footer from '../components/footer'
+import SEO from '../components/seo'
 
 export default function Blog( {data} ) {
   const [colorMode, setColorMode] = useColorMode()
   setColorMode('dark')
   return (
     <div>
+      <SEO title='Blog Homepage' 
+                excerpt='SBA guides, topic walk-throughs and much more! Free online learning resources for CXC students.'/>
       <Header />
       <h1 sx={{
         fontSize: 1,
@@ -86,6 +89,7 @@ title
 modified(formatString: "MMMM Do, YYYY")
 featuredImage {
   node {
+    altText
     localFile {
       childImageSharp {
         fluid {

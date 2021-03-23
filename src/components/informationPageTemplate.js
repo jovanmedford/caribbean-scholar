@@ -2,23 +2,19 @@
 import { jsx, useColorMode } from 'theme-ui'
 import MainHeader from '../components/mainHeader'
 import HomeHero from '../components/homeHero'
-import Owl from '../img/owl.svg'
 import Footer from '../components/footer'
-import { graphql } from 'gatsby'
 import { Spacing } from '../utils/spacing'
 import SEO from '../components/seo'
 
-export default function About({data}){
+export default function InformationPageTemplate({information, title}){
     const [colorMode, setColorMode] = useColorMode()
     setColorMode('home');
-    const post = data.wpPost;
+    const post = information.wpPost;
 
     return(
         <div>
-            <SEO title='About Us' 
-                excerpt='Hear our story! Read more about how we intend to change the educational landscape in the West Indies.'/>
             <MainHeader />
-            <HomeHero copy='About Us' tagline="Here's Our Story:" image={Owl}/>
+            <HomeHero copy={title} tagline="Read the following carefully:"/>
             <article  sx={{
                     width: ['75%', '85%', '65%'],
                     margin: [`-3em auto ${Spacing.mobile.vertical.large} auto`,
@@ -69,11 +65,3 @@ export default function About({data}){
         </div>
     );
 }
-
-export const query = graphql`
-    query {
-        wpPost(title: {eq: "About"}){
-            content
-        }
-    }
-`

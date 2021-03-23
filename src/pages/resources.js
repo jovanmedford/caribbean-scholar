@@ -4,14 +4,18 @@ import MainHeader from '../components/mainHeader'
 import HomeHero from '../components/homeHero'
 import ResourcesImage from '../img/Resources.svg'
 import Footer from '../components/footer'
+import SEO from '../components/seo'
 
 export default function Resources() {
     const [colorMode, setColorMode] = useColorMode()
     setColorMode('home')
     return(
         <div>
+            <SEO title='Free Online CXC Resources | Caribbean Scholar' 
+                excerpt='Gifts for you! Crafty downloadable materials to help you along with your exam
+                preparations'/>
              <MainHeader />
-             <HomeHero copy='Resources' tagline='Extra materials for you to read, download and enjoy'
+             <HomeHero copy='Resources' alt='Online CSEC Math Book' tagline='Extra materials for you to read, download and enjoy'
                        image={ResourcesImage} />
             <section sx={{
                 width: '80%',

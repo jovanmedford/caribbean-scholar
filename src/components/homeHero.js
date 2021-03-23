@@ -2,7 +2,7 @@
 import { jsx } from 'theme-ui'
 import LinkButton from './linkButton'
 import { Spacing } from '../utils/spacing'
-export default function HomeHero({copy,tagline,image, buttonText, link}) {
+export default function HomeHero({copy,tagline,image, buttonText, alt, link}) {
     const buttonDisplay = buttonText ? 'block' : 'none';
     return(
              <section className="Hero" sx={{
@@ -27,13 +27,14 @@ export default function HomeHero({copy,tagline,image, buttonText, link}) {
                     }}>{copy}</h1>
                     <span sx={{
                         textAlign: 'center',
+                        display: 'block',
                         marginBottom: [`${Spacing.mobile.vertical.small}`,
                                        `${Spacing.tablet.vertical.small}`,
                                        `${Spacing.desktop.vertical.small}`]
                     }}>{tagline}</span>
                     <LinkButton link={link} text={buttonText} display={buttonDisplay}/>
                 </div>
-                <img src={image} alt="Students from Jamaica, Trinidad and Antigua" sx={{
+                <img src={image} alt={alt} sx={{
                     display: 'block',
                     margin: '0 auto',
                     width: ['100%','24rem','40rem']

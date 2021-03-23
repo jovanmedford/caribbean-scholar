@@ -3,11 +3,11 @@ import { jsx } from 'theme-ui'
 import Header from '../components/header'
 import { graphql } from 'gatsby'
 import Img from 'gatsby-image'
-import Me from '../img/me.jpg'
 import PostHeader from '../components/PostHeader'
 import { Helmet } from 'react-helmet' 
 import SEO from './seo'
 import Footer from './footer'
+import { Spacing } from '../utils/spacing'
 
 
 export default function BlogPost({data}) {
@@ -16,7 +16,8 @@ export default function BlogPost({data}) {
     const source = childImageSharp.fluid;
     const socialImage = childImageSharp.resize;
     const name = post.author.node.firstName + ' ' + post.author.node.lastName;
-
+    const avatar = post.author.node.avatar.url
+    const altText = post.featuredImage.node.altText;
     const category = post.categories.nodes[0].name;
     const pathname = `/blog/${category}/${post.slug}`
 
@@ -34,53 +35,42 @@ export default function BlogPost({data}) {
             
             <Header />
             <PostHeader category={post.categories.nodes[0].name} title={post.title} 
-            authorImg={Me} authorName={name} date={post.date}/>
-            <Img fluid={source} sx={{
+            authorImg={avatar} authorName={name} date={post.date}/>
+            <Img fluid={source} alt={altText} sx={{
                 height: ['18rem','18rem','18rem'],
-                width: ['75%', '65%', '60%'],
+                width: ['75%', '85%', '65%'],
                 margin: '0 auto'
             }}/>
             
             <article sx={{
-                width: ['75%', '65%', '60%'],
-                margin: '2rem auto',
+                width: ['75%', '85%', '65%'],
+                margin: [`2em auto ${Spacing.mobile.vertical.large} auto`,
+                         `2em auto${Spacing.tablet.vertical.large} auto`,
+                         `2em auto ${Spacing.desktop.vertical.large} auto`],
                 ul: {
-                   paddingLeft: '5rem'
-                },
-                h2: {
-                    margin: '1rem 0',
-                    fontSize: [3,4],
-                    fontWeight: 600
-                },
-                h3: {
-                    fontSize: [2,3],
-                    margin: '0.5rem 0',
-                    fontWeight: 'semibold'
+                   paddingLeft: '3em'
                 },
                 h4: {
-                    margin: '1rem 0 0 0',
-                    fontSize: [1,2]
+                    fontSize: 2
                 },
                 p: {
-                    fontSize: [0,1],
+                    fontSize: 1,
                     lineHeight: '1.8',
                     fontWeight: '400',
-                    margin: '1rem 0',
+                    margin: '1.25rem 0',
                 },
                 li: {
-                    fontSize: [1,2],
+                    fontSize: 1,
                     listStyle: 'disc',
-                    margin: '0.5rem 0'
                 },
                 a: {
-                    color: 'secondary'
+                    color: 'accent',
+                    fontWeight: 'bold'
                 },
                 span: {
-                    display: 'initial',
-
-                    '.rt-reading-time': {
-                        display: 'inline-flex'
-                    }
+                    display: 'inline-block',
+                    fontSize: '1.25em',
+                    color: 'text',
                 },
                 blockQuote: {
                     padding: '1rem 2rem',
@@ -96,6 +86,11 @@ export default function BlogPost({data}) {
                         fontSize: '1.2rem',
                         marginTop: '1rem'
                     }
+                }
+            }} css={{
+                '.katex': {
+                    fontSize: '1rem',
+                    color: 'text'
                 }
             }}
             dangerouslySetInnerHTML={{__html: post.content}}>
@@ -118,6 +113,9 @@ export const query = graphql`
                 node {
                 firstName
                 lastName
+                avatar{
+                    url
+                }
                 }
             }
             seo {
@@ -131,6 +129,7 @@ export const query = graphql`
             }
             featuredImage {
                 node {
+                  altText
                   localFile {
                     childImageSharp {
                       fluid(maxWidth: 1200) {

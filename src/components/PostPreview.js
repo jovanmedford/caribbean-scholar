@@ -17,6 +17,7 @@ export default function PostPreview(props) {
             {props.info.map(post => (
                 <Card category={post.categories.nodes[0].name} 
                       title={post.title} slug={post.slug} 
+                      altText={post.featuredImage.node.altText}
                       fluid={post.featuredImage.node.localFile.childImageSharp.fluid}/>
             ))}
             {postsCount === 2 && <AdditionalPostsList />}

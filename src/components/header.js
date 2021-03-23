@@ -5,7 +5,7 @@ import { faSearch, faMoon } from '@fortawesome/free-solid-svg-icons'
 import Logo from '../img/logopng.png'
 import { useColorMode } from 'theme-ui'
 import { Link } from 'gatsby'
-import MenuService from './dropdown-menu'
+import MenuService from './menuService'
 
 export default function Header() {
   const [colorMode, setColorMode] = useColorMode()
@@ -44,7 +44,7 @@ export default function Header() {
           </div>
           
           <Link to='/blog'>
-            <img src={Logo} alt={'Caribbean Scholar'} sx ={{
+            <img src={Logo} alt={'Caribbean Scholar Logo within link to blog home page'} sx ={{
               width: '11em',
               position: 'absolute',
               top: '50%',
@@ -64,11 +64,11 @@ export default function Header() {
               }
               }}>
                 <Link to='/filter' sx={{color: 'text'}}>
-                    <FontAwesomeIcon icon={faSearch} sx={{
+                    <FontAwesomeIcon icon={faSearch} alt='redirects to blog search page' sx={{
                     marginRight: '0.75rem'
                   }}/>
                 </Link>
-                <FontAwesomeIcon icon={faMoon}
+                <FontAwesomeIcon alt='toggles theme to dark mode' icon={faMoon}
                   onClick={e => {
                     setColorMode(colorMode === 'light' ? 'dark' : 'light')
                   }}

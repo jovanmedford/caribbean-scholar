@@ -45,6 +45,7 @@ export default {
     primary: '#00A99D',
     secondary: '#FC9CC6',
     accent: '#e02067',
+    rt: 'green',
     cta: '#0F325A',
     ctaButton: '#00A99D',
     modes: {
@@ -58,6 +59,7 @@ export default {
       dark: {
         text: 'white', 
         cta: '#3A93E5',
+        rt: 'yellow',
         background: '#0F325A', 
         muted: '#6d95c6',
         accent: '#38c6ff',
@@ -79,7 +81,6 @@ export default {
   styles: {
     root: {
       fontFamily: 'body',
-
       h1: {
         fontFamily: 'heading',
         fontWeight:'bold',

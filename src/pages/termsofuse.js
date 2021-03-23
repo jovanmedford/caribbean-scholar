@@ -4,15 +4,15 @@ import { jsx } from 'theme-ui'
 import InformationPageTemplate from '../components/informationPageTemplate'
 import { graphql } from 'gatsby'
 
-export default function PrivacyPolicy({data}) {
+export default function TermsOfUse({data}) {
     return(
-        <InformationPageTemplate information={data} title="Privacy Policy"/>
+        <InformationPageTemplate information={data} title="Terms of Use"/>
     )
 }
 
 export const query = graphql`
-    query MyQuery {
-        wpPost(title: {eq: "Privacy Policy"}){
+    query {
+        wpPost(title: {eq: "Terms of Use"}){
             content
         }
     }

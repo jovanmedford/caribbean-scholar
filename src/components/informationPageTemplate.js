@@ -6,7 +6,7 @@ import Footer from '../components/footer'
 import { Spacing } from '../utils/spacing'
 import SEO from '../components/seo'
 
-export default function InformationPageTemplate({information, title}){
+export default function InformationPageTemplate({information, title}) {
     const [colorMode, setColorMode] = useColorMode()
     setColorMode('home');
     const post = information.wpPost;

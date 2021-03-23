@@ -15,16 +15,15 @@ export default function Footer() {
         <section sx={{
             display: 'flex',
             justifyContent: 'space-around',
-            width: '80%',
-            margin: '0 auto',
+            width: ['80%','50%','30%'],
+            margin: '0.5rem 1rem 0 3rem',
 
             'a:hover':{
                 color: 'secondary'
             }
         }}>
             <div className="footer-social" sx={{
-                width: '25%',
-                minWidth: '5rem'
+                width: '33.3%'
                 }}>
                 <h4 sx={{
                     width: '6rem',
@@ -48,10 +47,8 @@ export default function Footer() {
 
             <section className="footer-main" sx={{
                 display: 'flex',
-                minWidth: '9rem',
-                maxWidth: '15rem',
-                justifyContent: 'space-between',
-                
+                width: '66.6%',
+                justifyContent: 'space-between',                
                 a: {
                     fontWeight: 'normal'
                 }
@@ -68,25 +65,16 @@ export default function Footer() {
                     </ul>
                 </div>
                 
-                <div className="footer-main-company" sx={{
-                     width: '25%'
-                }}>
+                <div className="footer-main-company">
                 <h4>Company</h4>
                     <ul>
                         <li><Link to='/about'>About</Link></li>
                         <li><Link to='/blog'>Blog</Link></li>
                         <li><Link to='/contact'>Contact</Link></li>
+                        <li><Link to='/privacypolicy'>Privacy Policy</Link></li>
                     </ul>
                 </div>
             </section>
-
-            <section className="footer-balance" sx={{
-                 width: ['0%','90%']
-            }}>
-
-            </section>
-
-
         </section>
         <section className="footer-legal" sx={{
                 margin: '0 auto',

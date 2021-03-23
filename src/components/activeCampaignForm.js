@@ -1,5 +1,6 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui'
+import { Spacing } from '../utils/spacing'
 
 export default function ActiveCampaignForm() {
     const onSubmit = (event) => {
@@ -54,7 +55,13 @@ export default function ActiveCampaignForm() {
             <input type="hidden" name="act" value="sub" />
             <input type="hidden" name="v" value="2" />
 
-            <input
+              <div className='form-inputs' sx={{
+                  marginBottom: [
+                    `${Spacing.mobile.vertical.small}`,
+                    `${Spacing.tablet.vertical.extraSmall}`,
+                    `${Spacing.desktop.vertical.extraSmall}`]
+              }}>
+            <input sx={{marginBottom: '0.5rem'}}
               type="text"
               id='name'
               name="fullname"
@@ -69,6 +76,7 @@ export default function ActiveCampaignForm() {
               required
             />
 
+            </div>
             <input type="submit" value="Submit"></input>
         </form>
     )

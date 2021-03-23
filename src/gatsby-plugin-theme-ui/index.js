@@ -133,17 +133,18 @@ export default {
       },
 
       button: {
-        display: 'block'
+        display: 'block',
+        '&:hover': {
+          cursor: 'pointer'
+        }
       },
 
       input: {
         display: 'block',
         fontSize: '1rem',
         border: 'none',
+        margin: '0.5rem auto',
 
-        ':focus': {
-          outline: 'none'
-        },
         '::placeholder': {
           color: 'lightgray'
         }

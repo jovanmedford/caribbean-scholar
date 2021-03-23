@@ -15,7 +15,7 @@ export default function Footer() {
         <section sx={{
             display: 'flex',
             justifyContent: 'space-around',
-            width: ['80%','50%','30%'],
+            width: ['85%','55%','35%'],
             margin: '0.5rem 1rem 0 3rem',
 
             'a:hover':{

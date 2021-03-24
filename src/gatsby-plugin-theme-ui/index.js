@@ -41,6 +41,7 @@ export default {
   colors: {
     background: 'white',
     heading2: '#DC611B',
+    formSuccess: '#00A99D',
     text: '#484E55',
     primary: '#00A99D',
     secondary: '#FC9CC6',
@@ -48,6 +49,7 @@ export default {
     rt: 'green',
     cta: '#0F325A',
     ctaButton: '#00A99D',
+    footer: '#0F325A',
     modes: {
       home: {
         background: 'white',
@@ -57,13 +59,16 @@ export default {
         title: 'white',
       },
       dark: {
+        primary: '#E43694',
         text: 'white', 
-        cta: '#3A93E5',
+        cta: '#29ABE2',
         rt: 'yellow',
         background: '#0F325A', 
         muted: '#6d95c6',
         accent: '#38c6ff',
-        ctaButton: '#0F325A'
+        ctaButton: '#0F325A',
+        formSuccess: '#0F325A',
+        footer: '#0b1b2d'
       }
     }
   },
@@ -71,11 +76,12 @@ export default {
     primary: {
       color: 'white',
       border: 'none',
-      padding: '1rem 3rem',
+      padding: '0.75rem 2rem',
       margin: '0 auto',
       textTransform: 'uppercase',
       fontWeight: 'bold',
-      fontSize: '1em'
+      fontSize: '1em',
+      backgroundColor: 'primary',
     }
   },  
   styles: {
@@ -139,14 +145,24 @@ export default {
         }
       },
 
+      label: {
+        color: 'white',
+        fontSize: '1em'
+      },
+
       input: {
         display: 'block',
-        fontSize: '1rem',
+        fontSize: '1.125em',
         border: 'none',
-        margin: '0.5rem auto',
+        padding: ['0.75em 0.75em','0.75rem 1.25rem'],
+        
+        '&[type=text]': {
+          width: '100%'
+        },
 
         '::placeholder': {
-          color: 'lightgray'
+          color: '#DADADA',
+          fontWeight: 'bold',
         }
       }
     }

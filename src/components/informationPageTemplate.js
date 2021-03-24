@@ -16,7 +16,7 @@ export default function InformationPageTemplate({information, title}) {
             <MainHeader />
             <HomeHero copy={title} tagline="Read the following carefully:"/>
             <article  sx={{
-                    width: ['75%', '85%', '65%'],
+                    width: ['90%', '85%', '65%'],
                     margin: [`-3em auto ${Spacing.mobile.vertical.large} auto`,
                              `-6em auto${Spacing.tablet.vertical.large} auto`,
                              `-6em auto ${Spacing.desktop.vertical.large} auto`],
@@ -38,7 +38,8 @@ export default function InformationPageTemplate({information, title}) {
                     },
                     a: {
                         color: 'accent',
-                        fontWeight: 'bold'
+                        fontWeight: 'bold',
+                        overflowWrap: 'break-word'
                     },
                     span: {
                         display: 'inline-block',

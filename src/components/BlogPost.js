@@ -43,7 +43,7 @@ export default function BlogPost({data}) {
             }}/>
             
             <article sx={{
-                width: ['75%', '85%', '65%'],
+                width: ['90%', '85%', '65%'],
                 margin: [`2em auto ${Spacing.mobile.vertical.large} auto`,
                          `2em auto${Spacing.tablet.vertical.large} auto`,
                          `2em auto ${Spacing.desktop.vertical.large} auto`],
@@ -65,7 +65,8 @@ export default function BlogPost({data}) {
                 },
                 a: {
                     color: 'accent',
-                    fontWeight: 'bold'
+                    fontWeight: 'bold',
+                    overflowWrap: 'break-word'
                 },
                 span: {
                     display: 'inline-block',

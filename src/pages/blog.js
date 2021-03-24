@@ -33,9 +33,10 @@ export default function Blog( {data} ) {
       margin: '1rem auto',
   }}>
       <h2 sx={{
-        fontWeight: 'semibold',
+        fontWeight: 'bold',
+        fontSize: '2em',
         width: ['96%','96%','80%'],
-        margin: '0 auto'
+        margin: '0 auto 1.5rem auto'
         }}>Top Posts</h2>
       <PostPreview info={data.topPost.nodes} additionalPosts={data.additionalPost.nodes}/>
     </section>

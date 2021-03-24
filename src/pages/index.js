@@ -86,7 +86,7 @@ export default function Home() {
                      }}>
                      <h2 sx={{margin:'0 0 2rem 0'}}>Try Our Algebra Course!</h2>
                      <p sx={{marginBottom:'2rem'}}>Get a full demo of the Caribbean Scholar experience before you spend a dime.</p>
-                     <LinkButton link='https://school.thecaribbeanscholar.com/courses/pre-algebra' text="Let's Go!" />
+                     <LinkButton link='https://school.thecaribbeanscholar.com/courses/make-algebra-make-sense' text="Let's Go!" />
                      </div>
              </section>
 

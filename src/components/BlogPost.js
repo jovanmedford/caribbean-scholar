@@ -70,7 +70,7 @@ export default function BlogPost({data}) {
                 },
                 span: {
                     display: 'inline-block',
-                    fontSize: '1.25em',
+                    fontSize: '1em',
                     color: 'text',
                 },
                 blockQuote: {

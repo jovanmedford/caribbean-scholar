@@ -14,7 +14,7 @@ export default function Blog( {data} ) {
   setColorMode('dark')
   return (
     <div>
-      <SEO title='Blog Homepage' 
+      <SEO title='Caribbean Scholar | Blog Homepage' 
                 excerpt='SBA guides, topic walk-throughs and much more! Free online learning resources for CXC students.'/>
       <Header />
       <h1 sx={{
@@ -38,7 +38,7 @@ export default function Blog( {data} ) {
         width: ['96%','96%','80%'],
         margin: '0 auto 1.5rem auto'
         }}>Top Posts</h2>
-      <PostPreview info={data.topPost.nodes} additionalPosts={data.additionalPost.nodes}/>
+      <PostPreview info={data.topPost.nodes} showAdditionalPosts={false} additionalPosts={data.additionalPost.nodes}/>
     </section>
     
     
@@ -51,7 +51,7 @@ export default function Blog( {data} ) {
 export const query = graphql`
 
 query {
-  featured: allWpPost(limit: 2, filter: {section: {name: {eq: "featured"}}}){
+  featured: allWpPost(limit: 3, filter: {section: {name: {eq: "featured"}}}){
     ...PreviewInformation
   }
 

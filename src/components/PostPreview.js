@@ -4,7 +4,7 @@ import Card from './card'
 import AdditionalPostsList from './additionalPostsList'
 
 export default function PostPreview(props) {
-    const postsCount = props.info.length;
+    const showAdditionalPosts = props.showAdditionalPosts;
     return (
         <div sx={{
           display: 'flex',
@@ -20,7 +20,7 @@ export default function PostPreview(props) {
                       altText={post.featuredImage.node.altText}
                       fluid={post.featuredImage.node.localFile.childImageSharp.fluid}/>
             ))}
-            {postsCount === 2 && <AdditionalPostsList />}
+            {showAdditionalPosts && <AdditionalPostsList />}
         </div>
     );
 }

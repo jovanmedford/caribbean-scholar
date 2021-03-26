@@ -5,11 +5,6 @@
  */
 
  export default function validateName(name) {
-    console.log('Validate Name')
-    let nameArray = name.split(' ');
-    if(nameArray.length !== 2) {
-        return 'Enter Your First and Last Name';
-    } 
     return '';
 }
 

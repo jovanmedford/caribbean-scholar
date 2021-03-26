@@ -34,7 +34,7 @@ export default function ListCard(props) {
               display: "inline-block",
               
                p: {
-                fontsize: '1rem'
+                fontsize: '1em'
                }
               }}>
                 <h5 sx={{margin: 0}}>{props.title}</h5>

@@ -37,7 +37,7 @@ export default function PostHeader(props) {
                 <img src={props.authorImg} sx={{
                     margin: '0 1rem 1rem 0',
                     borderRadius: '100%',
-                    width: ['2rem','2.5rem']
+                    width: ['3rem','4.5rem']
                 }}/>
             </div>
             <div className="bio__info" sx={{

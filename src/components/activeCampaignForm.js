@@ -50,7 +50,7 @@ const handleInputChange = (event) => {
         })
  }
     return(
-        <form onSubmit={onSubmit}  sx={{
+        <form className='cta' onSubmit={onSubmit}  sx={{
             backgroundColor: 'cta',
             width: ['100%','96%','80%'],
             padding: ['3rem 2rem','4.5rem 3rem 2rem 4.5rem', '2rem 9rem'],

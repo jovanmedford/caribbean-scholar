@@ -73,6 +73,9 @@ export default function BlogPost({data}) {
                     fontSize: '1em',
                     color: 'text',
                 },
+                iframe: {
+                    width: '100%'
+                },
                 blockQuote: {
                     padding: '1rem 2rem',
                     backgroundColor: 'primary',

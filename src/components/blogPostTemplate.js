@@ -1,16 +1,16 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui'
-import Header from '../components/header'
+import Header from './header'
 import { graphql } from 'gatsby'
 import Img from 'gatsby-image'
-import PostHeader from '../components/PostHeader'
+import BlogPostHeader from './blogPostHeader'
 import { Helmet } from 'react-helmet' 
 import SEO from './seo'
 import Footer from './footer'
 import { Spacing } from '../utils/spacing'
 
 
-export default function BlogPost({data}) {
+export default function BlogPostTemplate({data}) {
     const post = data.wpPost;
     const childImageSharp = post.featuredImage.node.localFile.childImageSharp
     const source = childImageSharp.fluid;
@@ -34,7 +34,7 @@ export default function BlogPost({data}) {
             
             
             <Header />
-            <PostHeader category={post.categories.nodes[0].name} title={post.title} 
+            <BlogPostHeader category={post.categories.nodes[0].name} title={post.title} 
             authorImg={avatar} authorName={name} date={post.date}/>
             <Img fluid={source} alt={altText} sx={{
                 height: ['18rem','18rem','18rem'],

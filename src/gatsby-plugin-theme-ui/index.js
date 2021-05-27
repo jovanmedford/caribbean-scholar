@@ -17,10 +17,10 @@ export default {
     heading: 1.125,
   },
   fontSizes: [
-   '1em', '1.25em', '1.5em', '2em', '3em', '4em',
+   '1em', '1.25em', '1.56em', '1.96em', '2.44em', '3.05em',
   ],
   breakpoints: [
-    '37.5em','56em', '75em',
+    '48em', '64em', '75em',
   ],
   spacing: {
     homepageHero: {

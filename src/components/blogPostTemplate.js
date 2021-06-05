@@ -8,6 +8,7 @@ import { Helmet } from 'react-helmet'
 import SEO from './seo'
 import Footer from './footer'
 import { Spacing } from '../utils/spacing'
+import remCalc from '../utils/remCalc'
 
 
 export default function BlogPostTemplate({data}) {
@@ -43,21 +44,29 @@ export default function BlogPostTemplate({data}) {
             }}/>
             
             <article sx={{
-                width: ['90%', '85%', '65%'],
+                width: ['90%', '75%', '55%'],
+                maxWidth: remCalc(830),
                 margin: [`2em auto ${Spacing.mobile.vertical.large} auto`,
                          `2em auto${Spacing.tablet.vertical.large} auto`,
                          `2em auto ${Spacing.desktop.vertical.large} auto`],
                 ul: {
                    paddingLeft: '3em'
                 },
+                h2: {
+                    marginBottom: '0.5rem',
+                },
+                "h3, h4": {
+                    marginBottom: '0.25rem',
+                    fontWeight: 'semibold'
+                },
                 h4: {
                     fontSize: 2
                 },
                 p: {
                     fontSize: 1,
-                    lineHeight: '1.8',
+                    lineHeight: ['1.5','1.7'],
                     fontWeight: '400',
-                    margin: '1.25rem 0',
+                    marginBottom: '1.25rem',
                 },
                 li: {
                     fontSize: 1,
@@ -65,7 +74,7 @@ export default function BlogPostTemplate({data}) {
                 },
                 a: {
                     color: 'accent',
-                    fontWeight: 'bold',
+                    textDecoration: 'underline',
                     overflowWrap: 'break-word'
                 },
                 span: {
@@ -75,6 +84,9 @@ export default function BlogPostTemplate({data}) {
                 },
                 iframe: {
                     width: '100%'
+                },
+                figure: {
+                    margin: 0
                 },
                 blockQuote: {
                     padding: '1rem 2rem',

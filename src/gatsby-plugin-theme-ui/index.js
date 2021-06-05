@@ -1,4 +1,5 @@
 import "@fontsource/poppins"
+import "@fontsource/poppins/600.css"
 import "@fontsource/poppins/700.css"
 
 // example base theme from @theme-ui/presets
@@ -9,7 +10,7 @@ export default {
   },
   fontWeights: {
     body: 400,
-    semibold: 500,
+    semibold: 600,
     bold: 700,
   },
   lineHeights: {
@@ -39,13 +40,13 @@ export default {
     }
   },
   colors: {
-    background: 'white',
+    background: '#FFF8F0',
     heading2: '#DC611B',
     formSuccess: '#00A99D',
-    text: '#484E55',
+    text: '#536272',
     primary: '#00A99D',
     secondary: '#FC9CC6',
-    accent: '#e02067',
+    accent: '#F52F57',
     rt: 'green',
     cta: '#0F325A',
     ctaButton: '#00A99D',

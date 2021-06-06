@@ -70,6 +70,10 @@ export default {
         ctaButton: '#0F325A',
         formSuccess: '#0F325A',
         footer: '#0b1b2d'
+      },
+      examCountdown: {
+        background: "#4FB286",
+        text: "#FFF8F0"
       }
     }
   },

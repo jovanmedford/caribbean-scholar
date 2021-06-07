@@ -1,9 +1,11 @@
 /** @jsx jsx */
 import { useState } from 'react'
 import { jsx, useColorMode } from 'theme-ui'
+import { subjects } from '../../utils/subjects'
 import Logo from '../../img/logopng.png'
 //components
 import SubjectLevel from '../../components/exam-countdown/SubjectLevel'
+import SubjectName from '../../components/exam-countdown/SubjectName'
 import remCalc from '../../utils/remCalc'
 export default function () {
   const [colorMode, setColorMode] = useColorMode()
@@ -11,16 +13,52 @@ export default function () {
   setColorMode('examCountdown');
 
   const [state, setState] = useState({
-    level: "CSEC",
-    name: "Math",
+    level: "csec",
+    name: "math",
+    nameInput: "math",
     menuIsOpen: false
   })
 
   const handleLevelChange = function(event) {
     setState({
+      ...state,
       level: event.target.value
     })
+  };
+
+  const handleNameClick = function() {
+    setState({
+      ...state,
+      menuIsOpen: true,
+    })
   }
+
+  const handleNameChange = function(event) {
+    setState({
+      ...state,
+      nameInput: event.target.value,
+    });
+  }
+
+  const handleSubmit = function(event) {
+    event.preventDefault();
+    setState(prevState => {
+      return {
+        name: prevState.nameInput.toLowerCase(),
+        nameInput: "",
+        menuIsOpen: false,
+        level: prevState.level
+      }
+    })
+  }
+
+  
+  const subject = (state.name in subjects) ? subjects[state.name] : subjects["math"];
+  const subjectDateTime = (state.level in subject) ? subject[state.level] : subject["csec"];
+  const subjectDate = subjectDateTime
+                        .toLocaleString('default', {month: 'long', day: 'numeric'})
+  const subjectTime = subjectDateTime
+                        .toLocaleString('default', {hour: 'numeric', dayPeriod: 'long'})
 
   return (
     <div sx = {{
@@ -34,47 +72,15 @@ export default function () {
               fontSize: remCalc(31.25),
               }}/>
       <section>
-        <div>
+          <form onSubmit={handleSubmit}>
             <SubjectLevel level={state.level} handleChange={handleLevelChange}/>
-        <h1 sx={{
-          margin: remCalc([0,0,24,0]),
-          fontSize: remCalc(48),
-          display: 'none',
-        }}>Math</h1>
-
-        <div className="countdown__subject" sx={{
-          margin: '0 auto',
-        }}>
-          <input sx={{
-            display: "inline-block",
-            width: "100%",
-            textAlign: "center",
-            marginBottom: remCalc(24), 
-            color: "text",
-            background: "none",
-            fontSize: remCalc(48),
-            fontWeight: "bold",
-            padding: 0
-          }}></input>
-
-          <div className="countdown__subject-list-container" sx={{
-            position:'absolute',
-            width: "100%",
-            height: "100%",
-            backgroundColor: 'background',
-
-            li: {
-              fontSize: remCalc(25),
-            },
-          }}>
-            <ul>
-              <li>Computer Science</li>
-              <li>Communication Studies</li>
-            </ul>
-          </div>
-        </div>
-        </div>
-
+            <SubjectName 
+              name={state.name}
+              nameInput = {state.nameInput}
+              menuIsOpen={state.menuIsOpen}
+              handleClick={handleNameClick} 
+              handleInputChange={handleNameChange}/>
+          </form>
         <div>
           <span sx={{
           marginBottom: 0,
@@ -83,7 +89,7 @@ export default function () {
         </span>
         <h1 sx={{
           margin: remCalc([0,0,24,0]),
-        }}>November 10</h1>
+        }}>{subjectDate}</h1>
         </div>
 
         <div>
@@ -94,7 +100,7 @@ export default function () {
         </span>
         <h1 sx={{
           margin: remCalc([0,0,24,0]),
-        }}>9AM</h1>
+        }}>{subjectTime}</h1>
         </div>
       </section>
     </div>

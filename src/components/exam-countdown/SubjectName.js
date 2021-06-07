@@ -1,7 +1,9 @@
 /**@jsx jsx */
 import { jsx } from 'theme-ui'
 import remCalc from '../../utils/remCalc'
-export default function ({ name, nameInput, menuIsOpen, handleClick, handleInputChange }) {
+//components
+import SubjectList from './SubjectList'
+export default function ({ name, nameInput, menuIsOpen, handleClick, handleListItemClick, handleInputChange }) {
   return(
     <div>
         <h1 onClick={handleClick} sx={{
@@ -20,6 +22,7 @@ export default function ({ name, nameInput, menuIsOpen, handleClick, handleInput
             type="text" 
             value={nameInput}
             onChange={handleInputChange} 
+            autoComplete="off"
             placeholder="type"
             sx={{
               display: "inline-block",
@@ -33,22 +36,9 @@ export default function ({ name, nameInput, menuIsOpen, handleClick, handleInput
               padding: 0
           }}></input>
           </label>
-
-          <div className="countdown__subject-list-container" sx={{
-            position:'absolute',
-            width: "100%",
-            height: "100%",
-            backgroundColor: 'background',
-
-            li: {
-              fontSize: remCalc(25),
-            },
-          }}>
-            <ul>
-              <li>Computer Science</li>
-              <li>Communication Studies</li>
-            </ul>
-          </div>
+          <SubjectList 
+            nameInput={nameInput}
+            handleClick={handleListItemClick}/>
         </div>
     </div>
   )

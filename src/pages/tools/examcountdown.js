@@ -15,7 +15,7 @@ export default function () {
   const [state, setState] = useState({
     level: "csec",
     name: "math",
-    nameInput: "math",
+    nameInput: "",
     menuIsOpen: false
   })
 
@@ -38,6 +38,17 @@ export default function () {
       ...state,
       nameInput: event.target.value,
     });
+  }
+
+  const handleSubjectListItemClick = function(event) {
+    setState(prevState => {
+      return {
+      name: event.target.innerText,
+      nameInput: "",
+      menuIsOpen: false,
+      level: prevState.level
+    }
+    })
   }
 
   const handleSubmit = function(event) {
@@ -78,7 +89,8 @@ export default function () {
               name={state.name}
               nameInput = {state.nameInput}
               menuIsOpen={state.menuIsOpen}
-              handleClick={handleNameClick} 
+              handleClick={handleNameClick}
+              handleListItemClick={handleSubjectListItemClick} 
               handleInputChange={handleNameChange}/>
           </form>
         <div>

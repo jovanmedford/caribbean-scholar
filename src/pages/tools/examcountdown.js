@@ -3,10 +3,13 @@ import { useState } from 'react'
 import { jsx, useColorMode } from 'theme-ui'
 import { subjects } from '../../utils/subjects'
 import Logo from '../../img/logopng.png'
-//components
+// components
 import SubjectLevel from '../../components/exam-countdown/SubjectLevel'
 import SubjectName from '../../components/exam-countdown/SubjectName'
+import Countdown from '../../components/exam-countdown/Countdown'
+// utils
 import remCalc from '../../utils/remCalc'
+import { text } from '@fortawesome/fontawesome-svg-core'
 export default function () {
   const [colorMode, setColorMode] = useColorMode()
   setColorMode('home');
@@ -16,7 +19,8 @@ export default function () {
     level: "csec",
     name: "math",
     nameInput: "",
-    menuIsOpen: false
+    menuIsOpen: false,
+    countdownIsOpen: false,
   })
 
   const handleLevelChange = function(event) {
@@ -30,6 +34,7 @@ export default function () {
     setState({
       ...state,
       menuIsOpen: true,
+      countdownIsOpen: false,
     })
   }
 
@@ -45,8 +50,9 @@ export default function () {
       return {
       name: event.target.innerText,
       nameInput: "",
+      level: prevState.level,
       menuIsOpen: false,
-      level: prevState.level
+      countdownIsOpen: false,
     }
     })
   }
@@ -57,14 +63,26 @@ export default function () {
       return {
         name: prevState.nameInput.toLowerCase(),
         nameInput: "",
+        level: prevState.level,
         menuIsOpen: false,
-        level: prevState.level
+        countdownIsOpen: false,
       }
     })
   }
 
+  const handleCountdownClick = function(event) {
+    setState(prevState => {
+      return {
+        name: prevState.name,
+        nameInput: "",
+        menuIsOpen: false,
+        level: prevState.level,
+        countdownIsOpen: !prevState.countdownIsOpen,
+      }
+    })
+  }
   
-  const subject = (state.name in subjects) ? subjects[state.name] : subjects["math"];
+  const subject = (state.name in subjects) ? subjects[state.name] : subjects["Math"];
   const subjectDateTime = (state.level in subject) ? subject[state.level] : subject["csec"];
   const subjectDate = subjectDateTime
                         .toLocaleString('default', {month: 'long', day: 'numeric'})
@@ -93,6 +111,11 @@ export default function () {
               handleListItemClick={handleSubjectListItemClick} 
               handleInputChange={handleNameChange}/>
           </form>
+          <Countdown 
+            subjectDateTime={subjectDateTime}
+            isOpen={state.countdownIsOpen}
+          />
+
         <div>
           <span sx={{
           marginBottom: 0,
@@ -115,6 +138,25 @@ export default function () {
         }}>{subjectTime}</h1>
         </div>
       </section>
+
+      <button
+        dateTime={subjectDateTime}
+        onClick={handleCountdownClick} 
+        sx={{
+          position: 'relative',
+          background: 'none',
+          border: '3px solid',
+          borderColor: 'text',
+          borderRadius: '10px',
+          padding: '1rem 2rem',
+          display: 'inline-block',
+          color: 'text',
+          fontWeight: 'bold',
+          fontSize: '1.125rem',
+          zIndex: '1000'
+      }}>
+        {state.countdownIsOpen ? "EXAM DATE" : "COUNTDOWN"} 
+      </button>
     </div>
   );
 }

@@ -1,13 +1,13 @@
 export const subjects = {
-    "math": {
+    "Math": {
       "csec": new Date(2021,7,7,9),
       "cape": new Date(2021,6,4,13),
     },
-    "computer science": {
+    "Computer Science": {
       "csec": new Date(2021,8,7,13),
       "cape": new Date(2021,4,4,9),
     },
-    "french": {
+    "French": {
       "csec": new Date(2021,2,1,13),
       "cape": new Date(2021,2,5,9),
     },

@@ -27,6 +27,7 @@ export default function ({ nameInput, handleClick }) {
       width: "100%",
       height: "100%",
       backgroundColor: 'background',
+      zIndex: 1200
     }}>
       <ul>
         { subjectList }

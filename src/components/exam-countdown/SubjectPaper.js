@@ -46,7 +46,7 @@ export default function({index, handleClick}) {
         
         ':hover': {
           animationName: bounce,
-          animationDuration: '0.5s'
+          animationDuration: '1s'
         }
       },
 

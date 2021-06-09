@@ -5,7 +5,8 @@ export default function ({ number, unit}) {
     return (
       <div sx={{
         span: {
-          fontSize: "3rem",
+          top: 0,
+          fontSize: '3rem'
         },
 
         p: {
@@ -13,7 +14,7 @@ export default function ({ number, unit}) {
         }
 
       }}>
-        <span>{number}</span>
+        <span className="countdown-unit__number">{number}</span>
         <p>{unit}</p>
       </div>
     )

@@ -15,6 +15,11 @@ export default function({ handleChange, level }) {
               border: 'none',
               color: 'text',
               fontSize: remCalc(31.25),
+
+              "*": {
+                backgroundColor: 'background',
+                fontSize: remCalc(20),
+              }
             }}>
               <option value="csec">CSEC</option>
               <option value="cape">CAPE</option> 

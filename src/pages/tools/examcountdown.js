@@ -114,11 +114,18 @@ export default function () {
   
   const now = new Date();
   console.log(examTimes);
-  let message;
+
+  let errorMessage;
+  const errorMessageStyle = {
+    position: 'relative',
+    top: '35%',
+    fontSize: remCalc(48),
+  }
+
   if(dateTime == null) {
-    message = <span>No exam</span>
+    errorMessage = <span sx={errorMessageStyle}>No exam</span>
   } else if ((dateTime - now) < 0) {
-    message = <span>This exam has past.</span>
+    errorMessage = <span sx={errorMessageStyle}>This exam has past.</span>
   } 
 
   return (
@@ -149,8 +156,15 @@ export default function () {
             />
           </form>
 
-          <div>
-            {message ? message : 
+          <div sx={{
+            backgroundColor: '#28866C',
+            borderRadius: '8px',
+            padding: '1rem 0',
+            margin: '2rem auto',
+            maxWidth: remCalc(400),
+            height: remCalc(330),
+          }}>
+            {errorMessage ? errorMessage : 
             <div>
             <Countdown 
               subjectDateTime={dateTime}

@@ -1,24 +1,27 @@
 /** @jsx jsx */
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { jsx, useColorMode } from 'theme-ui'
-import { subjects } from '../../utils/subjects'
 import Logo from '../../img/logopng.png'
 // components
+import SubjectDate from '../../components/exam-countdown/SubjectDate'
 import SubjectLevel from '../../components/exam-countdown/SubjectLevel'
 import SubjectName from '../../components/exam-countdown/SubjectName'
+import SubjectPaper from '../../components/exam-countdown/SubjectPaper'
 import Countdown from '../../components/exam-countdown/Countdown'
 // utils
 import remCalc from '../../utils/remCalc'
-import { text } from '@fortawesome/fontawesome-svg-core'
+import getExamTimes from '../../utils/getExamTimes'
+import formatExamTimes from '../../utils/formatExamTimes'
+
 export default function () {
-  const [colorMode, setColorMode] = useColorMode()
-  setColorMode('home');
+  const [,setColorMode] = useColorMode()
   setColorMode('examCountdown');
 
   const [state, setState] = useState({
     level: "csec",
     name: "math",
     nameInput: "",
+    paperIndex: 0, 
     menuIsOpen: false,
     countdownIsOpen: false,
   })
@@ -45,12 +48,35 @@ export default function () {
     });
   }
 
+  const handlePaperButtonClick = function(event,direction) {
+      event.preventDefault();
+      if(direction==="next") {
+        setState(prevState => {
+          return {
+            ...state,
+            paperIndex: prevState.paperIndex<3 ?
+                            prevState.paperIndex + 1
+                          : prevState.paperIndex,
+          }
+        })
+      } else {
+        setState(prevState => {
+          return {
+            ...state,
+            paperIndex: prevState.paperIndex > 0 ?
+                            prevState.paperIndex - 1
+                          : prevState.paperIndex,
+          }
+        })
+      }
+    }
+
   const handleSubjectListItemClick = function(event) {
     setState(prevState => {
       return {
+      ...state,
       name: event.target.innerText,
       nameInput: "",
-      level: prevState.level,
       menuIsOpen: false,
       countdownIsOpen: false,
     }
@@ -61,9 +87,9 @@ export default function () {
     event.preventDefault();
     setState(prevState => {
       return {
+        ...state,
         name: prevState.nameInput.toLowerCase(),
         nameInput: "",
-        level: prevState.level,
         menuIsOpen: false,
         countdownIsOpen: false,
       }
@@ -73,21 +99,27 @@ export default function () {
   const handleCountdownClick = function(event) {
     setState(prevState => {
       return {
-        name: prevState.name,
+        ...state,
         nameInput: "",
         menuIsOpen: false,
-        level: prevState.level,
         countdownIsOpen: !prevState.countdownIsOpen,
       }
     })
   }
+ 
+  const examTimes = formatExamTimes(
+                      getExamTimes(state.name, state.level)
+                    );
+  const dateTime = examTimes[state.paperIndex].dateTime;
   
-  const subject = (state.name in subjects) ? subjects[state.name] : subjects["Math"];
-  const subjectDateTime = (state.level in subject) ? subject[state.level] : subject["csec"];
-  const subjectDate = subjectDateTime
-                        .toLocaleString('default', {month: 'long', day: 'numeric'})
-  const subjectTime = subjectDateTime
-                        .toLocaleString('default', {hour: 'numeric', dayPeriod: 'long'})
+  const now = new Date();
+  console.log(examTimes);
+  let message;
+  if(dateTime == null) {
+    message = <span>No exam</span>
+  } else if ((dateTime - now) < 0) {
+    message = <span>This exam has past.</span>
+  } 
 
   return (
     <div sx = {{
@@ -100,7 +132,7 @@ export default function () {
               fontWeight: 400,
               fontSize: remCalc(31.25),
               }}/>
-      <section>
+
           <form onSubmit={handleSubmit}>
             <SubjectLevel level={state.level} handleChange={handleLevelChange}/>
             <SubjectName 
@@ -109,38 +141,28 @@ export default function () {
               menuIsOpen={state.menuIsOpen}
               handleClick={handleNameClick}
               handleListItemClick={handleSubjectListItemClick} 
-              handleInputChange={handleNameChange}/>
+              handleInputChange={handleNameChange}
+            />
+            <SubjectPaper 
+              handleClick={handlePaperButtonClick}
+              index={state.paperIndex}
+            />
           </form>
-          <Countdown 
-            subjectDateTime={subjectDateTime}
-            isOpen={state.countdownIsOpen}
-          />
 
-        <div>
-          <span sx={{
-          marginBottom: 0,
-        }}>
-          Date
-        </span>
-        <h1 sx={{
-          margin: remCalc([0,0,24,0]),
-        }}>{subjectDate}</h1>
-        </div>
-
-        <div>
-          <span sx={{
-          marginBottom: 0,
-        }}>
-          Time
-        </span>
-        <h1 sx={{
-          margin: remCalc([0,0,24,0]),
-        }}>{subjectTime}</h1>
-        </div>
-      </section>
+          <div>
+            {message ? message : 
+            <div>
+            <Countdown 
+              subjectDateTime={dateTime}
+              isOpen={state.countdownIsOpen}
+            />
+            <SubjectDate date={examTimes[state.paperIndex].date} time={examTimes[state.paperIndex].time}/>
+            </div>
+            }
+          </div>
 
       <button
-        dateTime={subjectDateTime}
+        dateTime={examTimes[state.paperIndex].dateTime}
         onClick={handleCountdownClick} 
         sx={{
           position: 'relative',

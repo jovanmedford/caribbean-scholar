@@ -1,19 +1,8 @@
 /**@jsx jsx */
 import { jsx } from 'theme-ui'
-import { keyframes } from '@emotion/core'
+import { motion } from 'framer-motion'
 import remCalc from '../../utils/remCalc'
-export default function({date,time}) {
-  const growIn = keyframes`
-  from {
-    transform: translateY(30px);
-    opacity:0;
-  }
-
-  to {
-    transform: translateY(0px);
-    opacity: 100%
-  }
-`
+export default function({date, time, controls}) {
   return(
   <section sx={{
     position: 'relative',
@@ -25,18 +14,22 @@ export default function({date,time}) {
     span: {
       margin: remCalc([0,0,24,0]),
       fontSize: '3rem',
-      animationName: growIn,
-      animationDuration: '1s' 
     }
   }}>
         <div>
           <h3>Date</h3>
-          <span>{date}</span>
+          <motion.span 
+            animate={controls}
+          >
+            {date}
+          </motion.span>
         </div>
 
         <div sx>
           <h3>Time</h3>
-          <span>{time}</span>
+          <motion.span
+          animate={controls}
+          >{time}</motion.span>
         </div>
   </section>
   )

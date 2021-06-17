@@ -2,6 +2,7 @@
 import { useState, useEffect } from 'react'
 import { jsx, useColorMode } from 'theme-ui'
 import Logo from '../../img/logopng.png'
+import { useAnimation } from 'framer-motion'
 // components
 import SubjectDate from '../../components/exam-countdown/SubjectDate'
 import SubjectLevel from '../../components/exam-countdown/SubjectLevel'
@@ -17,6 +18,8 @@ export default function () {
   const [,setColorMode] = useColorMode()
   setColorMode('examCountdown');
 
+  const controls = useAnimation();
+
   const [state, setState] = useState({
     level: "csec",
     name: "math",
@@ -24,6 +27,8 @@ export default function () {
     paperIndex: 0, 
     menuIsOpen: false,
     countdownIsOpen: false,
+    dateOpacity: 1,
+    dateY: 0
   })
 
   const handleLevelChange = function(event) {
@@ -50,6 +55,10 @@ export default function () {
 
   const handlePaperButtonClick = function(event,direction) {
       event.preventDefault();
+        controls.start({
+          opacity: [0,1],
+          y: [10,0]
+        })
       if(direction==="next") {
         setState(prevState => {
           return {
@@ -113,7 +122,6 @@ export default function () {
   const dateTime = examTimes[state.paperIndex].dateTime;
   
   const now = new Date();
-  console.log(examTimes);
 
   let errorMessage;
   const errorMessageStyle = {
@@ -170,7 +178,10 @@ export default function () {
               subjectDateTime={dateTime}
               isOpen={state.countdownIsOpen}
             />
-            <SubjectDate date={examTimes[state.paperIndex].date} time={examTimes[state.paperIndex].time}/>
+            <SubjectDate 
+              date={examTimes[state.paperIndex].date} 
+              time={examTimes[state.paperIndex].time}
+              controls={controls}/>
             </div>
             }
           </div>

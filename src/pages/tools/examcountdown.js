@@ -4,10 +4,10 @@ import { jsx, useColorMode } from 'theme-ui'
 import Logo from '../../img/logopng.png'
 import { useAnimation } from 'framer-motion'
 // components
-import SubjectDate from '../../components/exam-countdown/SubjectDate'
-import SubjectLevel from '../../components/exam-countdown/SubjectLevel'
-import SubjectName from '../../components/exam-countdown/SubjectName'
-import SubjectPaper from '../../components/exam-countdown/SubjectPaper'
+import ExamDateDisplay from '../../components/exam-countdown/ExamDateDisplay'
+import ExamLevelInput from '../../components/exam-countdown/ExamLevelInput'
+import ExamName from '../../components/exam-countdown/ExamName'
+import ExamPaperInput from '../../components/exam-countdown/ExamPaperInput'
 import Countdown from '../../components/exam-countdown/Countdown'
 // utils
 import remCalc from '../../utils/remCalc'
@@ -149,8 +149,8 @@ export default function () {
               }}/>
 
           <form onSubmit={handleSubmit}>
-            <SubjectLevel level={state.level} handleChange={handleLevelChange}/>
-            <SubjectName 
+            <ExamLevelInput level={state.level} handleChange={handleLevelChange}/>
+            <ExamName 
               name={state.name}
               nameInput = {state.nameInput}
               menuIsOpen={state.menuIsOpen}
@@ -158,7 +158,7 @@ export default function () {
               handleListItemClick={handleSubjectListItemClick} 
               handleInputChange={handleNameChange}
             />
-            <SubjectPaper 
+            <ExamPaperInput 
               handleClick={handlePaperButtonClick}
               index={state.paperIndex}
             />
@@ -178,7 +178,7 @@ export default function () {
               subjectDateTime={dateTime}
               isOpen={state.countdownIsOpen}
             />
-            <SubjectDate 
+            <ExamDateDisplay 
               date={examTimes[state.paperIndex].date} 
               time={examTimes[state.paperIndex].time}
               controls={controls}/>

@@ -63,6 +63,7 @@ export default function () {
         setState(prevState => {
           return {
             ...state,
+            countdownIsOpen: false,
             paperIndex: prevState.paperIndex<3 ?
                             prevState.paperIndex + 1
                           : prevState.paperIndex,
@@ -72,6 +73,7 @@ export default function () {
         setState(prevState => {
           return {
             ...state,
+            countdownIsOpen: false,
             paperIndex: prevState.paperIndex > 0 ?
                             prevState.paperIndex - 1
                           : prevState.paperIndex,

@@ -73,7 +73,7 @@ export default function Home() {
                  </div>
              </section>
              
-             <section sx={{
+             <section className='cta' sx={{
                  backgroundColor: '#0F325A',
                  margin: [`0 0 ${Spacing.mobile.vertical.extraLarge} 0`,
                           `0 1rem ${Spacing.tablet.vertical.extraLarge} 1rem `,

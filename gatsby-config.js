@@ -37,6 +37,8 @@ module.exports = {
       }
     },
     'gatsby-plugin-react-helmet',
+    `gatsby-plugin-sitemap`,
+    'gatsby-plugin-robots-txt',
     'gatsby-plugin-theme-ui',
     'gatsby-plugin-fontawesome-css',
   ],

@@ -2,13 +2,19 @@
 import { jsx } from "theme-ui"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faSearch, faMoon } from "@fortawesome/free-solid-svg-icons"
+import LightToggle from "./LightToggle"
 import { useColorMode } from "theme-ui"
 import { Link } from "gatsby"
-import Logo from "./Logo"
+import Logo from "../Logo"
 
 export default function Header() {
   const [colorMode, setColorMode] = useColorMode()
   setColorMode(colorMode === "home" ? "light" : colorMode)
+
+  const handleClick = () => {
+    setColorMode(colorMode === "light" ? "dark" : "light")
+  }
+
   return (
     <header sx={headerContainer}>
       <div sx={linkContainer}>
@@ -22,7 +28,7 @@ export default function Header() {
       </div>
       <div sx={iconContainer}>
         <FontAwesomeIcon sx={nudge} icon={faSearch} />
-        <FontAwesomeIcon sx={nudge} icon={faMoon} />
+        <LightToggle sx={nudge} handleClick={handleClick} />
       </div>
     </header>
   )

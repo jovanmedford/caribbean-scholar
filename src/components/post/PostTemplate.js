@@ -1,13 +1,13 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui"
-import Header from "./header/Header"
+import Header from "../header/Header"
 import { graphql } from "gatsby"
 import Img from "gatsby-image"
-import BlogPostHeader from "./blogPostHeader"
+import BlogPostHeader from "./PostHeader"
 import { Helmet } from "react-helmet"
-import SEO from "./seo"
-import Footer from "./footer"
-import { Spacing } from "../utils/spacing"
+import SEO from "../seo"
+import Footer from "../footer"
+import { Spacing } from "../../utils/spacing"
 
 export default function BlogPostTemplate({ data }) {
   const post = data.wpPost

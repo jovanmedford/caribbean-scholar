@@ -24,7 +24,9 @@ export default function Header() {
         <a href="https://school.thecaribbeanscholar.com/collections">Courses</a>
       </div>
       <div sx={logoContainer}>
-        <Logo />
+        <Link to="/blog">
+          <Logo />
+        </Link>
       </div>
       <div sx={iconContainer}>
         <SearchButton sx={nudge} />
@@ -40,6 +42,8 @@ const headerContainer = {
   display: "flex",
   justifyContent: "space-between",
   alignItems: "center",
+  width: ["85%", "75%"],
+  margin: "2rem auto",
 }
 
 const logoContainer = {

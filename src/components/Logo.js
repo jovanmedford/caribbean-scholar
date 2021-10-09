@@ -7,6 +7,8 @@ export default function () {
       src="../img/logopng.png"
       alt="Caribbean Scholar Logo"
       aspect-ratio={16 / 5}
+      loading="eager"
+      placeholder="none"
     />
   )
 }

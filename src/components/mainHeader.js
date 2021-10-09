@@ -3,7 +3,7 @@ import { jsx } from "theme-ui"
 import { Link } from "gatsby"
 import Logo from "../img/logopng.png"
 import { Spacing } from "../utils/spacing"
-import MenuService from "../utils/menuService"
+import MenuService from "./menus/Menu"
 
 export default function mainHeader() {
   return (

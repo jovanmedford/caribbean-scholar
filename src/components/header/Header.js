@@ -6,6 +6,7 @@ import LightToggle from "./LightToggle"
 import { useColorMode } from "theme-ui"
 import { Link } from "gatsby"
 import Logo from "../Logo"
+import Menu from "../menus/Menu"
 
 export default function Header() {
   const [colorMode, setColorMode] = useColorMode()
@@ -17,6 +18,7 @@ export default function Header() {
 
   return (
     <header sx={headerContainer}>
+      <Menu type="dropdown" />
       <div sx={linkContainer}>
         <Link sx={nudge} to="/home">
           Home
@@ -47,11 +49,12 @@ const logoContainer = {
 }
 
 const linkContainer = {
+  display: ["none", "block"],
+  marginTop: "1rem",
+  width: flexItemWidth,
   a: {
     color: "text",
   },
-  marginTop: "1rem",
-  width: flexItemWidth,
 }
 
 const iconContainer = {

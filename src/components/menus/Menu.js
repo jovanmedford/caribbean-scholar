@@ -1,11 +1,11 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui"
-import { useState, useEffect, useRef } from "react"
+import React, { useState, useEffect, useRef } from "react"
 
-import DropdownMenu from "../components/header/DropdownMenu"
-import SidebarMenu from "../components/sidebar"
+import DropdownMenu from "./DropdownMenu"
+import SidebarMenu from "./Sidebar"
 
-export default function MenuService({ type }) {
+export default function Menu({ type }) {
   const [state, setState] = useState({
     isOpen: false,
     display: "none",
@@ -36,8 +36,8 @@ export default function MenuService({ type }) {
   })
 
   return (
-    <section>
-      {type === 1 ? (
+    <React.Fragment>
+      {type === "dropdown" ? (
         <DropdownMenu
           container={container}
           state={state}
@@ -50,6 +50,6 @@ export default function MenuService({ type }) {
           state={state}
         />
       )}
-    </section>
+    </React.Fragment>
   )
 }

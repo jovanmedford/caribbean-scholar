@@ -1,9 +1,7 @@
 /** @jsx jsx */
-import { jsx } from "theme-ui"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faSearch, faMoon } from "@fortawesome/free-solid-svg-icons"
+import { jsx, useColorMode } from "theme-ui"
 import LightToggle from "./LightToggle"
-import { useColorMode } from "theme-ui"
+import SearchButton from "./SearchButton"
 import { Link } from "gatsby"
 import Logo from "../Logo"
 import Menu from "../menus/Menu"
@@ -20,7 +18,7 @@ export default function Header() {
     <header sx={headerContainer}>
       <Menu type="dropdown" />
       <div sx={linkContainer}>
-        <Link sx={nudge} to="/home">
+        <Link sx={nudge} to="/">
           Home
         </Link>
         <a href="https://school.thecaribbeanscholar.com/collections">Courses</a>
@@ -29,7 +27,7 @@ export default function Header() {
         <Logo />
       </div>
       <div sx={iconContainer}>
-        <FontAwesomeIcon sx={nudge} icon={faSearch} />
+        <SearchButton sx={nudge} />
         <LightToggle sx={nudge} handleClick={handleClick} />
       </div>
     </header>

@@ -7,18 +7,14 @@ export default function PostHeader(props) {
     <section
       className="body"
       sx={{
-        width: ["75%", "85%", "60%"],
-        margin: [
-          `${Spacing.mobile.vertical.large} auto 0 auto`,
-          `${Spacing.tablet.vertical.large} auto 0 auto`,
-          `${Spacing.desktop.vertical.large} auto 0 auto`,
-        ],
+        width: ["85%", "75%"],
+        margin: "0 auto",
         textAlign: "left",
       }}
     >
       <h3
         sx={{
-          marginBottom: 0,
+          margin: 0,
           color: "accent",
           fontWeight: "normal",
           fontSize: [2, 3],
@@ -28,7 +24,7 @@ export default function PostHeader(props) {
       </h3>
       <h1
         sx={{
-          marginTop: 0,
+          margin: 0,
           fontSize: [2, 3],
           fontWeight: "500",
         }}
@@ -57,7 +53,7 @@ export default function PostHeader(props) {
             sx={{
               margin: "0 1rem 1rem 0",
               borderRadius: "100%",
-              width: ["3rem", "4.5rem"],
+              width: ["3.5rem", "4.5rem"],
             }}
           />
         </div>
@@ -65,9 +61,9 @@ export default function PostHeader(props) {
           className="bio__info"
           sx={{
             display: "inline-block",
-            verticalAlign: "top",
+            marginTop: "0.5rem",
             span: {
-              fontSize: "14px",
+              fontSize: 0,
             },
           }}
         >

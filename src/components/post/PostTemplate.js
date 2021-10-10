@@ -2,7 +2,7 @@
 import { jsx } from "theme-ui"
 import Header from "../header/Header"
 import { graphql } from "gatsby"
-import Img from "gatsby-image"
+import { getImage, GatsbyImage } from "gatsby-plugin-image"
 import BlogPostHeader from "./PostHeader"
 import { Helmet } from "react-helmet"
 import SEO from "../seo"
@@ -11,9 +11,7 @@ import { Spacing } from "../../utils/spacing"
 
 export default function BlogPostTemplate({ data }) {
   const post = data.wpPost
-  const childImageSharp = post.featuredImage.node.localFile.childImageSharp
-  const source = childImageSharp.fluid
-  const socialImage = childImageSharp.resize
+  const image = getImage(post.featuredImage.node.localFile)
   const name = post.author.node.firstName + " " + post.author.node.lastName
   const avatar = post.author.node.avatar.url
   const altText = post.featuredImage.node.altText
@@ -23,7 +21,7 @@ export default function BlogPostTemplate({ data }) {
   return (
     <div>
       <SEO
-        image={socialImage}
+        image={image}
         title={post.title}
         author={name}
         excerpt={post.seo.metaDesc}
@@ -51,43 +49,40 @@ export default function BlogPostTemplate({ data }) {
         authorName={name}
         date={post.date}
       />
-      <Img
-        fluid={source}
+      <GatsbyImage
+        image={image}
         alt={altText}
         sx={{
-          height: ["18rem", "18rem", "18rem"],
-          width: ["75%", "85%", "65%"],
+          width: ["85%", "75%", "65%"],
           margin: "0 auto",
         }}
       />
 
       <article
         sx={{
-          width: ["90%", "85%", "65%"],
-          margin: [
-            `2em auto ${Spacing.mobile.vertical.large} auto`,
-            `2em auto${Spacing.tablet.vertical.large} auto`,
-            `2em auto ${Spacing.desktop.vertical.large} auto`,
-          ],
+          width: ["90%", "85%", "50%"],
+          margin: "2rem auto",
           ul: {
             paddingLeft: "3em",
           },
-          h4: {
-            fontSize: 2,
+          h2: {
+            fontSize: [2, 3],
+          },
+          h3: {
+            fontSize: [1, 2],
           },
           p: {
-            fontSize: 1,
+            fontSize: [0, 1],
             lineHeight: "1.8",
             fontWeight: "400",
             margin: "1.25rem 0",
           },
           li: {
-            fontSize: 1,
+            fontSize: [0, 1],
             listStyle: "disc",
           },
           a: {
             color: "accent",
-            fontWeight: "bold",
             overflowWrap: "break-word",
           },
           span: {
@@ -156,14 +151,11 @@ export const query = graphql`
           altText
           localFile {
             childImageSharp {
-              fluid(maxWidth: 1200) {
-                ...GatsbyImageSharpFluid
-              }
-              resize(width: 1200, height: 630) {
-                src
-                height
-                width
-              }
+              gatsbyImageData(
+                formats: [AUTO, WEBP, AVIF]
+                layout: FULL_WIDTH
+                aspectRatio: 2
+              )
             }
           }
         }

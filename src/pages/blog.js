@@ -22,7 +22,6 @@ export default function Blog({ data }) {
       <h1
         sx={{
           fontSize: 1,
-          marginTop: "4.5rem",
           textAlign: "center",
         }}
       >
@@ -112,15 +111,11 @@ export const query = graphql`
           altText
           localFile {
             childImageSharp {
-              fluid {
-                base64
-                tracedSVG
-                srcWebp
-                srcSetWebp
-                originalImg
-                originalName
-              }
-              gatsbyImageData
+              gatsbyImageData(
+                formats: [AUTO, WEBP, AVIF]
+                layout: FULL_WIDTH
+                aspectRatio: 1.33
+              )
             }
           }
         }

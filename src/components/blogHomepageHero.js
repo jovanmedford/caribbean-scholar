@@ -55,7 +55,7 @@ export default function BlogHomepageHero() {
         flexWrap: "wrap",
         justifyContent: "space-between",
         width: ["100%", "96%", "80%"],
-        margin: "3rem auto 3rem auto",
+        margin: "2.5rem auto 1.5rem auto",
       }}
     >
       <Link

@@ -4,8 +4,8 @@ import Header from "../components/header/Header"
 import BlogHomepageHero from "../components/blogHomepageHero"
 import Cta from "../components/cta"
 import PostPreview from "../components/PostPreview"
-import ActiveCampaignForm from "../components/activeCampaignForm"
 import { graphql } from "gatsby"
+import TextBanner from "../components/TextBanner"
 import Footer from "../components/footer"
 import SEO from "../components/seo"
 
@@ -23,14 +23,14 @@ export default function Blog({ data }) {
         sx={{
           fontSize: 1,
           textAlign: "center",
+          textTransform: "uppercase",
         }}
       >
-        Caribbean Scholar Blog
+        Blog
       </h1>
       <BlogHomepageHero />
       <PostPreview info={data.featured.nodes} />
-      <ActiveCampaignForm />
-
+      <TextBanner />
       <section
         className="top-posts"
         sx={{

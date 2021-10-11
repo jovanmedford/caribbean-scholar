@@ -14,7 +14,7 @@ export default function PostPreview(props) {
         position: "relative",
         flexWrap: "wrap",
         width: ["100%", "96%", "80%"],
-        margin: "0 auto 2rem auto",
+        margin: "0 auto 0rem auto",
       }}
     >
       {props.info.map(post => (

@@ -7,7 +7,6 @@ import BlogPostHeader from "./PostHeader"
 import { Helmet } from "react-helmet"
 import SEO from "../seo"
 import Footer from "../footer"
-import { Spacing } from "../../utils/spacing"
 
 export default function BlogPostTemplate({ data }) {
   const post = data.wpPost
@@ -42,21 +41,28 @@ export default function BlogPostTemplate({ data }) {
       </Helmet>
 
       <Header />
-      <BlogPostHeader
-        category={post.categories.nodes[0].name}
-        title={post.title}
-        authorImg={avatar}
-        authorName={name}
-        date={post.date}
-      />
-      <GatsbyImage
-        image={image}
-        alt={altText}
+      <div
         sx={{
-          width: ["85%", "75%", "65%"],
-          margin: "0 auto",
+          display: "flex",
+          flexDirection: ["column", "column", "row"],
+          width: ["85%", "85%", "75%"],
+          margin: "1rem auto 0 auto",
+          justifyContent: "space-between",
         }}
-      />
+      >
+        <BlogPostHeader
+          category={post.categories.nodes[0].name}
+          title={post.title}
+          authorImg={avatar}
+          authorName={name}
+          date={post.date}
+        />
+        <GatsbyImage
+          image={image}
+          alt={altText}
+          sx={{ width: ["100%", , "50%"] }}
+        />
+      </div>
 
       <article
         sx={{

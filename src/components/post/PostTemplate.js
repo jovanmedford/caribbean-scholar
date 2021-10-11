@@ -46,7 +46,7 @@ export default function BlogPostTemplate({ data }) {
           display: "flex",
           flexDirection: ["column", "column", "row"],
           width: ["85%", "85%", "75%"],
-          margin: "1rem auto 0 auto",
+          margin: ["1.5rem auto 0 auto", "3rem auto 0 auto"],
           justifyContent: "space-between",
         }}
       >
@@ -73,15 +73,18 @@ export default function BlogPostTemplate({ data }) {
           },
           h2: {
             fontSize: [2, 3],
+            marginTop: "3rem",
+            marginBottom: "0rem",
           },
           h3: {
             fontSize: [1, 2],
+            marginTop: "2.25rem",
+            marginBottom: "0rem",
           },
           p: {
             fontSize: [0, 1],
-            lineHeight: "1.8",
-            fontWeight: "400",
-            margin: "1.25rem 0",
+            lineHeight: "1.7",
+            margin: ["1.25rem 0 2rem 0", "1.25rem 0 2.5rem 0"],
           },
           li: {
             fontSize: [0, 1],

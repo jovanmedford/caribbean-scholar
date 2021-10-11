@@ -8,7 +8,7 @@ export default function PostHeader(props) {
       className="body"
       sx={{
         width: ["100%", "100%", "50%"],
-        margin: "1rem auto 0 auto",
+        margin: ["0 auto", "1rem auto 0 auto"],
         textAlign: "left",
       }}
     >

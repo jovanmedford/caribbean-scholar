@@ -44,6 +44,11 @@ export default function mainHeader() {
                 display: ["none", "block"],
                 margin: "0 0.5rem",
               },
+              a: {
+                color: "white",
+                fontWeight: "bold",
+                textDecoration: "none",
+              },
               "a:hover": {
                 color: "secondary",
               },

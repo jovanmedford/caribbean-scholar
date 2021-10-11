@@ -56,6 +56,7 @@ const linkContainer = {
   width: flexItemWidth,
   a: {
     color: "text",
+    textDecoration: "none",
   },
 }
 
@@ -64,6 +65,9 @@ const iconContainer = {
   display: "flex",
   justifyContent: "right",
   width: flexItemWidth,
+  a: {
+    color: "text",
+  },
 }
 
 const nudge = {

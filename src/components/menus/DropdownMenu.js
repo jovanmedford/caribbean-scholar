@@ -30,7 +30,7 @@ export default function DropdownMenu({
         sx={{
           position: "absolute",
           zIndex: "5",
-          top: "3.5rem",
+          top: "5.5rem",
           display: [state.display, "none"],
           fontSize: "1rem",
           color: "text",
@@ -44,6 +44,11 @@ export default function DropdownMenu({
             width: "100%",
             paddingLeft: "0.5rem",
             fontWeight: "500",
+          },
+
+          a: {
+            textDecoration: "none",
+            color: "text",
           },
         }}
       >

@@ -5,7 +5,7 @@ import { Spacing } from "../../utils/spacing"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faTimes } from "@fortawesome/free-solid-svg-icons"
 import SidebarLink from "./SidebarLink"
-import Ad from "../../img/make-algebra-make-sense.jpg"
+import Ad from "../../img/pre-algebra.png"
 
 export default function Sidebar({ handleClick, state, container }) {
   return (
@@ -36,11 +36,11 @@ export default function Sidebar({ handleClick, state, container }) {
           display: [state.display, "none"],
           height: "100vh",
           width: "80%",
-          backgroundColor: "cta",
+          backgroundColor: "#206BC0",
           a: {
             fontSize: "1.5rem",
             textDecoration: "none",
-            colot: "text",
+            color: "white",
           },
           overflow: "scroll",
         }}
@@ -112,7 +112,7 @@ export default function Sidebar({ handleClick, state, container }) {
               margin: "24px",
             }}
           >
-            Make Algebra Make Sense
+            Pre-Algebra (v2)
           </h3>
         </div>
       </section>

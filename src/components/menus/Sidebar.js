@@ -39,6 +39,8 @@ export default function Sidebar({ handleClick, state, container }) {
           backgroundColor: "cta",
           a: {
             fontSize: "1.5rem",
+            textDecoration: "none",
+            colot: "text",
           },
           overflow: "scroll",
         }}

@@ -10,7 +10,7 @@ export default function () {
         </h2>
         <a
           sx={linkStyle}
-          href="https://school.thecaribbeanscholar.com/courses/make-algebra-make-sense"
+          href="https://school.thecaribbeanscholar.com/courses/pre-algebra-v2"
         >
           Free course
         </a>

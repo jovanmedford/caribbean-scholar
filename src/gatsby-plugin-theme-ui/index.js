@@ -45,6 +45,8 @@ export default {
     cta: "#0F325A",
     ctaButton: "#4FB286",
     footer: "#0F325A",
+    tableHeader: "#1A5599",
+    tableBody: "#2477D6",
     modes: {
       home: {
         background: "white",

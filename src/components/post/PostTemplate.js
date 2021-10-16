@@ -84,7 +84,7 @@ export default function BlogPostTemplate({ data }) {
           p: {
             fontSize: [0, 1],
             lineHeight: "1.7",
-            margin: ["1.25rem 0 2rem 0", "1.25rem 0 2.5rem 0"],
+            margin: ["1.25rem 0 2rem 0"],
           },
           li: {
             fontSize: [0, 1],
@@ -102,6 +102,20 @@ export default function BlogPostTemplate({ data }) {
           iframe: {
             width: "100%",
           },
+          th: {
+            backgroundColor: "tableHeader",
+            padding: "1rem 2rem",
+          },
+          table: {
+            margin: ["2rem auto", "2.5rem auto"],
+            borderCollapse: "collapse",
+            color: "#FFF8F0",
+          },
+          td: {
+            backgroundColor: "tableBody",
+            textAlign: "center",
+            padding: "1rem 2rem",
+          },
           blockQuote: {
             padding: "1rem 2rem",
             backgroundColor: "primary",
@@ -118,9 +132,16 @@ export default function BlogPostTemplate({ data }) {
           },
         }}
         css={{
+          ".has-text-align-center, .aligncenter": {
+            textAlign: "center",
+          },
+          ".katex-display": {
+            display: "inherit",
+            margin: 0,
+            marginLeft: "2.5rem",
+          },
           ".katex": {
-            fontSize: "1rem",
-            color: "text",
+            fontSize: "1.5rem",
           },
         }}
         dangerouslySetInnerHTML={{ __html: post.content }}
@@ -163,7 +184,7 @@ export const query = graphql`
               gatsbyImageData(
                 formats: [AUTO, WEBP, AVIF]
                 layout: FULL_WIDTH
-                aspectRatio: 2
+                aspectRatio: 1.77
               )
             }
           }

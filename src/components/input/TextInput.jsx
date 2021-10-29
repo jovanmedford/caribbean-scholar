@@ -2,6 +2,7 @@
 import { jsx } from "theme-ui"
 import { Fragment } from "react"
 import PropTypes from "prop-types"
+import { inputStyle, errorBorderStyle, errorStyle } from "./inputStyle"
 export const TextInput = ({
   label,
   name,
@@ -51,20 +52,3 @@ TextInput.propTypes = {
 }
 
 const labelStyle = { color: "text" }
-const errorStyle = {
-  fontSize: "0.75em",
-  fontWeight: "normal",
-  color: "#FF0000",
-}
-
-const inputStyle = {
-  border: "1px solid",
-  width: "100%",
-  borderRadius: "4px",
-}
-
-const errorBorderStyle = {
-  border: "1px solid #FF0000",
-  width: "100%",
-  borderRadius: "4px",
-}

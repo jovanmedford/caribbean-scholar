@@ -1,0 +1,20 @@
+export const inputStyle = {
+  border: "1px solid",
+  width: "100%",
+  borderRadius: "4px",
+  maxWidth: "20rem",
+  display: "block",
+  padding: "0.5em",
+  paddingRight: "1em",
+}
+
+export const errorBorderStyle = {
+  ...inputStyle,
+  border: "1px solid #FF0000",
+}
+
+export const errorStyle = {
+  fontSize: "0.75em",
+  fontWeight: "normal",
+  color: "#FF0000",
+}

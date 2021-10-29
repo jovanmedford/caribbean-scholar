@@ -3,7 +3,7 @@ import { jsx } from "theme-ui"
 import { Fragment } from "react"
 import PropTypes from "prop-types"
 import { inputStyle, errorBorderStyle, errorStyle } from "./inputStyle"
-export const TextInput = ({
+export const Text = ({
   label,
   name,
   type,
@@ -25,7 +25,6 @@ export const TextInput = ({
         type={type}
         placeholder={placeholder}
         onChange={handleChange}
-        value={value}
         className={className}
       ></input>
       <span sx={errorStyle}>{errorMessage}</span>
@@ -33,22 +32,27 @@ export const TextInput = ({
   )
 }
 
-TextInput.defaultProps = {
+Text.defaultProps = {
+  label: "",
+  name: "",
   type: "text",
+  errorMessage: "",
+  placeholder: "",
+  value: "",
   className: "",
   errorMessage: "",
 }
 
-TextInput.propTypes = {
+Text.propTypes = {
   label: PropTypes.string,
-  name: PropTypes.string.isRequired,
+  name: PropTypes.string,
   type: PropTypes.string,
   errorMessage: PropTypes.string,
-  placeholder: PropTypes.string.isRequired,
+  placeholder: PropTypes.string,
   type: PropTypes.oneOf(["text", "number", "password"]),
   className: PropTypes.string,
   value: PropTypes.any,
-  handleChange: PropTypes.func.isRequired,
+  handleChange: PropTypes.func,
 }
 
 const labelStyle = { color: "text" }

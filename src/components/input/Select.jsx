@@ -41,7 +41,7 @@ export const Select = ({
 
 Select.propTypes = {
   label: PropTypes.string,
-  name: PropTypes.string.isRequired,
+  name: PropTypes.string,
   options: PropTypes.array,
   handleChange: PropTypes.func,
   errorMessage: PropTypes.string,
@@ -50,4 +50,5 @@ Select.propTypes = {
 
 Select.defaultProps = {
   placeholder: "-Select-",
+  options: ["first", "second", "third"],
 }

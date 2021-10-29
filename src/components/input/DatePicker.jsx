@@ -32,10 +32,9 @@ DatePicker.defaultProps = {
 
 DatePicker.propTypes = {
   label: PropTypes.string,
-  name: PropTypes.string.isRequired,
+  name: PropTypes.string,
   errorMessage: PropTypes.string,
   value: PropTypes.any,
-  handleChange: PropTypes.func.isRequired,
+  handleChange: PropTypes.func,
 }
-
 const labelStyle = { color: "text" }

@@ -1,15 +1,15 @@
 import React from "react"
 
-import { TextInput } from "./TextInput"
+import { Text } from "./Text"
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-  title: "Form/TextInput",
-  component: TextInput,
+  title: "Form/Text",
+  component: Text,
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
 }
 
-const Template = args => <TextInput {...args} />
+const Template = args => <Text {...args} />
 
 export const Default = Template.bind({})
 Default.args = {
@@ -20,5 +20,4 @@ export const Error = Template.bind({})
 Error.args = {
   errorMessage: "Field Empty",
   label: "Subject Name",
-  onChange: () => console.log("Hi"),
 }

@@ -144,17 +144,11 @@ export const theme = {
 
       input: {
         display: "block",
-        fontSize: "1.125em",
-        border: "none",
-        padding: ["0.75em 0.75em", "0.75rem 1.25rem"],
-
-        "&[type=text]": {
-          width: "100%",
-        },
-
+        fontSize: "1rem",
+        padding: ["0.25rem"],
+        maxWidth: "24rem",
         "::placeholder": {
-          color: "#DADADA",
-          fontWeight: "bold",
+          color: "#AAB7C5",
         },
       },
     },

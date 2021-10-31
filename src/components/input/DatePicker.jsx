@@ -5,6 +5,7 @@ import PropTypes from "prop-types"
 import { errorBorderStyle, inputStyle, errorStyle } from "./inputStyle"
 
 export const DatePicker = ({
+  key,
   name,
   value,
   label,
@@ -17,6 +18,8 @@ export const DatePicker = ({
     </label>
     <input
       sx={!errorMessage ? inputStyle : errorBorderStyle}
+      key={key}
+      name={name}
       type="date"
       onChange={handleChange}
       value={value}

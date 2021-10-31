@@ -5,8 +5,10 @@ import PropTypes from "prop-types"
 import { errorBorderStyle, inputStyle, errorStyle } from "./inputStyle"
 
 export const Select = ({
+  key,
   name,
   label,
+  value,
   placeholder,
   form,
   options,
@@ -14,7 +16,9 @@ export const Select = ({
   handleChange,
 }) => {
   const optionList = options.map(option => (
-    <option value={option.toLowerCase()}>{option}</option>
+    <option key={option} value={option.toLowerCase()}>
+      {option}
+    </option>
   ))
   return (
     <Fragment>
@@ -22,10 +26,12 @@ export const Select = ({
         {label}
       </label>
       <select
+        key={key}
         name={name}
         id={name}
         placeholder={placeholder}
         form={form}
+        value={value}
         onChange={handleChange}
         sx={!errorMessage ? inputStyle : errorBorderStyle}
       >
@@ -50,5 +56,5 @@ Select.propTypes = {
 
 Select.defaultProps = {
   placeholder: "-Select-",
-  options: ["first", "second", "third"],
+  options: ["first", "second"],
 }

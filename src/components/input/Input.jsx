@@ -7,9 +7,9 @@ import PropTypes from "prop-types"
 export const Input = function (props) {
   return (
     {
-      date: <DatePicker type={props.type} props={props} />,
-      select: <Select type={props.type} props={props} />,
-    }[props.type] || <Text type={props.type} props={props} />
+      date: <DatePicker {...props} />,
+      select: <Select {...props} />,
+    }[props.type] || <Text {...props} />
   )
 }
 

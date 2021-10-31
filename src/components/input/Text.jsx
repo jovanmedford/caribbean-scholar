@@ -4,6 +4,7 @@ import { Fragment } from "react"
 import PropTypes from "prop-types"
 import { inputStyle, errorBorderStyle, errorStyle } from "./inputStyle"
 export const Text = ({
+  key,
   label,
   name,
   type,
@@ -22,7 +23,9 @@ export const Text = ({
       <input
         sx={!errorMessage ? inputStyle : errorBorderStyle}
         name={name}
+        key={key}
         type={type}
+        value={value}
         placeholder={placeholder}
         onChange={handleChange}
         className={className}

@@ -1,4 +1,14 @@
-import { isDateValid } from "./validationRules"
+import { hasValue, isDateValid } from "./validationRules"
+
+describe("hasValue", () => {
+  test("Field is empty", () => {
+    expect(hasValue("")).toBeFalsy()
+  })
+
+  test("Field is not empty", () => {
+    expect(hasValue("hey")).toBeTruthy()
+  })
+})
 
 describe("date input", () => {
   test("Date has passed", () => {

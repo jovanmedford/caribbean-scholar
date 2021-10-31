@@ -139,10 +139,10 @@ export const theme = {
 
       label: {
         color: "white",
-        fontSize: "1em",
+        fontSize: "1rem",
       },
 
-      input: {
+      "input,select": {
         display: "block",
         fontSize: "1rem",
         padding: ["0.25rem"],

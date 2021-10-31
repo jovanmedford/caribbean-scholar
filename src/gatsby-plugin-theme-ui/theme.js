@@ -47,6 +47,10 @@ export const theme = {
       home: {
         background: "white",
       },
+      chalkboard: {
+        background: "#4FB286",
+        text: "white",
+      },
       light: {
         background: "#FFF8F0",
         muted: "#fffffb",
@@ -146,7 +150,7 @@ export const theme = {
         display: "block",
         fontSize: "1rem",
         padding: ["0.25rem"],
-        maxWidth: "24rem",
+        maxWidth: ["none", "24rem"],
         "::placeholder": {
           color: "#AAB7C5",
         },

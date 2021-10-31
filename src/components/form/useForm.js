@@ -44,17 +44,19 @@ export const useForm = formConfig => {
   }
 
   const FormInputs = formConfig.map(config => (
-    <Input
-      key={config.name || ""}
-      name={config.name || ""}
-      type={config.type || ""}
-      label={config.label || ""}
-      placeholder={config.placeholder || ""}
-      options={config.options || []}
-      value={state[config.name]}
-      errorMessage={state["errors"][config.name]}
-      handleChange={e => handleChange(e, config.validationRules)}
-    />
+    <p>
+      <Input
+        key={config.name || ""}
+        name={config.name || ""}
+        type={config.type || ""}
+        label={config.label || ""}
+        placeholder={config.placeholder || ""}
+        options={config.options || []}
+        value={state[config.name]}
+        errorMessage={state["errors"][config.name]}
+        handleChange={e => handleChange(e, config.validationRules)}
+      />
+    </p>
   ))
 
   return [handleSubmit, FormInputs]

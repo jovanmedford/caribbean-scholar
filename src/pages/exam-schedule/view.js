@@ -3,6 +3,7 @@ import { useState, useEffect } from "react"
 import { jsx, useColorMode } from "theme-ui"
 import Logo from "../../img/logopng.png"
 import { useAnimation } from "framer-motion"
+import axios from "axios"
 // components
 import ExamDateDisplay from "../../components/exam-countdown/ExamDateDisplay"
 import ExamLevelInput from "../../components/exam-countdown/ExamLevelInput"
@@ -15,15 +16,34 @@ import getExamTimes from "../../utils/getExamTimes"
 import formatExamTimes from "../../utils/formatExamTimes"
 
 export default function () {
+  // Set Color
   const [, setColorMode] = useColorMode()
-  setColorMode("examCountdown")
+  setColorMode("chalkboard")
+
+  //Set status
+  const [status, setStatus] = useState("loading...")
+  const [exams, setExams] = useState([])
+
+  // get exams
+  useEffect(() => {
+    if (status !== "loading...") return
+    axios("/api/get-exams").then(result => {
+      if (result.status !== 200) {
+        console.error("Error loading exams")
+        console.error(result)
+        return
+      }
+      setExams(result.data.exams)
+      setStatus("loaded")
+    })
+  }, [status])
 
   const controls = useAnimation()
 
   const [state, setState] = useState({
     level: "csec",
     name: "math",
-    nameInput: "",
+    input: "",
     paperIndex: 0,
     menuIsOpen: false,
     countdownIsOpen: false,
@@ -49,47 +69,18 @@ export default function () {
   const handleNameChange = function (event) {
     setState({
       ...state,
-      nameInput: event.target.value,
+      input: event.target.value,
     })
   }
 
-  const handlePaperButtonClick = function (event, direction) {
-    event.preventDefault()
-    controls.start({
-      opacity: [0, 1],
-      y: [10, 0],
-    })
-    if (direction === "next") {
-      setState(prevState => {
-        return {
-          ...state,
-          countdownIsOpen: false,
-          paperIndex:
-            prevState.paperIndex < 3
-              ? prevState.paperIndex + 1
-              : prevState.paperIndex,
-        }
-      })
-    } else {
-      setState(prevState => {
-        return {
-          ...state,
-          countdownIsOpen: false,
-          paperIndex:
-            prevState.paperIndex > 0
-              ? prevState.paperIndex - 1
-              : prevState.paperIndex,
-        }
-      })
-    }
-  }
+  const handlePaperButtonClick = function (event, direction) {}
 
   const handleSubjectListItemClick = function (event) {
     setState(prevState => {
       return {
         ...state,
         name: event.target.innerText,
-        nameInput: "",
+        input: "",
         menuIsOpen: false,
         countdownIsOpen: false,
       }
@@ -101,8 +92,8 @@ export default function () {
     setState(prevState => {
       return {
         ...state,
-        name: prevState.nameInput.toLowerCase(),
-        nameInput: "",
+        name: prevState.input.toLowerCase(),
+        input: "",
         menuIsOpen: false,
         countdownIsOpen: false,
       }
@@ -113,7 +104,7 @@ export default function () {
     setState(prevState => {
       return {
         ...state,
-        nameInput: "",
+        input: "",
         menuIsOpen: false,
         countdownIsOpen: !prevState.countdownIsOpen,
       }
@@ -160,11 +151,13 @@ export default function () {
         <ExamLevelInput level={state.level} handleChange={handleLevelChange} />
         <ExamName
           name={state.name}
-          nameInput={state.nameInput}
+          input={state.input}
           menuIsOpen={state.menuIsOpen}
           handleClick={handleNameClick}
           handleListItemClick={handleSubjectListItemClick}
           handleInputChange={handleNameChange}
+          exams={exams}
+          status={status}
         />
         <ExamPaperInput
           handleClick={handlePaperButtonClick}

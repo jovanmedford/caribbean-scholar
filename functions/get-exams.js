@@ -5,6 +5,7 @@ const GET_EXAMS = `
     allExams {
       data {
           _id
+          name
           level
           paperNumber
           date

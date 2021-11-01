@@ -1,37 +1,31 @@
 /**@jsx jsx */
-import { jsx } from 'theme-ui'
+import { jsx } from "theme-ui"
 //components
-import SubjectListItem from './SubjectListItem'
+import SubjectListItem from "./SubjectListItem"
 //utils
-import { subjects } from '../../utils/subjects'
-import remCalc from '../../utils/remCalc'
-import { v4 as uuidv4} from 'uuid'
+import { v4 as uuidv4 } from "uuid"
 
-export default function ({ nameInput, handleClick }) {
-  const searchString = nameInput.toLowerCase()
-  const subjectNames = Object.keys(subjects);
-  const filteredSubjectNames = subjectNames.filter( subjectName => {
-    return subjectName.toLowerCase().includes(searchString);
-  })
+export default function ({ input, handleClick, exams }) {
+  const searchString = input.toLowerCase()
+  const names = new Set(exams.map(exam => exam.name))
+  const filteredNames = [...names].filter(name =>
+    name.toLowerCase().includes(searchString)
+  )
+  const options = filteredNames.map(name => (
+    <SubjectListItem key={uuidv4()} name={name} handleClick={handleClick} />
+  ))
 
-  const subjectList = filteredSubjectNames.map( subjectName => {
-    return <SubjectListItem 
-            key={uuidv4()} 
-            subjectName={subjectName}
-            handleClick={handleClick}
-          />
-  })
-  return(
-    <div className="countdown__subject-list-container" sx={{
-      position:'absolute',
-      width: "100%",
-      height: "100%",
-      backgroundColor: 'background',
-      zIndex: 1200
-    }}>
-      <ul>
-        { subjectList }
-      </ul>
+  return (
+    <div sx={ListStyle}>
+      <ul>{options}</ul>
     </div>
   )
+}
+
+const ListStyle = {
+  position: "absolute",
+  width: "100%",
+  height: "100%",
+  backgroundColor: "background",
+  zIndex: 1200,
 }

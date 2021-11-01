@@ -58,6 +58,5 @@ export const useForm = formConfig => {
       />
     </p>
   ))
-
   return [handleSubmit, FormInputs]
 }

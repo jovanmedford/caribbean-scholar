@@ -1,28 +1,36 @@
 /** @jsx jsx */
-import { useState, useEffect } from "react"
+import { useState, useEffect, Fragment } from "react"
 import { jsx, useColorMode } from "theme-ui"
-import Logo from "../../img/logopng.png"
 import { useAnimation } from "framer-motion"
 import axios from "axios"
 // components
-import ExamDateDisplay from "../../components/exam-countdown/ExamDateDisplay"
-import ExamLevelInput from "../../components/exam-countdown/ExamLevelInput"
-import ExamName from "../../components/exam-countdown/ExamName"
-import ExamPaperInput from "../../components/exam-countdown/ExamPaperInput"
-import Countdown from "../../components/exam-countdown/Countdown"
+import ExamDateDisplay from "../../components/exam-countdown/DateView"
+import Level from "../../components/exam-countdown/Level"
+import Name from "../../components/exam-countdown/Name"
+import PaperNumber from "../../components/exam-countdown/PaperNumber"
+import { Countdown } from "../../components/countdown/Countdown"
 // utils
 import remCalc from "../../utils/remCalc"
-import getExamTimes from "../../utils/getExamTimes"
-import formatExamTimes from "../../utils/formatExamTimes"
+import Search from "../../components/exam-countdown/Search"
 
 export default function () {
+  const controls = useAnimation()
+
   // Set Color
   const [, setColorMode] = useColorMode()
-  setColorMode("chalkboard")
-
-  //Set status
   const [status, setStatus] = useState("loading...")
   const [exams, setExams] = useState([])
+  const [state, setState] = useState({
+    level: "csec",
+    name: "math",
+    input: "",
+    view: "date",
+    paperIndex: 0,
+    dateOpacity: 1,
+    dateY: 0,
+  })
+
+  setColorMode("chalkboard")
 
   // get exams
   useEffect(() => {
@@ -38,22 +46,10 @@ export default function () {
     })
   }, [status])
 
-  const controls = useAnimation()
-
-  const [state, setState] = useState({
-    level: "csec",
-    name: "math",
-    input: "",
-    paperIndex: 0,
-    menuIsOpen: false,
-    countdownIsOpen: false,
-    dateOpacity: 1,
-    dateY: 0,
-  })
-
   const handleLevelChange = function (event) {
     setState({
       ...state,
+      view: "date",
       level: event.target.value,
     })
   }
@@ -61,29 +57,55 @@ export default function () {
   const handleNameClick = function () {
     setState({
       ...state,
-      menuIsOpen: true,
-      countdownIsOpen: false,
+      view: "search",
     })
   }
 
-  const handleNameChange = function (event) {
+  const handleInputChange = function (event) {
     setState({
       ...state,
       input: event.target.value,
     })
   }
 
-  const handlePaperButtonClick = function (event, direction) {}
+  const handlePaperButtonClick = function (event, direction, length) {
+    event.preventDefault()
+    controls.start({
+      opacity: [0, 1],
+      y: [10, 0],
+    })
+    if (direction === "next") {
+      setState(prevState => {
+        return {
+          ...state,
+          view: "date",
+          paperIndex:
+            prevState.paperIndex < length
+              ? prevState.paperIndex + 1
+              : prevState.paperIndex,
+        }
+      })
+    } else {
+      setState(prevState => {
+        return {
+          ...state,
+          view: "date",
+          paperIndex:
+            prevState.paperIndex > 0
+              ? prevState.paperIndex - 1
+              : prevState.paperIndex,
+        }
+      })
+    }
+  }
 
-  const handleSubjectListItemClick = function (event) {
-    setState(prevState => {
-      return {
-        ...state,
-        name: event.target.innerText,
-        input: "",
-        menuIsOpen: false,
-        countdownIsOpen: false,
-      }
+  const handleSearchItemClick = function (event) {
+    setState({
+      ...state,
+      name: event.target.innerText,
+      view: "date",
+      paperIndex: 0,
+      input: "",
     })
   }
 
@@ -92,42 +114,41 @@ export default function () {
     setState(prevState => {
       return {
         ...state,
-        name: prevState.input.toLowerCase(),
+        name: prevState.input,
+        view: "date",
         input: "",
-        menuIsOpen: false,
-        countdownIsOpen: false,
       }
     })
   }
 
-  const handleCountdownClick = function (event) {
+  const handleCountdownClick = function () {
     setState(prevState => {
       return {
         ...state,
         input: "",
-        menuIsOpen: false,
-        countdownIsOpen: !prevState.countdownIsOpen,
+        view: prevState.view === "date" ? "countdown" : "date",
       }
     })
   }
 
-  const examTimes = formatExamTimes(getExamTimes(state.name, state.level))
-  const dateTime = examTimes[state.paperIndex].dateTime
+  let examsFiltered =
+    exams &&
+    exams
+      .filter(
+        exam =>
+          exam.name.toLowerCase() === state.name.toLowerCase() &&
+          exam.level.toLowerCase() === state.level.toLowerCase()
+      )
+      .sort((a, b) => a.paperNumber - b.paperNumber)
 
-  const now = new Date()
-
-  let errorMessage
-  const errorMessageStyle = {
-    position: "relative",
-    top: "35%",
-    fontSize: remCalc(48),
-  }
-
-  if (dateTime == null) {
-    errorMessage = <span sx={errorMessageStyle}>No exam</span>
-  } else if (dateTime - now < 0) {
-    errorMessage = <span sx={errorMessageStyle}>This exam has past.</span>
-  }
+  const currentExamTime =
+    Array.isArray(examsFiltered) &&
+    examsFiltered.length &&
+    examsFiltered[state.paperIndex].date
+  const currentExamPeriod =
+    Array.isArray(examsFiltered) &&
+    examsFiltered.length &&
+    examsFiltered[state.paperIndex].period
 
   return (
     <div
@@ -136,81 +157,90 @@ export default function () {
         marginTop: remCalc(64),
       }}
     >
-      <img
-        src={Logo}
-        alt={"Caribbean Scholar Logo within link to blog home page"}
-        sx={{
-          width: remCalc(210),
-          marginBottom: remCalc(48),
-          fontWeight: 400,
-          fontSize: remCalc(31.25),
-        }}
-      />
-
       <form onSubmit={handleSubmit}>
-        <ExamLevelInput level={state.level} handleChange={handleLevelChange} />
-        <ExamName
-          name={state.name}
-          input={state.input}
-          menuIsOpen={state.menuIsOpen}
+        <Level level={state.level} handleChange={handleLevelChange} />
+        <Name
+          {...state}
           handleClick={handleNameClick}
-          handleListItemClick={handleSubjectListItemClick}
-          handleInputChange={handleNameChange}
-          exams={exams}
-          status={status}
+          handleInputChange={handleInputChange}
         />
-        <ExamPaperInput
+        <PaperNumber
           handleClick={handlePaperButtonClick}
           index={state.paperIndex}
+          exams={examsFiltered || []}
         />
       </form>
 
-      <div
-        sx={{
-          backgroundColor: "#28866C",
-          borderRadius: "8px",
-          padding: "1rem 0",
-          margin: "2rem auto",
-          maxWidth: remCalc(400),
-          height: remCalc(330),
-        }}
-      >
-        {errorMessage ? (
-          errorMessage
-        ) : (
-          <div>
-            <Countdown
-              subjectDateTime={dateTime}
-              isOpen={state.countdownIsOpen}
+      {status === "loaded" && (
+        <div sx={state.view === "search" ? "" : countdownContainerStyle}>
+          {Array.isArray(examsFiltered) && examsFiltered.length ? (
+            <div>
+              {
+                {
+                  date: (
+                    <ExamDateDisplay
+                      dateString={currentExamTime}
+                      period={currentExamPeriod}
+                      controls={controls}
+                    />
+                  ),
+                  countdown: (
+                    <Countdown
+                      sx={{ marginTop: "20%" }}
+                      dateString={currentExamTime}
+                    />
+                  ),
+                }[state.view]
+              }
+            </div>
+          ) : state.view === "search" ? (
+            ""
+          ) : (
+            <span sx={errorMessageStyle}>No exam</span>
+          )}
+          {state.view === "search" && (
+            <Search
+              input={state.input}
+              handleInputChange={handleInputChange}
+              handleClick={handleSearchItemClick}
+              exams={exams}
             />
-            <ExamDateDisplay
-              date={examTimes[state.paperIndex].date}
-              time={examTimes[state.paperIndex].time}
-              controls={controls}
-            />
-          </div>
-        )}
-      </div>
+          )}
+        </div>
+      )}
 
-      <button
-        dateTime={examTimes[state.paperIndex].dateTime}
-        onClick={handleCountdownClick}
-        sx={{
-          position: "relative",
-          background: "none",
-          border: "3px solid",
-          borderColor: "text",
-          borderRadius: "10px",
-          padding: "1rem 2rem",
-          display: "inline-block",
-          color: "text",
-          fontWeight: "bold",
-          fontSize: "1.125rem",
-          zIndex: "1000",
-        }}
-      >
-        {state.countdownIsOpen ? "EXAM DATE" : "COUNTDOWN"}
+      <button onClick={handleCountdownClick} sx={buttonStyle}>
+        {state.view === "date" ? "Exam Date" : "Countdown"}
       </button>
     </div>
   )
+}
+
+const errorMessageStyle = {
+  position: "relative",
+  top: "35%",
+  fontSize: remCalc(48),
+}
+
+const countdownContainerStyle = {
+  backgroundColor: "#28866C",
+  borderRadius: "8px",
+  padding: "1rem 0",
+  margin: "2rem auto",
+  maxWidth: remCalc(400),
+  height: remCalc(330),
+}
+
+const buttonStyle = {
+  position: "relative",
+  background: "none",
+  border: "3px solid",
+  borderColor: "text",
+  borderRadius: "10px",
+  padding: "1rem 2rem",
+  display: "inline-block",
+  color: "text",
+  fontWeight: "bold",
+  fontSize: "1.125rem",
+  zIndex: "1000",
 }

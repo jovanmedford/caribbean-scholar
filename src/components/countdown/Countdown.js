@@ -3,13 +3,12 @@ import { jsx } from "theme-ui"
 import { useState, useEffect } from "react"
 import decompose from "./decompose"
 import CountdownUnit from "./CountdownUnit"
-import PropTypes from "prop-types"
 
 /***
  * Countdown to given date and time
  * @param {String} dateString - date time of format "yyyy-mm-dd hh:mm:ss"
  */
-export const Countdown = ({ dateString }) => {
+export const Countdown = ({ dateString, className }) => {
   const datetime = new Date(dateString)
   const [timeDelta, setTimeDelta] = useState(datetime - new Date())
 
@@ -22,7 +21,7 @@ export const Countdown = ({ dateString }) => {
 
   const [days, hours, minutes, seconds] = decompose(timeDelta)
   return (
-    <div>
+    <div className={className}>
       {timeDelta > 0 ? (
         <ul sx={listStyle}>
           <CountdownUnit key="Days" number={days} unit="Days" />
@@ -35,10 +34,6 @@ export const Countdown = ({ dateString }) => {
       )}
     </div>
   )
-}
-
-Countdown.PropTypes = {
-  datetime: PropTypes.string,
 }
 
 const listStyle = {

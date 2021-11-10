@@ -13,53 +13,8 @@ export default function ({ index, handleClick, exams }) {
     paperNumber = exams[index].paperNumber
   }
 
-  const bounce = keyframes`
-  from, 20%, 53%, 80%, to {
-    transform: translate3d(0,0,0);
-  }
-
-  40%, 43% {
-    transform: translate3d(0, -10px, 0);
-  }
-
-  70% {
-    transform: translate3d(0, -5px, 0);
-  }
-
-  90% {
-    transform: translate3d(0, 0px,0);
-  }
-`
-
   return (
-    <div
-      sx={{
-        display: "flex",
-        justifyContent: "center",
-        marginBottom: remCalc(24),
-
-        span: {
-          fontSize: remCalc(31.25),
-          margin: "0 0.5rem",
-        },
-
-        button: {
-          background: "none",
-          border: "none",
-          position: "relative",
-
-          ":hover": {
-            animationName: bounce,
-            animationDuration: "1s",
-          },
-        },
-
-        svg: {
-          fontSize: "2rem",
-          color: "text",
-        },
-      }}
-    >
+    <div sx={allStyle}>
       {index > 0 ? (
         <button onClick={event => handleClick(event, "previous", length)}>
           <FontAwesomeIcon icon={faAngleLeft} alt="previous exam paper" />
@@ -80,3 +35,48 @@ export default function ({ index, handleClick, exams }) {
     </div>
   )
 }
+
+const allStyle = {
+  display: "flex",
+  justifyContent: "center",
+  marginBottom: remCalc(24),
+
+  span: {
+    fontSize: remCalc(25),
+    margin: "0 0.5rem",
+  },
+
+  button: {
+    background: "none",
+    border: "none",
+    position: "relative",
+
+    ":hover": {
+      animationName: bounce,
+      animationDuration: "1s",
+    },
+  },
+
+  svg: {
+    fontSize: "2rem",
+    color: "text",
+  },
+}
+
+const bounce = keyframes`
+from, 20%, 53%, 80%, to {
+  transform: translate3d(0,0,0);
+}
+
+40%, 43% {
+  transform: translate3d(0, -10px, 0);
+}
+
+70% {
+  transform: translate3d(0, -5px, 0);
+}
+
+90% {
+  transform: translate3d(0, 0px,0);
+}
+`

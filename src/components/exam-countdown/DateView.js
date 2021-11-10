@@ -20,7 +20,7 @@ export default function ({ dateString, period, controls }) {
         },
         span: {
           margin: remCalc([0, 0, 24, 0]),
-          fontSize: "3rem",
+          fontSize: "2.4375rem",
         },
       }}
     >

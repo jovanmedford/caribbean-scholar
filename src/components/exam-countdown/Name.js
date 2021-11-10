@@ -12,7 +12,7 @@ export default function ({ name, handleClick }) {
         onClick={handleClick}
         sx={{
           margin: 0,
-          fontSize: remCalc(40),
+          fontSize: remCalc(39),
         }}
       >
         {name} <FontAwesomeIcon icon={faCaretDown} alt="change subject" />

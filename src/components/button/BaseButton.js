@@ -19,6 +19,7 @@ export const BaseButton = ({
     color: backgroundColor ? "white" : "text",
     padding: "0.5rem 1rem",
     borderRadius: "4px",
+    display: "block",
   }
   return (
     <button

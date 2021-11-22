@@ -50,6 +50,7 @@ export const theme = {
       chalkboard: {
         background: "#4FB286",
         text: "white",
+        formText: "#536272",
       },
       light: {
         background: "#FFF8F0",

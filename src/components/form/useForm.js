@@ -36,13 +36,6 @@ export const useForm = formConfig => {
     })
   }
 
-  const handleSubmit = (e, submitForm) => {
-    e.preventDefault()
-    if (Object.values(state.errors).every(value => value === "")) {
-      submitForm(state)
-    }
-  }
-
   const FormInputs = formConfig.map(config => (
     <p>
       <Input
@@ -58,5 +51,5 @@ export const useForm = formConfig => {
       />
     </p>
   ))
-  return [handleSubmit, FormInputs]
+  return [state, FormInputs]
 }

@@ -10,13 +10,14 @@ export const BaseButton = ({
   border,
   disabled,
   className,
+  onClick,
 }) => {
   const buttonStyle = {
     background: backgroundColor ? backgroundColor : "none",
     backgroundColor: backgroundColor && backgroundColor,
     border: "2px solid",
-    borderColor: border ? "text" : backgroundColor,
-    color: backgroundColor ? "white" : "text",
+    borderColor: border ? "formText" : backgroundColor,
+    color: backgroundColor ? "white" : "formText",
     padding: "0.5rem 1rem",
     borderRadius: "4px",
     display: "block",
@@ -27,6 +28,7 @@ export const BaseButton = ({
       type="button"
       sx={buttonStyle}
       className={className}
+      onClick={onClick}
     >
       {label}
     </button>

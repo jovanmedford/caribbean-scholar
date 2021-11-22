@@ -49,7 +49,12 @@ export const Modal = ({
             <h2>{heading}</h2>
             {children}
             <div sx={buttonsContainer}>
-              <Button onClick={handleSubmit} label="Submit" type="primary" />
+              <Button
+                sx={{ marginRight: "0.75rem" }}
+                onClick={handleSubmit}
+                label="Submit"
+                type="primary"
+              />
               <Button onClick={handleCancel} label="cancel" type="secondary" />
             </div>
           </motion.div>
@@ -61,6 +66,7 @@ export const Modal = ({
 
 const modalStyle = {
   borderRadius: "8px",
+  color: "formText",
   width: "83.33%",
   maxWidth: "24rem",
   margin: "0 auto",
@@ -76,8 +82,8 @@ const modalStyle = {
 }
 
 const modalVariants = {
-  visible: { opacity: 1, scale: 1 },
-  hidden: { opacity: 0, scale: 0 },
+  visible: { opacity: 1 },
+  hidden: { opacity: 0 },
 }
 
 const overlayStyle = {

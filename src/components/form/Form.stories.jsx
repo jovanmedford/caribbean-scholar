@@ -14,8 +14,9 @@ Default.args = {
   formConfig: [
     {
       name: "name",
+      type: "autocomplete",
       label: "Name",
-      type: "text",
+      items: ["One", "Two"],
       validationRules: [requiredRule],
     },
     {

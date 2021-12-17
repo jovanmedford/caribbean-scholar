@@ -22,9 +22,18 @@ export const useForm = formConfig => {
   //handleChange
   const handleChange = (e, validationRules) => {
     let errorMessage = ""
-    const target = e.target
-    const name = target.name
-    const value = target.value
+    let name = ""
+    let value = ""
+    if (e.target) {
+      name = e.target.name
+      value = e.target.value
+    }
+
+    if (e.selectedItem) {
+      name = "name"
+      value = e.selectedItem
+    }
+
     errorMessage = validate(validationRules, value)
     setState({
       ...state,
@@ -46,6 +55,7 @@ export const useForm = formConfig => {
         placeholder={config.placeholder || ""}
         options={config.options || []}
         value={state[config.name]}
+        items={config.items}
         errorMessage={state["errors"][config.name]}
         handleChange={e => handleChange(e, config.validationRules)}
       />

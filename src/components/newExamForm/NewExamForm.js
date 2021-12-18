@@ -59,6 +59,7 @@ export const NewExamForm = ({ formConfig }) => {
 
 const formStyle = {
   width: "90%",
+  maxWidth: "24rem",
   margin: "0 auto",
   label: {
     fonrSize: 1,

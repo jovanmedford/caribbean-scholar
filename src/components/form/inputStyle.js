@@ -1,5 +1,5 @@
 export const inputStyle = {
-  border: "1px solid",
+  border: "none",
   width: "100%",
   display: "block",
   padding: "0.5em",

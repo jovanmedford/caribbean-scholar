@@ -1,5 +1,8 @@
-import React, { useState } from "react"
+/** @jsx jsx */
+import { jsx } from "theme-ui"
+import { useState } from "react"
 import { useCombobox } from "downshift"
+import { inputStyle } from "./inputStyle"
 
 export const ComboboxUncontrolled = ({
   key,
@@ -27,6 +30,7 @@ export const ComboboxUncontrolled = ({
       setInputItems(
         items.filter(item =>
           item.toLowerCase().startsWith(inputValue.toLowerCase())
+         
         )
       )
     },
@@ -40,22 +44,19 @@ export const ComboboxUncontrolled = ({
           {...getInputProps({
             name: name,
             key: key,
+            sx: inputStyle
           })}
         />
-        <button
-          type="button"
-          {...getToggleButtonProps()}
-          aria-label="toggle menu"
-        >
-          &#8595;
-        </button>
       </div>
-      <ul {...getMenuProps()}>
+      {
+        inputItems.length > 0 &&
+        <ul {...getMenuProps({style: menuStyle})}>
         {isOpen &&
           inputItems.map((item, index) => (
             <li
               style={
-                highlightedIndex === index ? { backgroundColor: "#bde4ff" } : {}
+                highlightedIndex === index ? { ...itemStyle,
+                backgroundColor: "#bde4ff" } : itemStyle
               }
               key={`${item}${index}`}
               {...getItemProps({ item, index })}
@@ -64,6 +65,25 @@ export const ComboboxUncontrolled = ({
             </li>
           ))}
       </ul>
+    }
     </div>
   )
+}
+
+const itemStyle = {
+  padding: "0.5rem 1rem"
+}
+
+const menuStyle = {
+    margin: 0,
+    padding: 0,
+    boxShadow: "0px 1px 8px #9BAABB",
+    color: "black",
+    position: "absolute",
+    zIndex: 8,
+    maxWidth: "24rem",
+    width: "100%",
+    background: "white",
+    borderRadius:" 0 0 4px 4px",
+    fontSize: "1rem"
 }

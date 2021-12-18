@@ -44,7 +44,7 @@ export default function () {
     {
       name: "date",
       label: "Exam Date",
-      type: "date",
+      type: "datetime-local",
       validationRules: [dateRule],
     },
   ]

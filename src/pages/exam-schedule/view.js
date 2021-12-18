@@ -147,7 +147,7 @@ export default function () {
     Array.isArray(examsFiltered) &&
     examsFiltered.length &&
     examsFiltered[state.paperIndex].period
-
+ console.log(exams)
   return (
     <div
       sx={{

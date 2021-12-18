@@ -25,7 +25,7 @@ export const getExams = async () => {
   return allExams.data
 }
 
-export const createExam = async ({ name, level, paperNumber, date }) => {
+export const createExam = async ({ name, level, paperNumber, date, period }) => {
   let data = await client.query(
     q.Create(q.Collection("exams"), {
       data: {
@@ -33,6 +33,7 @@ export const createExam = async ({ name, level, paperNumber, date }) => {
         level,
         paperNumber,
         date,
+        period
       },
     })
   )

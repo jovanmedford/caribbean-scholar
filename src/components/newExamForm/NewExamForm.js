@@ -50,7 +50,7 @@ export const NewExamForm = ({ formConfig }) => {
         <span>Paper {state.paperNumber}</span>
         <div sx={dateStyle}>
           <span>{formattedDate}</span>
-          <span>{state.period}</span>
+          <span>{state.time}</span>
         </div>
       </Modal>
     </form>

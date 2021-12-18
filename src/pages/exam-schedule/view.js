@@ -2,7 +2,7 @@
 import { useState, useEffect, Fragment } from "react"
 import { jsx, useColorMode } from "theme-ui"
 import { useAnimation } from "framer-motion"
-import axios from "axios"
+import { getExams } from "../../utils/models"
 // components
 import ExamDateDisplay from "../../components/exam-countdown/DateView"
 import Level from "../../components/exam-countdown/Level"
@@ -35,15 +35,13 @@ export default function () {
   // get exams
   useEffect(() => {
     if (status !== "loading...") return
-    axios("/api/get-exams").then(result => {
-      if (result.status !== 200) {
-        console.error("Error loading exams")
-        console.error(result)
-        return
-      }
-      setExams(result.data.exams)
+    async function fetchExams() {
+      let data = await getExams()
+      let newExams = data.map(doc => doc.data)
+      setExams(newExams)
       setStatus("loaded")
-    })
+    }
+    fetchExams()
   }, [status])
 
   const handleLevelChange = function (event) {

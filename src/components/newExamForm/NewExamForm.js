@@ -3,6 +3,7 @@ import { jsx } from "theme-ui"
 import { useForm } from "../form/useForm"
 import { useState, useEffect } from "react"
 import { Modal } from "../modal/Modal"
+import { createExam } from "../../utils/models"
 
 export const NewExamForm = ({ formConfig }) => {
   const [state, FormInputs] = useForm(formConfig)
@@ -11,7 +12,7 @@ export const NewExamForm = ({ formConfig }) => {
 
   useEffect(() => {
     if (hasConfirmation) {
-      console.log(state)
+      createExam(state)
     }
     return () => setConfirmation(false)
   })

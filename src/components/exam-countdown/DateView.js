@@ -2,7 +2,7 @@
 import { jsx } from "theme-ui"
 import { motion } from "framer-motion"
 import remCalc from "../../utils/remCalc"
-export default function ({ dateString, controls }) {
+export default function ({ dateString, period, controls }) {
   const datetime = new Date(dateString)
   const time = datetime.toLocaleTimeString("en", {
     timeZoneName: "short",
@@ -36,7 +36,7 @@ export default function ({ dateString, controls }) {
 
       <div sx>
         <h3>Time</h3>
-        <motion.span animate={controls}>{time}</motion.span>
+        <motion.span sx={{textTransform: "uppercase"}} animate={controls}>{period}</motion.span>
       </div>
     </section>
   )

@@ -4,6 +4,8 @@ import { jsx, useColorMode } from "theme-ui"
 import { useAnimation } from "framer-motion"
 import { getExams } from "../../utils/models"
 // components
+import MainHeader from '../../components/mainHeader'
+import Footer from '../../components/footer'
 import ExamDateDisplay from "../../components/exam-countdown/DateView"
 import Level from "../../components/exam-countdown/Level"
 import Name from "../../components/exam-countdown/Name"
@@ -143,12 +145,14 @@ export default function () {
     Array.isArray(examsFiltered) &&
     examsFiltered.length &&
     examsFiltered[state.paperIndex].date
+
   const currentExamPeriod =
     Array.isArray(examsFiltered) &&
     examsFiltered.length &&
     examsFiltered[state.paperIndex].period
- console.log(exams)
+    
   return (
+    <div>
     <div
       sx={{
         textAlign: "center",
@@ -206,11 +210,26 @@ export default function () {
           )}
         </div>
       )}
-
       <button onClick={handleCountdownClick} sx={buttonStyle}>
         {state.view === "date" ? "Exam Date" : "Countdown"}
       </button>
     </div>
+      <section sx={instructionStyle}>
+        <h2>Need help?</h2>
+        <ol>
+          <li>Click on the subject level and choose either CSEC or CAPE</li>
+          <li>Click the subject name and use the search bar to find the exam you need</li>
+          <li>Use the left and right arrows to change the paper number</li>
+        </ol>
+      </section>
+      <section sx={disclaimerStyle}>
+        <h2>Disclaimer</h2>
+        <p>The exams listed in this tool are subject to change. 
+        Please make sure to double check your exam times by 
+        visiting cxc exam timetables.</p>
+      </section>
+      <Footer />
+  </div>
   )
 }
 
@@ -221,7 +240,7 @@ const errorMessageStyle = {
 }
 
 const countdownContainerStyle = {
-  backgroundColor: "#28866C",
+  backgroundColor: "#005953",
   borderRadius: "8px",
   padding: "1rem 0",
   margin: "2rem auto",
@@ -241,4 +260,28 @@ const buttonStyle = {
   fontWeight: "bold",
   fontSize: "1.125rem",
   zIndex: "1000",
+}
+
+const instructionStyle = {
+  maxWidth: "60rem",
+  width: "90%",
+  textAlign: "left", 
+  margin: "2.5rem auto 0",
+  h2: {
+    marginBottom: "0.5rem",
+    fontSize: 2
+  },
+  li: {
+    listStyle: "auto",
+    marginBottom: "0.5rem",
+    fontSize: [0,1]
+  },
+  p: {
+    fontSize: [0,1]
+  }
+}
+
+const disclaimerStyle = {
+  ...instructionStyle,
+  marginBottom: "6rem"
 }

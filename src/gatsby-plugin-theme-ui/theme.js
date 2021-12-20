@@ -48,7 +48,7 @@ export const theme = {
         background: "white",
       },
       chalkboard: {
-        background: "#4FB286",
+        background: "#28866C",
         text: "white",
         formText: "#536272",
       },

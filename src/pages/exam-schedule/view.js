@@ -4,13 +4,14 @@ import { jsx, useColorMode } from "theme-ui"
 import { useAnimation } from "framer-motion"
 import { getExams } from "../../utils/models"
 // components
-import MainHeader from '../../components/mainHeader'
-import Footer from '../../components/footer'
+import MainHeader from "../../components/mainHeader"
+import Footer from "../../components/footer"
 import ExamDateDisplay from "../../components/exam-countdown/DateView"
 import Level from "../../components/exam-countdown/Level"
 import Name from "../../components/exam-countdown/Name"
 import PaperNumber from "../../components/exam-countdown/PaperNumber"
 import { Countdown } from "../../components/countdown/Countdown"
+import { LoadingAnimation } from "../../components/exam-countdown/LoadingAnimation"
 // utils
 import remCalc from "../../utils/remCalc"
 import Search from "../../components/exam-countdown/Search"
@@ -24,7 +25,7 @@ export default function () {
   const [exams, setExams] = useState([])
   const [state, setState] = useState({
     level: "csec",
-    name: "math",
+    name: "Math",
     input: "",
     view: "date",
     paperIndex: 0,
@@ -45,6 +46,18 @@ export default function () {
     }
     fetchExams()
   }, [status])
+
+  const combineDate = (date, period) => {
+    if (period === "Morning") {
+      return `${date} 09:00:00`
+    }
+
+    if (period === "Evening") {
+      return `${date} 13:00:00`
+    }
+
+    return date
+  }
 
   const handleLevelChange = function (event) {
     setState({
@@ -146,90 +159,114 @@ export default function () {
     examsFiltered.length &&
     examsFiltered[state.paperIndex].date
 
+  console.log(`${currentExamTime} `)
   const currentExamPeriod =
     Array.isArray(examsFiltered) &&
     examsFiltered.length &&
     examsFiltered[state.paperIndex].period
-    
+
   return (
     <div>
-    <div
-      sx={{
-        textAlign: "center",
-        marginTop: remCalc(64),
-      }}
-    >
-      <form onSubmit={handleSubmit}>
-        <Level level={state.level} handleChange={handleLevelChange} />
-        <Name
-          {...state}
-          handleClick={handleNameClick}
-          handleInputChange={handleInputChange}
-        />
-        <PaperNumber
-          handleClick={handlePaperButtonClick}
-          index={state.paperIndex}
-          exams={examsFiltered || []}
-        />
-      </form>
+      <MainHeader />
+      <div
+        sx={{
+          textAlign: "center",
+          marginTop: remCalc(64),
+        }}
+      >
+        <form onSubmit={handleSubmit}>
+          <span sx={title}>Jan 2022 Exam Period</span>
+          <Level level={state.level} handleChange={handleLevelChange} />
+          <Name
+            {...state}
+            handleClick={handleNameClick}
+            handleInputChange={handleInputChange}
+          />
+          <PaperNumber
+            handleClick={handlePaperButtonClick}
+            index={state.paperIndex}
+            exams={examsFiltered || []}
+          />
+        </form>
 
-      {status === "loaded" && (
-        <div sx={state.view === "search" ? "" : countdownContainerStyle}>
-          {Array.isArray(examsFiltered) && examsFiltered.length ? (
-            <div>
-              {
+        {status === "loaded" ? (
+          <div sx={state.view === "search" ? "" : countdownContainerStyle}>
+            {Array.isArray(examsFiltered) && examsFiltered.length ? (
+              <div>
                 {
-                  date: (
-                    <ExamDateDisplay
-                      dateString={currentExamTime}
-                      period={currentExamPeriod}
-                      controls={controls}
-                    />
-                  ),
-                  countdown: (
-                    <Countdown
-                      sx={{ marginTop: "20%" }}
-                      dateString={currentExamTime}
-                    />
-                  ),
-                }[state.view]
-              }
-            </div>
-          ) : state.view === "search" ? (
-            ""
-          ) : (
-            <span sx={errorMessageStyle}>No exam</span>
-          )}
-          {state.view === "search" && (
-            <Search
-              input={state.input}
-              handleInputChange={handleInputChange}
-              handleClick={handleSearchItemClick}
-              exams={exams}
-            />
-          )}
-        </div>
-      )}
-      <button onClick={handleCountdownClick} sx={buttonStyle}>
-        {state.view === "date" ? "Exam Date" : "Countdown"}
-      </button>
-    </div>
+                  {
+                    date: (
+                      <ExamDateDisplay
+                        dateString={currentExamTime}
+                        period={currentExamPeriod}
+                        controls={controls}
+                      />
+                    ),
+                    countdown: (
+                      <Countdown
+                        sx={{ marginTop: "20%" }}
+                        dateString={combineDate(
+                          currentExamTime,
+                          currentExamPeriod
+                        )}
+                      />
+                    ),
+                  }[state.view]
+                }
+              </div>
+            ) : state.view === "search" ? (
+              ""
+            ) : (
+              <span sx={errorMessageStyle}>No exam added</span>
+            )}
+            {state.view === "search" && (
+              <Search
+                input={state.input}
+                handleInputChange={handleInputChange}
+                handleClick={handleSearchItemClick}
+                exams={exams}
+              />
+            )}
+          </div>
+        ) : (
+          <div
+            sx={{
+              margin: "3.5rem auto",
+            }}
+          >
+            <LoadingAnimation />
+          </div>
+        )}
+        <button onClick={handleCountdownClick} sx={buttonStyle}>
+          {state.view === "date" ? "Countdown" : "Date"}
+        </button>
+      </div>
       <section sx={instructionStyle}>
         <h2>Need help?</h2>
         <ol>
           <li>Click on the subject level and choose either CSEC or CAPE</li>
-          <li>Click the subject name and use the search bar to find the exam you need</li>
+          <li>
+            Click the subject name and use the search bar to find the exam you
+            need
+          </li>
           <li>Use the left and right arrows to change the paper number</li>
         </ol>
       </section>
       <section sx={disclaimerStyle}>
         <h2>Disclaimer</h2>
-        <p>The exams listed in this tool are subject to change. 
-        Please make sure to double check your exam times by 
-        visiting cxc exam timetables.</p>
+        <p>
+          The exams listed in this tool are subject to change. Please make sure
+          to double check your exam times by visiting{" "}
+          <a
+            sx={{ color: "text" }}
+            href="https://46i48l108maaxssg8uyuvr10-wpengine.netdna-ssl.com/wp-content/uploads/2018/11/Timetable-CSEC_Jan2022_FINAL_08Nov2021.pdf"
+          >
+            cxc exam timetables.
+          </a>
+        </p>
       </section>
       <Footer />
-  </div>
+    </div>
   )
 }
 
@@ -259,29 +296,41 @@ const buttonStyle = {
   color: "text",
   fontWeight: "bold",
   fontSize: "1.125rem",
-  zIndex: "1000",
+  zIndex: "10",
 }
 
 const instructionStyle = {
   maxWidth: "60rem",
   width: "90%",
-  textAlign: "left", 
+  textAlign: "left",
   margin: "2.5rem auto 0",
   h2: {
     marginBottom: "0.5rem",
-    fontSize: 2
+    fontSize: 2,
   },
   li: {
     listStyle: "auto",
     marginBottom: "0.5rem",
-    fontSize: [0,1]
+    fontSize: [0, 1],
   },
   p: {
-    fontSize: [0,1]
-  }
+    fontSize: [0, 1],
+  },
 }
 
 const disclaimerStyle = {
   ...instructionStyle,
-  marginBottom: "6rem"
+  marginBottom: "6rem",
+}
+
+const title = {
+  display: "block",
+  textAlign: "center",
+  fontSize: [0, 1],
+  position: "relative",
+  zIndex: -1,
+  opacity: "50%",
+  letterSpacing: "4px",
+  marginBottom: "1rem",
+  marginTop: "-1rem",
 }

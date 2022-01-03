@@ -73,6 +73,7 @@ export default function Sidebar({ handleClick, state, container }) {
           <SidebarLink text="Home" link="/" isInternal={true} />
           <SidebarLink text="About" link="/about" isInternal={true} />
           <SidebarLink text="Blog" link="/blog" isInternal={true} />
+          <SidebarLink text="Exam Schedule" link="/exam-schedule/view" isInternal={true} />
           <SidebarLink
             text="Courses"
             link="https://school.thecaribbeanscholar.com/"

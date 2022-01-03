@@ -9,6 +9,7 @@ export default function HomeHero({copy,tagline,image, buttonText, alt, link}) {
                  backgroundColor: '#0F325A',
                  display: 'flex',
                  flexDirection: 'column',
+                 paddingTop: "2rem",
                  marginBottom: [`${Spacing.mobile.vertical.extraLarge}`,
                                 `${Spacing.tablet.vertical.extraLarge}`,
                                 `${Spacing.desktop.vertical.extraLarge}`]
